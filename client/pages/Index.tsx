@@ -26,7 +26,7 @@ export default function Index() {
           </div>
 
           {/* Shop Now Button */}
-          <button className="flex items-center gap-1.5 bg-brand-primary-700 text-white px-4 py-1 rounded-full text-base font-bold leading-6 hover:opacity-90 transition-opacity">
+          <button className="flex items-center gap-1.5 bg-brand-primary-700 text-white px-4 py-1 rounded-full text-base font-bold leading-6 hover:opacity-90 transition-opacity text-outfit">
             Shop now
             <div className="flex items-center justify-center w-5 h-5">
               <ArrowRight className="w-4 h-4" />
@@ -157,7 +157,7 @@ export default function Index() {
               <h3 className="text-white text-base font-normal leading-6">Contact us</h3>
               <p className="text-brand-primary-300 text-sm font-normal leading-[150%]">
                 222 222/2 222/1 ถนน พุทธมณฑลสาย 1 แขวง<br />
-                บางระมาด เขตตลิ่งชัน กรุง��ทพมหานคร 10170
+                บางระมาด เขตตลิ่งชัน กรุงเทพมหานคร 10170
               </p>
             </div>
             
