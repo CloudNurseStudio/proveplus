@@ -106,7 +106,7 @@ export default function Index() {
 
       {/* Footer */}
       <footer className="bg-gradient-to-b from-brand-primary-700 to-brand-primary-400 rounded-t-[40px] shadow-[0_-16px_24px_0_rgba(0,0,0,0.12)] px-10 pt-10 pb-6 mt-16">
-        <div className="flex flex-col items-center gap-6 max-w-md mx-auto">
+        <div className="flex flex-col items-center gap-6 max-w-md md:max-w-2xl lg:max-w-4xl mx-auto">
           {/* Footer Logo */}
           <div className="flex flex-col items-center gap-8">
             <svg width="295" height="84" viewBox="0 0 295 84" fill="none" xmlns="http://www.w3.org/2000/svg">
