@@ -39,6 +39,12 @@
 
     --radius: 0.5rem;
 
+    /* Prove+ Brand Colors */
+    --brand-primary-700: 234 43% 42%;
+    --brand-primary-400: 227 34% 66%;
+    --brand-primary-300: 225 34% 77%;
+    --brand-white: 0 0% 100%;
+
     --sidebar-background: 0 0% 98%;
 
     --sidebar-foreground: 240 5.3% 26.1%;
