@@ -38,15 +38,15 @@ export default function Index() {
       {/* Main Content */}
       <main className="pt-24 pb-0">
         {/* Hero Section */}
-        <div className="flex flex-col items-center gap-15 px-0">
-          <img 
-            src="https://api.builder.io/api/v1/image/assets/TEMP/26fc47f26205ef9b130e457a8a05138cb7eb3622?width=748" 
-            alt="Prove+ Product" 
+        <div className="flex flex-col items-center gap-[60px] px-0">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/26fc47f26205ef9b130e457a8a05138cb7eb3622?width=748"
+            alt="Prove+ Product"
             className="w-full max-w-[374px] h-auto object-cover"
           />
 
           {/* Where to Buy Section */}
-          <div className="flex flex-col items-center gap-12 px-6 w-full max-w-md">
+          <div className="flex flex-col items-center gap-[50px] px-6 w-full max-w-md">
             {/* Section Header */}
             <div className="flex flex-col items-center gap-1 text-center">
               <h2 className="text-4xl font-bold text-brand-primary-700 leading-[150%] text-outfit">
