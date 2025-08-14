@@ -1,6 +1,9 @@
 export default function WhereToBuy() {
   return (
-    <div className="flex flex-col items-center gap-[50px] px-6 w-full max-w-md md:max-w-lg lg:max-w-xl">
+    <div
+      id="where-to-buy"
+      className="flex flex-col items-center gap-[50px] px-6 w-full max-w-md md:max-w-lg lg:max-w-xl"
+    >
       <div className="flex flex-col items-center gap-1 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-primary-700 leading-[150%] text-outfit">
           Where to Buy

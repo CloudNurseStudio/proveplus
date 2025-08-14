@@ -13,6 +13,7 @@ import CookieNotice from "./pages/CookieNotice";
 import TermsOfUse from "./pages/TermsOfUse";
 import Accessibility from "./pages/Accessibility";
 import LegalWarning from "./pages/LegalWarning";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-notice" element={<PrivacyNotice />} />
           <Route path="/cookie-notice" element={<CookieNotice />} />
           <Route path="/terms-of-use" element={<TermsOfUse />} />
