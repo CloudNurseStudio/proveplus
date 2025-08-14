@@ -58,7 +58,7 @@ export default function Index() {
             </div>
 
             {/* Platform Cards */}
-            <div className="flex flex-col items-start gap-11 w-full max-w-[246px]">
+            <div className="flex flex-col items-start gap-[44.727px] w-full max-w-[246px]">
               {/* Shopee Card with Glow */}
               <div className="relative w-full">
                 {/* Glow Effect */}
