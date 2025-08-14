@@ -49,10 +49,10 @@ export default function Index() {
           <div className="flex flex-col items-center gap-12 px-6 w-full max-w-md">
             {/* Section Header */}
             <div className="flex flex-col items-center gap-1 text-center">
-              <h2 className="text-4xl font-bold text-brand-primary-700 leading-[150%]">
+              <h2 className="text-4xl font-bold text-brand-primary-700 leading-[150%] text-outfit">
                 Where to Buy
               </h2>
-              <p className="text-base text-brand-primary-400 leading-[150%] font-normal">
+              <p className="text-base text-brand-primary-400 leading-[150%] font-normal text-fc-orbit">
                 Once we launch, you'll be able to shop from your favorite platforms.
               </p>
             </div>
