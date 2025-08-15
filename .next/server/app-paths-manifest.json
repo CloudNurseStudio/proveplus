@@ -1,0 +1,10 @@
+{
+  "/contact/page": "app/contact/page.js",
+  "/cookie-notice/page": "app/cookie-notice/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/accessibility/page": "app/accessibility/page.js",
+  "/legal-warning/page": "app/legal-warning/page.js",
+  "/page": "app/page.js",
+  "/privacy-notice/page": "app/privacy-notice/page.js",
+  "/terms-of-use/page": "app/terms-of-use/page.js"
+}

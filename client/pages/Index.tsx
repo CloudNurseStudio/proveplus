@@ -9,14 +9,19 @@ export default function Index() {
       <Navbar />
 
       {/* Main Content */}
-      <main className="pb-0">
+      <main className="h-screen overflow-y-auto snap-y snap-mandatory pb-0 scroll-smooth">
         <div className="flex flex-col items-center gap-[60px] px-0 md:gap-20">
-          <HeroImage />
-          <WhereToBuy />
+          <section className="snap-start w-full h-screen">
+            <HeroImage />
+          </section>
+          <section className="snap-start w-full h-screen">
+            <WhereToBuy />
+          </section>
+          <section className="snap-start w-full">
+            <Footer />
+          </section>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

@@ -1,0 +1,8 @@
+2:I[9107,[],"ClientPageRoot"]
+3:I[9403,["264","static/chunks/264-160497f7d5f292dd.js","41","static/chunks/app/accessibility/page-a4d00057c0dc5ec0.js"],"default",1]
+4:I[4707,[],""]
+5:I[6423,[],""]
+6:I[5447,["160","static/chunks/app/not-found-aa3d0b6de39bd334.js"],"default"]
+0:["_P5J1En-iGdzlF81xsIJQ",[[["",{"children":["accessibility",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["accessibility",{"children":["__PAGE__",{},[["$L1",["$","$L2",null,{"props":{"params":{},"searchParams":{}},"Component":"$3"}],null],null],null]},[null,["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children","accessibility","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/9cec46a6f20d365e.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"children":["$","$L4",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L5",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L6",null,{}],"notFoundStyles":[]}]}]}]],null],null],["$L7",null]]]]
+7:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"Prove+"}],["$","meta","3",{"name":"description","content":"Prove+ official site"}]]
+1:null

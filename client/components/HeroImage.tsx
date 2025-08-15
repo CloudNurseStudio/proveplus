@@ -18,7 +18,7 @@ export default function HeroImage() {
       <div className='w-full h-screen p-8 flex flex-col sm:flex-row justify-center gap-4 items-center pt-48'>
         {/* Hero Text */}
         <motion.img
-          src={HeroText}
+          src={(HeroText as unknown as { src: string }).src ?? (HeroText as unknown as string)}
           alt="Prove+ Text"
           className="w-full z-20 max-w-[374px] md:max-w-[560px] lg:max-w-[640px] h-auto object-contain drop-shadow-[0_20px_40px_rgba(20,66,87,0.25)]"
           initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export default function HeroImage() {
 
         {/* Hero Product */}
         <motion.img
-          src={Product}
+          src={(Product as unknown as { src: string }).src ?? (Product as unknown as string)}
           alt="Prove+ Product"
           className="w-full z-20 max-w-[374px] md:max-w-[560px] lg:max-w-[640px] h-auto object-contain drop-shadow-[0_20px_40px_rgba(20,66,87,0.25)]"
           initial={{ opacity: 0, y: 24 }}
@@ -39,7 +39,7 @@ export default function HeroImage() {
 
        <div className="absolute bottom-0 right-0 z-10">
           <img
-            src={GutSymbol}
+            src={(GutSymbol as unknown as { src: string }).src ?? (GutSymbol as unknown as string)}
             alt="Gut Symbol"
             className="w-full h-full object-contain"
           />
