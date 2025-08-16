@@ -25,3 +25,11 @@ dist-ssr
 
 .config/
 !.env
+out/
+.next/
+.superdesign/
+.cursor/
+.cursorrules
+.windsurfrules
+.cursorignore
+.cursorignore

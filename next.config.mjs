@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   output: 'export',
   images: { unoptimized: true },
+  trailingSlash: true,
 };
 
 export default nextConfig;

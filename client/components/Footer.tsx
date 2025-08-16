@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Phone, Mail } from "lucide-react";
+import { Facebook, Instagram, Phone, Mail, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -60,48 +60,28 @@ export default function Footer() {
               <div className="flex flex-col gap-2 items-center sm:items-start text-center sm:text-left">
                 {/* <a href="#" className="text-white text-base font-normal leading-6">About us</a> */}
                 <a href="/contact" className="text-white text-base font-normal leading-6">Contact Us</a>
-                <a href="#where-to-buy" className="text-white text-base font-normal leading-6">Shop now</a>
+                <a href="/#where-to-buy" className="text-white text-base font-normal leading-6">Shop now</a>
               </div>
 
-              <div className="flex flex-row sm:flex-col items-center sm:items-end gap-3">
-                <div className="flex items-center justify-center w-8 h-8 bg-brand-primary-300 rounded-[20px] shadow-[0_1.333px_6.667px_0_rgba(138,0,75,0.02),0_2.667px_40px_0_rgba(138,0,75,0.04)] backdrop-blur-[21.333px] hover:bg-brand-primary-200 transition-colors" aria-label="Facebook">
-                  <Facebook className="w-5 h-5 text-brand-primary-700" fill="currentColor" />
-                </div>
-                <div className="flex items-center justify-center w-8 h-8 bg-brand-primary-300 rounded-[20px] shadow-[0_1.333px_6.667px_0_rgba(138,0,75,0.02),0_2.667px_40px_0_rgba(138,0,75,0.04)] backdrop-blur-[21.333px] hover:bg-brand-primary-200 transition-colors" aria-label="Instagram">
-                  <Instagram className="w-5 h-5 text-brand-primary-700" />
-                </div>
-                <div className="flex items-center justify-center w-8 h-8 bg-brand-primary-300 rounded-[20px] shadow-[0_1.333px_6.667px_0_rgba(138,0,75,0.02),0_2.667px_40px_0_rgba(138,0,75,0.04)] backdrop-blur-[21.333px] hover:bg-brand-primary-200 transition-colors" aria-label="TikTok">
-                  <svg className="w-5 h-5 text-brand-primary-700" viewBox="0 0 22 23" fill="currentColor" aria-hidden="true">
+              <div className="flex flex-row sm:flex-col items-center justify-center sm:justify-end sm:items-end gap-3">
+                <a href="https://www.facebook.com/share/14JJxjH6w57/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-8 h-8 bg-brand-primary-300 rounded-[20px] shadow-[0_1.333px_6.667px_0_rgba(138,0,75,0.02),0_2.667px_40px_0_rgba(138,0,75,0.04)] backdrop-blur-[21.333px] hover:bg-brand-primary-400 transition-transform transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60" aria-label="Facebook">
+                  <Facebook className="w-5 h-5 text-brand-primary-700 group-hover:text-brand-white transform group-hover:scale-105" fill="currentColor" />
+                </a>
+                <a href="https://www.instagram.com/proveplus_th/" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-8 h-8 bg-brand-primary-300 rounded-[20px] shadow-[0_1.333px_6.667px_0_rgba(138,0,75,0.02),0_2.667px_40px_0_rgba(138,0,75,0.04)] backdrop-blur-[21.333px] hover:bg-brand-primary-400 transition-transform transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60" aria-label="Instagram">
+                  <Instagram className="w-5 h-5 text-brand-primary-700 group-hover:text-brand-white transform group-hover:scale-105" />
+                </a>
+                <a href="https://www.tiktok.com/@proveplus?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-8 h-8 bg-brand-primary-300 rounded-[20px] shadow-[0_1.333px_6.667px_0_rgba(138,0,75,0.02),0_2.667px_40px_0_rgba(138,0,75,0.04)] backdrop-blur-[21.333px] hover:bg-brand-primary-400 transition-transform transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60" aria-label="TikTok">
+                  <svg className="w-5 h-5 text-brand-primary-700 group-hover:text-brand-white transform group-hover:scale-105" viewBox="0 0 22 23" fill="currentColor" aria-hidden="true">
                     <path d="M16.4362 6.26399C15.4786 5.63961 14.7874 4.6406 14.5718 3.47602C14.5252 3.2244 14.4996 2.96545 14.4996 2.70049H11.4433L11.4384 14.9493C11.387 16.321 10.258 17.4219 8.87408 17.4219C8.44394 17.4219 8.03892 17.3144 7.68231 17.1267C6.86454 16.6964 6.3049 15.8392 6.3049 14.8528C6.3049 13.436 7.45749 12.2835 8.87408 12.2835C9.13852 12.2835 9.3922 12.3271 9.63215 12.4023V9.28204C9.38383 9.24823 9.13152 9.22709 8.87408 9.22709C5.77209 9.22709 3.24854 11.7508 3.24854 14.8528C3.24854 16.756 4.19943 18.4402 5.65012 19.4587C6.56388 20.1002 7.67536 20.4783 8.87408 20.4783C11.9761 20.4783 14.4996 17.9547 14.4996 14.8528V8.64154C15.6984 9.50193 17.167 10.0089 18.7518 10.0089V6.95258C17.8981 6.95258 17.103 6.69879 16.4362 6.26399Z" />
                   </svg>
-                </div>
+                </a>
+                <a href="https://line.me/R/ti/p/@491uyure" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center w-8 h-8 bg-brand-primary-300 rounded-[20px] shadow-[0_1.333px_6.667px_0_rgba(138,0,75,0.02),0_2.667px_40px_0_rgba(138,0,75,0.04)] backdrop-blur-[21.333px] hover:bg-brand-primary-400 transition-transform transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60" aria-label="Line OA">
+                  <MessageCircle className="w-5 h-5 text-brand-primary-700 group-hover:text-brand-white transform group-hover:scale-105" />
+                </a>
               </div>
             </div>
 
-            <div className="flex flex-col gap-2.5 w-full items-center md:items-start text-center md:text-left">
-              <div className="flex flex-col gap-1">
-                <h3 className="text-white text-base font-normal leading-6">Contact us</h3>
-                <p className="text-brand-primary-300 text-sm font-normal leading-[150%]">
-                  222 222/2 222/1 ถนน พุทธมณฑลสาย 1 แขวง
-                  <br />
-                  บางระมาด เขตตลิ่งชัน กรุงเทพมหานคร 10170
-                </p>
-              </div>
 
-              <div className="flex items-center gap-1">
-                <Phone className="w-4 h-4 text-white" />
-                <span className="text-brand-primary-300 text-sm font-normal leading-[150%]">
-                  0805361019
-                </span>
-              </div>
-
-              <div className="flex items-center gap-1">
-                <Mail className="w-4 h-4 text-white" />
-                <span className="text-brand-primary-300 text-sm font-normal leading-[150%]">
-                  shop@proveplus-th.com
-                </span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
