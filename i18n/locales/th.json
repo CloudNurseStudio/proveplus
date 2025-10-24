@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "หน้าหลัก",
+    "about": "เกี่ยวกับเรา",
+    "contact": "ติดต่อ",
+    "shopNow": "สั่งซื้อ"
+  },
+  "hero": {
+    "headline1": "ลำไส้ดี... มีตัวช่วย",
+    "headline2": "ด้วย Prove+"
+  },
+  "productFeatures": {
+    "title1": "โพรไบโอติกส์เม็ดจิ๋ว",
+    "title2": "ที่พรูฟแล้วว่าดี",
+    "subtitle": "ฉีกซองแล้วทาน"
+  },
+  "benefits": {
+    "title": "ทำไมต้อง prove+",
+    "card1": {
+      "title": "ทานง่าย",
+      "subtitle": "ละลายในปาก"
+    },
+    "card2": {
+      "title": "อัดมาแน่น",
+      "subtitle": "จุลินทรีย์ที่ดีต่อลำไส้"
+    },
+    "card3": {
+      "title": "รสชาติดี",
+      "subtitle": "ถูกปากคนไทย"
+    }
+  },
+  "certifications": {
+    "title1": "เรื่องของลำไส้",
+    "title2": "ไว้ใจ prove+",
+    "sb5": {
+      "title": "สบ.5",
+      "subtitle": "(ใบสำคัญการจดทะเบียนอาหาร)"
+    },
+    "gmp": {
+      "title": "GMP",
+      "subtitle": "Good Manufacturing Practice"
+    },
+    "iso9001": "ISO 9001",
+    "iso22000": "ISO 22000"
+  },
+  "testimonials": {
+    "title": "Prove+ แล้วโดยลูกค้า",
+    "videoReviews": {
+      "title1": "รีวิวจาก",
+      "title2": "ลูกค้าโดยตรง"
+    },
+    "platformReviews": {
+      "title": "รีวิวจาก platforms"
+    },
+    "customer1": {
+      "name": "Jalen kyle",
+      "title": "Founder of Mediahouse"
+    },
+    "customer2": {
+      "name": "Alexander",
+      "title": "Content Writer"
+    }
+  },
+  "footer": {
+    "copyright": "copyrigt@proveplus",
+    "terms": "ข้อกำหนดในการให้บริการ",
+    "contact": {
+      "phone": "0805361019",
+      "email": "shop@proveplus-th.com",
+      "address": "222 222/2 222/1 ถนน พุทธมณฑลสาย 1\nแขวงบางระมาด เขตตลิ่งชัน\nกรุงเทพมหานคร 10170"
+    }
+  }
+}
+

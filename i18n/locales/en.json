@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact us",
+    "shopNow": "Shop now"
+  },
+  "hero": {
+    "headline1": "Good gut health... has a helper",
+    "headline2": "with Prove+"
+  },
+  "productFeatures": {
+    "title1": "Tiny probiotic beads",
+    "title2": "that are proven to be good",
+    "subtitle": "Tear and consume"
+  },
+  "benefits": {
+    "title": "Why Prove+",
+    "card1": {
+      "title": "Easy to take",
+      "subtitle": "Dissolves in your mouth"
+    },
+    "card2": {
+      "title": "Packed full",
+      "subtitle": "Good bacteria for the gut"
+    },
+    "card3": {
+      "title": "Great taste",
+      "subtitle": "Suits Thai palates"
+    }
+  },
+  "certifications": {
+    "title1": "Gut health matters",
+    "title2": "Trust prove+",
+    "sb5": {
+      "title": "FDA Registered",
+      "subtitle": "(Food Registration Certificate)"
+    },
+    "gmp": {
+      "title": "GMP",
+      "subtitle": "Good Manufacturing Practice"
+    },
+    "iso9001": "ISO 9001",
+    "iso22000": "ISO 22000"
+  },
+  "testimonials": {
+    "title": "Proven by customers",
+    "videoReviews": {
+      "title1": "Reviews from",
+      "title2": "direct customers"
+    },
+    "platformReviews": {
+      "title": "Reviews from platforms"
+    },
+    "customer1": {
+      "name": "Jalen kyle",
+      "title": "Founder of Mediahouse"
+    },
+    "customer2": {
+      "name": "Alexander",
+      "title": "Content Writer"
+    }
+  },
+  "footer": {
+    "copyright": "copyright@proveplus",
+    "terms": "Terms of Service",
+    "contact": {
+      "phone": "0805361019",
+      "email": "shop@proveplus-th.com",
+      "address": "222 222/2 222/1 Phutthamonthon Sai 1 Road\nBang Ramat, Taling Chan\nBangkok 10170"
+    }
+  }
+}
+

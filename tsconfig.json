@@ -52,6 +52,7 @@
     "app/**/*",
     "server/**/*",
     "shared/**/*",
+    "i18n/**/*",
     "next-env.d.ts",
     "vite.config.ts",
     "vite.config.server.ts",

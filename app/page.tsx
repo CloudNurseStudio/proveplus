@@ -1,29 +1,34 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
-import HeroImage from '@/components/HeroImage';
-import WhereToBuy from '@/components/WhereToBuy';
-import Footer from '@/components/Footer';
+import { LocaleProvider } from './components/v2/LocaleProvider';
+import { NavigationBar } from './components/v2/NavigationBar';
+import { HeroSection } from './components/v2/HeroSection';
+import { ProductFeaturesSection } from './components/v2/ProductFeaturesSection';
+import { BenefitsSection } from './components/v2/BenefitsSection';
+import { CertificationSection } from './components/v2/CertificationSection';
+import { TestimonialsSection } from './components/v2/TestimonialsSection';
+import { FooterNav } from './components/v2/FooterNav';
+import { ScrollAnimatedElement } from './components/v2/ScrollAnimatedElement';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main className="h-screen overflow-y-auto snap-y snap-mandatory pb-0 scroll-smooth">
-        <div className="flex flex-col items-center gap-[60px] px-0 md:gap-20">
-          <section className="snap-start w-full h-screen">
-            <HeroImage />
-          </section>
-          <section className="snap-start w-full h-screen flex flex-col items-center justify-center">
-            <WhereToBuy />
-          </section>
-          <section className="snap-start w-full">
-            <Footer />
-          </section>
-        </div>
-      </main>
-    </div>
+    <LocaleProvider>
+      <div className="relative min-h-screen bg-gradient-to-b from-white from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa]">
+        {/* Scroll-based animated element */}
+        <ScrollAnimatedElement />
+        
+        <NavigationBar />
+        
+        <main className="flex flex-col items-center gap-1">
+          <HeroSection />
+          <ProductFeaturesSection />
+          <BenefitsSection />
+          <CertificationSection />
+          <TestimonialsSection />
+        </main>
+        
+        <FooterNav />
+      </div>
+    </LocaleProvider>
   );
 }
-
-

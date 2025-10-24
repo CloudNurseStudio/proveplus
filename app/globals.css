@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* FC Orbit Rounded Font Face Declarations */
+@font-face {
+  font-family: 'FC Orbit Rounded';
+  src: url('/fonts/fc-orbit-rounded/FCOrbitRounded-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FC Orbit Rounded';
+  src: url('/fonts/fc-orbit-rounded/FCOrbitRounded-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FC Orbit Rounded';
+  src: url('/fonts/fc-orbit-rounded/FCOrbitRounded-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FC Orbit Rounded';
+  src: url('/fonts/fc-orbit-rounded/FCOrbitRounded-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -28,6 +61,13 @@
     --brand-primary-400: 227 34% 66%;
     --brand-primary-300: 225 34% 77%;
     --brand-white: 0 0% 100%;
+    
+    /* Prove+ Brand Colors */
+    --prove-primary: 234 54% 62%;
+    --prove-main: 234 43% 49%;
+    --prove-secondary: 227 50% 66%;
+    --prove-grey: 0 0% 96%;
+    
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -75,7 +115,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    font-family: "FC Orbit Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, sans-serif;
   }
 }
@@ -88,6 +128,13 @@
   .text-fc-orbit {
     font-family: "FC Orbit Rounded", -apple-system, BlinkMacSystemFont,
       "Segoe UI", Roboto, sans-serif;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 }
 

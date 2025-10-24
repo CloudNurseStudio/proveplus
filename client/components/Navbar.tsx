@@ -1,10 +1,11 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isHeroVisible, setIsHeroVisible] = useState<boolean>(true);
+  const [language, setLanguage] = useState<'en' | 'th'>('en');
 
   useEffect(() => {
     const heroEl = document.querySelector(
@@ -35,20 +36,18 @@ export default function Navbar() {
     };
   }, []);
 
-  const logoColorClass = isHeroVisible
-    ? "text-brand-primary-700"
-    : "text-white";
+  const logoColorClass = "text-brand-primary-700";
+  
+  const linkColorClass = "text-brand-primary-700 hover:text-brand-primary-400";
 
   return (
-    <nav className="fixed top-4 left-4 right-4 z-50 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-[343px]">
+    <nav className="fixed top-4 left-4 right-4 z-50 md:left-1/2 md:right-auto md:-translate-x-1/2 md:max-w-5xl md:w-full">
       <div
         className={
-          "flex justify-between items-center rounded-[60px] px-6 py-4 h-[72px] transition-colors duration-300 " +
-          (isHeroVisible
-            ? "bg-white/30 backdrop-blur-[20px] border border-white"
-            : "bg-brand-primary-700 backdrop-blur-[20px] text-white border border-white/30")
+          "flex justify-between items-center rounded-[60px] px-5 py-3 transition-colors duration-300 backdrop-blur-[9.6px] bg-[rgba(70,86,167,0.2)] border border-[rgba(255,255,255,0.36)]"
         }
       >
+        {/* Logo */}
         <div className="flex-shrink-0">
           <a href="/" aria-label="Home" className="inline-block">
             <svg
@@ -94,25 +93,81 @@ export default function Navbar() {
           </a>
         </div>
 
-        <a
-          href="/#where-to-buy"
-          className={
-            "flex items-center gap-1.5 px-4 py-1 rounded-full text-base font-bold leading-6 transition-colors duration-200 text-outfit " +
-            (isHeroVisible
-              ? "bg-brand-primary-700 text-white hover:opacity-90"
-              : "bg-white text-brand-primary-700 hover:bg-white/90")
-          }
-        >
-          Shop now
-          <span className="flex items-center justify-center w-5 h-5">
-            <ArrowRight
+        {/* Navigation Links - Hidden on mobile */}
+        <div className="hidden lg:flex items-center gap-3 flex-1 justify-center">
+          <a
+            href="/"
+            className={
+              "text-sm font-semibold transition-colors duration-200 px-3 py-1.5 rounded-full text-fc-orbit " +
+              linkColorClass
+            }
+          >
+            {language === 'en' ? 'Home' : 'หน้าหลัก'}
+          </a>
+          <a
+            href="/about"
+            className={
+              "text-sm font-semibold transition-colors duration-200 px-3 py-1.5 rounded-full text-fc-orbit " +
+              linkColorClass
+            }
+          >
+            {language === 'en' ? 'About' : 'เกี่ยวกับเรา'}
+          </a>
+          <a
+            href="/contact"
+            className={
+              "text-sm font-semibold transition-colors duration-200 px-3 py-1.5 rounded-full text-fc-orbit " +
+              linkColorClass
+            }
+          >
+            {language === 'en' ? 'Contact us' : 'ติดต่อ'}
+          </a>
+        </div>
+
+        {/* Right side: Language switcher + Shop button */}
+        <div className="flex items-center gap-2">
+          {/* Language Switcher - Hidden on mobile */}
+          <div className="hidden md:flex items-center bg-white rounded-xl overflow-hidden h-[36px]">
+            <button
+              onClick={() => setLanguage('en')}
               className={
-                "w-4 h-4 " +
-                (isHeroVisible ? "text-white" : "text-brand-primary-700")
+                "px-3 h-full flex items-center justify-center gap-2 text-sm font-medium uppercase tracking-[1.25px] transition-colors duration-200 text-fc-orbit " +
+                (language === 'en'
+                  ? "bg-[#3f51b5] text-white"
+                  : "bg-transparent text-brand-primary-700 hover:bg-gray-100")
               }
-            />
-          </span>
-        </a>
+              aria-label="Switch to English"
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage('th')}
+              className={
+                "px-3 h-full flex items-center justify-center gap-2 text-sm font-medium uppercase tracking-[1.25px] transition-colors duration-200 text-fc-orbit " +
+                (language === 'th'
+                  ? "bg-[#3f51b5] text-white"
+                  : "bg-transparent text-brand-primary-700 hover:bg-gray-100")
+              }
+              aria-label="Switch to Thai"
+            >
+              TH
+            </button>
+          </div>
+
+          {/* Shop Now Button */}
+          <a
+            href="/#where-to-buy"
+            className={
+              "flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-bold transition-colors duration-200 text-fc-orbit " +
+              (isHeroVisible
+                ? "bg-white text-brand-primary-700 hover:bg-white/90"
+                : "bg-white text-brand-primary-700 hover:bg-white/90")
+            }
+          >
+            {language === 'en' ? 'Shop now' : 'สั่งซื้อ'}
+            <ShoppingCart className="w-4 h-4" />
+          </a>
+        </div>
       </div>
     </nav>
   );

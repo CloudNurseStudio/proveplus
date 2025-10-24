@@ -39,6 +39,12 @@ export default {
           },
           white: "hsl(var(--brand-white))",
         },
+        prove: {
+          primary: "hsl(var(--prove-primary))",
+          main: "hsl(var(--prove-main))",
+          secondary: "hsl(var(--prove-secondary))",
+          grey: "hsl(var(--prove-grey))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
