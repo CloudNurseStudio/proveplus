@@ -8,7 +8,7 @@ export function ProductFeaturesSection() {
   const { t } = useLocale();
 
   return (
-    <section className="relative w-full h-[681px] flex items-center px-20 gap-3">
+    <section className="relative w-full h-screen flex items-center px-20 gap-3">
       {/* Left side - Text Content */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}

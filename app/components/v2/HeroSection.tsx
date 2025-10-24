@@ -19,11 +19,12 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Decorative Plus Elements with Rotation Animation */}
+      {/* Decorative Plus Elements with Y Axis Rotation Animation */}
       <motion.div
-        initial={{ opacity: 0, rotate: 0 }}
-        animate={{ opacity: 1, rotate: 355.09 }}
+        initial={{ opacity: 0, rotateY: 0 }}
+        animate={{ opacity: 1, rotateY: 50.09, }}
         transition={{ duration: 1, delay: 0.3 }}
+        style={{ perspective: 800 }}
         className="absolute right-[298px] top-[402px] w-[220px] h-[220px] pointer-events-none"
       >
         <Image
@@ -35,9 +36,10 @@ export function HeroSection() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, rotate: 0 }}
-        animate={{ opacity: 1, rotate: 351.693 }}
+        initial={{ opacity: 0, rotateZ: 0 }}
+        animate={{ opacity: 1, rotateZ: 10.693 }}
         transition={{ duration: 1, delay: 0.5 }}
+        style={{ perspective: 800 }}
         className="absolute left-[216px] top-[269px] w-[161px] h-[161px] pointer-events-none"
       >
         <Image

@@ -13,17 +13,17 @@ export function ScrollAnimatedElement() {
 
   // Map scroll progress to different positions across sections
   // 0 = top of page, 1 = bottom of page
-  const x = useTransform(scrollYProgress, [1, 0.2, 0.4, 0.6, 0.8, 1], [
-    10,  // Hero section - right side
-    300,  // Product features - more right
-    150,  // Benefits - center-right
+  const x = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [
+    800,  // Hero section - right side
+    900,  // Product features - more right
+    900,  // Benefits - center-right
     400,  // Certifications - far right
     200,  // Testimonials - center
     100,  // Footer - back to right
   ]);
 
   const y = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6, 0.8, 1], [
-    100,  // Start near top
+    350,  // Start near top
     300,  // Move down
     500,  // Continue down
     700,  // Further down
@@ -32,7 +32,7 @@ export function ScrollAnimatedElement() {
   ]);
 
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.2, 0.8]);
+  const scale = useTransform(scrollYProgress, [10, 10, 10], [0.8, 1.2, 0.8]);
 
   return (
     <>
@@ -47,7 +47,7 @@ export function ScrollAnimatedElement() {
           rotate,
           scale,
         }}
-        className="fixed top-0 left-0 w-24 h-32 z-50 pointer-events-none"
+        className="fixed top-0 left-0 w-96 h-[640px] z-50 pointer-events-none"
       >
         <Image
           src="/images/sachet.png"

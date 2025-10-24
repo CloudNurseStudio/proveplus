@@ -51,7 +51,7 @@ export function BenefitsSection() {
   const { t } = useLocale();
 
   return (
-    <section className="w-full px-20 py-6 flex flex-col gap-6 items-center">
+    <section className="w-full h-screen px-20 py-6 flex flex-col gap-6 items-center justify-center">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

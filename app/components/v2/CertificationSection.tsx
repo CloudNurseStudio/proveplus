@@ -75,7 +75,7 @@ export function CertificationSection() {
   };
 
   return (
-    <section className="w-full px-20 py-6 flex flex-col gap-16">
+    <section className="w-full h-screen px-20 py-6 flex flex-col gap-16 justify-center">
       <div className="w-full px-9 py-6 flex flex-col gap-9 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

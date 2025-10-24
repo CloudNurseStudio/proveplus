@@ -27,7 +27,7 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="relative w-full px-20 py-12 flex flex-col gap-9 items-center">
+    <section className="relative w-full h-screen px-20 py-12 flex flex-col gap-9 items-center justify-center">
       {/* Background Pattern - faded */}
       <div className="absolute inset-0 opacity-[0.56] pointer-events-none overflow-hidden">
         <div className="absolute left-1/2 top-[119px] -translate-x-1/2 w-[731px] h-[1050px]">

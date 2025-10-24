@@ -1,13 +1,13 @@
 'use client';
 
+import Navbar from '@/client/components/Navbar';
+import Footer from '@/client/components/Footer';
 import { LocaleProvider } from './components/v2/LocaleProvider';
-import { NavigationBar } from './components/v2/NavigationBar';
 import { HeroSection } from './components/v2/HeroSection';
 import { ProductFeaturesSection } from './components/v2/ProductFeaturesSection';
 import { BenefitsSection } from './components/v2/BenefitsSection';
 import { CertificationSection } from './components/v2/CertificationSection';
 import { TestimonialsSection } from './components/v2/TestimonialsSection';
-import { FooterNav } from './components/v2/FooterNav';
 import { ScrollAnimatedElement } from './components/v2/ScrollAnimatedElement';
 
 export default function HomePage() {
@@ -17,9 +17,10 @@ export default function HomePage() {
         {/* Scroll-based animated element */}
         <ScrollAnimatedElement />
         
-        <NavigationBar />
+        {/* Use existing Navbar with color change on scroll */}
+        <Navbar />
         
-        <main className="flex flex-col items-center gap-1">
+        <main className="flex flex-col items-center gap-1" aria-label="Featured product">
           <HeroSection />
           <ProductFeaturesSection />
           <BenefitsSection />
@@ -27,7 +28,8 @@ export default function HomePage() {
           <TestimonialsSection />
         </main>
         
-        <FooterNav />
+        {/* Use existing Footer */}
+        <Footer />
       </div>
     </LocaleProvider>
   );
