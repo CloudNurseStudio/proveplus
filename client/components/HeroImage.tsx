@@ -15,10 +15,10 @@ export default function HeroImage() {
           "radial-gradient(62.54% 62.53% at 24.97% 47.65%, #FFF 0%, #8DD6F7 81.24%, #31A1E6 100%)",
       }}
     >
-      <div className="w-full max-w-[1200px] mx-auto px-6 pt-48">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 h-[calc(100vh-12rem)] overflow-hidden">
+      <div className="w-full max-w-[1200px] mx-auto px-6 pt-32 pb-20">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 h-[calc(100vh-10rem)] overflow-hidden">
           {/* Hero Text */}
-          <div className="flex-1 min-w-0 min-h-0 flex items-center justify-center">
+          <div className="flex-2 min-w-0 min-h-0 flex items-center justify-center">
             <motion.img
               src={(HeroText as unknown as { src: string }).src ?? (HeroText as unknown as string)}
               alt="Prove+ Text"
@@ -30,11 +30,11 @@ export default function HeroImage() {
           </div>
 
           {/* Hero Product */}
-          <div className="flex-1 min-w-0 min-h-0 flex items-center justify-center">
+          <div className="flex-3 min-w-0 min-h-0 flex items-center justify-center">
             <motion.img
               src={(Product as unknown as { src: string }).src ?? (Product as unknown as string)}
               alt="Prove+ Product"
-              className="z-20 h-full w-full object-contain drop-shadow-[0_20px_40px_rgba(20,66,87,0.25)]"
+              className="z-20 h-full w-full object-contain"
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}

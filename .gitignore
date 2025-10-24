@@ -26,6 +26,7 @@ dist-ssr
 .config/
 !.env
 out/
+out
 .next/
 .superdesign/
 .cursor/

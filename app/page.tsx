@@ -14,7 +14,7 @@ export default function HomePage() {
           <section className="snap-start w-full h-screen">
             <HeroImage />
           </section>
-          <section className="snap-start w-full h-screen">
+          <section className="snap-start w-full h-screen flex flex-col items-center justify-center">
             <WhereToBuy />
           </section>
           <section className="snap-start w-full">
