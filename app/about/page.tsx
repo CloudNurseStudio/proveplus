@@ -139,7 +139,7 @@ export default function AboutPage() {
             </p>
             
             {/* Decorative line rotated */}
-            <div className="absolute left-0 top-0 w-[305.809px] h-[246.933px] rotate-[14.835deg]">
+            <div className="absolute left-0 top-0 w-[325.809px] h-[255.933px] rotate-[14.835deg]">
               <img 
                 src="/about-decorative-line.svg" 
                 alt="" 
@@ -167,7 +167,7 @@ export default function AboutPage() {
               <img 
                 src="/about-founder-photo.png"
                 alt="Company Representative"
-                className="relative rounded-[24px] object-cover"
+                className="relative rounded-full object-cover"
                 style={{
                   width: '430.889px',
                   height: '420.567px'
