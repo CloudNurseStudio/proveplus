@@ -20,7 +20,7 @@ export default function HomePage() {
         {/* Use existing Navbar with color change on scroll */}
         <Navbar />
         
-        <main className="flex flex-col items-center gap-1" aria-label="Featured product">
+        <main className="flex flex-col items-center gap-1 pt-20" aria-label="Featured product">
           <HeroSection />
           <ProductFeaturesSection />
           <BenefitsSection />

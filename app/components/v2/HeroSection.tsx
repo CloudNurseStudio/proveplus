@@ -8,7 +8,7 @@ export function HeroSection() {
   const { t } = useLocale();
 
   return (
-    <section className="relative w-full h-screen py-20 flex items-center justify-center px-52 overflow-hidden">
+    <section className="relative w-full h-screen pt-20 flex items-center justify-center px-52 overflow-hidden">
       {/* Background Pattern - faded */}
       <div className="absolute inset-0 opacity-[0.56] pointer-events-none">
         <Image

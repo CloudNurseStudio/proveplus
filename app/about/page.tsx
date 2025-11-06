@@ -150,7 +150,7 @@ export default function AboutPage() {
         </section>
 
         {/* Company Introduction Section - Following Figma structure */}
-        <section className="relative h-[591px] px-12 flex items-end">
+        <section className="relative h-screen px-12 flex items-end">
           {/* Left: Overlapping masked images */}
           <div className="relative h-full shrink-0" style={{ width: '670px' }}>
             {/* Background layer with tinted frame */}
@@ -277,7 +277,7 @@ export default function AboutPage() {
         </section>
 
         {/* Partnership Section - Following Figma structure */}
-        <section className="relative h-[591px] px-14 flex gap-9 items-center">
+        <section className="relative h-auto w-full px-14 flex gap-9 items-center">
           {/* Left: Partnership Details */}
           <motion.div
             className="flex-1 flex flex-col gap-9 h-full items-center justify-center py-6"
