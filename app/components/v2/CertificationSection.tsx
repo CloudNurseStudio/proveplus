@@ -91,14 +91,14 @@ export function CertificationSection() {
             <p className="text-[48px] font-medium text-prove-primary text-center z-10">
               {t.certifications.title2}
             </p>
-            <div className="absolute left-[149px] top-[9px] w-[198px] h-[102px]">
+            {/* <div className="absolute left-[149px] top-[9px] w-[198px] h-[102px]">
               <Image
                 src="/images/hero/image-45-decoration.png"
                 alt=""
                 fill
                 className="object-cover"
               />
-            </div>
+            </div> */}
           </div>
         </motion.div>
 

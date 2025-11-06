@@ -6,7 +6,7 @@ export default function WhereToBuy() {
   return (
     <div
       id="where-to-buy"
-      className="flex flex-col items-center gap-[50px] px-6 w-full pt-36 pb-6 md:pt-6 justify-center h-[80%]"
+      className="flex flex-col items-center gap-[50px] px-6 w-full pt-36 pb-6 md:pt-6 justify-center h-screen"
     >
       <motion.div
         className="flex flex-col items-center gap-1 text-center"

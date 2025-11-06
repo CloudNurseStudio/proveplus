@@ -105,7 +105,7 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#ffffff] from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa] relative">
+    <div className="w-full overflow-x-hidden overflow-y-auto min-h-screen bg-gradient-to-b from-[#ffffff] from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa] relative">
       <Navbar />
 
       {/* Language Toggle Button */}
@@ -119,7 +119,7 @@ export default function AboutPage() {
         </button>
       </div>
 
-      <main className="relative w-full max-w-[1280px] mx-auto">
+      <main className="relative w-full mx-auto">
         {/* Hero Section - Absolute positioned text as in Figma */}
         <section className="relative h-[467px]">
           <motion.div
