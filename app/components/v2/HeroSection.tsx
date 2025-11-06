@@ -8,14 +8,14 @@ export function HeroSection() {
   const { t } = useLocale();
 
   return (
-    <section className="relative w-full h-screen min-h-[752px] flex items-center justify-center px-52 overflow-hidden">
+    <section className="relative w-full h-screen py-20 flex items-center justify-center px-52 overflow-hidden">
       {/* Background Pattern - faded */}
       <div className="absolute inset-0 opacity-[0.56] pointer-events-none">
         <Image
           src="/images/hero/background-pattern.png"
           alt=""
           fill
-          className="object-cover opacity-12"
+          className="object-cover opacity-5"
         />
       </div>
 
