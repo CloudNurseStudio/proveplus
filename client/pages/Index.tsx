@@ -15,7 +15,7 @@ export default function Index() {
             <HeroImage />
           </section>
           <section className="snap-start w-full h-screen">
-            <WhereToBuy />
+            <WhereToBuy heading="Shop now" />
           </section>
           <section className="snap-start w-full">
             <Footer />
