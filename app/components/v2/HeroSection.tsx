@@ -3,12 +3,14 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useLocale } from './LocaleProvider';
+import { useModalService } from './ModalServiceProvider';
 
 export function HeroSection() {
   const { t } = useLocale();
+  const { openShopModal } = useModalService();
 
   return (
-    <section className="relative w-full h-screen pt-20 flex items-center justify-center px-52 overflow-hidden">
+    <section className="relative w-full min-h-screen pt-20 sm:pt-24 md:pt-28 flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-52 overflow-hidden">
       {/* Background Pattern - faded */}
       <div className="absolute inset-0 opacity-[0.56] pointer-events-none">
         <Image
@@ -19,13 +21,13 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Decorative Plus Elements with Y Axis Rotation Animation */}
+      {/* Decorative Plus Elements with Y Axis Rotation Animation - Hidden on mobile */}
       <motion.div
         initial={{ opacity: 0, rotateY: 0 }}
         animate={{ opacity: 1, rotateY: 50.09, }}
         transition={{ duration: 1, delay: 0.3 }}
         style={{ perspective: 800 }}
-        className="absolute right-[298px] top-[402px] w-[220px] h-[220px] pointer-events-none"
+        className="hidden lg:block absolute right-[15%] xl:right-[298px] top-[35%] md:top-[402px] w-[120px] md:w-[180px] lg:w-[220px] h-[120px] md:h-[180px] lg:h-[220px] pointer-events-none"
       >
         <Image
           src="/images/hero/element-plus-02.png"
@@ -40,7 +42,7 @@ export function HeroSection() {
         animate={{ opacity: 1, rotateZ: 10.693 }}
         transition={{ duration: 1, delay: 0.5 }}
         style={{ perspective: 800 }}
-        className="absolute left-[216px] top-[269px] w-[161px] h-[161px] pointer-events-none"
+        className="hidden lg:block absolute left-[10%] xl:left-[216px] top-[25%] md:top-[269px] w-[100px] md:w-[140px] lg:w-[161px] h-[100px] md:h-[140px] lg:h-[161px] pointer-events-none"
       >
         <Image
           src="/images/hero/element-plus-03.png"
@@ -51,18 +53,18 @@ export function HeroSection() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center px-0 py-9 w-[605px]">
+      <div className="relative z-10 flex flex-col items-center px-0 py-6 sm:py-9 w-full max-w-[90vw] sm:max-w-[605px]">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-end mb-0 text-prove-primary leading-[1.5]"
+          className="flex flex-col items-center sm:items-end mb-0 text-prove-primary leading-[1.3] sm:leading-[1.5]"
         >
-          <h1 className="text-[80px] font-medium text-center whitespace-nowrap">
+          <h1 className="text-[clamp(2rem,8vw,5rem)] font-medium text-center whitespace-normal sm:whitespace-nowrap">
             {t.hero.headline1}
           </h1>
-          <h2 className="text-[48px] font-semibold whitespace-nowrap">
+          <h2 className="text-[clamp(1.5rem,5vw,3rem)] font-semibold whitespace-normal sm:whitespace-nowrap">
             {t.hero.headline2}
           </h2>
         </motion.div>
@@ -72,7 +74,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative w-[424px] h-[424px]"
+          className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[424px] md:h-[424px]"
         >
           <Image
             src="/images/hero/sku-gut-re.png"
@@ -87,15 +89,16 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className="bg-prove-primary text-white px-4 py-2 rounded-[32px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center gap-1.5 text-[26px] font-semibold hover:bg-prove-main transition-colors"
+          onClick={() => openShopModal({ heading: t.nav.shopNow })}
+          className="bg-prove-primary text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-[32px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] flex items-center gap-1 sm:gap-1.5 text-[clamp(1.125rem,3vw,1.625rem)] font-semibold hover:bg-prove-main transition-colors"
         >
           {t.nav.shopNow}
           <Image
             src="/images/testimonials/shopping-cart-icon.svg"
             alt=""
-            width={24}
-            height={24}
-            className="brightness-0 invert"
+            width={20}
+            height={20}
+            className="brightness-0 invert sm:w-6 sm:h-6"
           />
         </motion.button>
       </div>

@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "Home",
+    "products": "Products",
     "about": "About",
     "contact": "Contact us",
     "shopNow": "Shop now"
@@ -9,39 +10,86 @@
     "headline1": "Good gut health... has a helper",
     "headline2": "with Prove+"
   },
+  "microProbiotic": {
+    "line1": "Tiny probiotic beads",
+    "line2": "that are proven to work",
+    "line3": "Just tear and enjoy"
+  },
   "productFeatures": {
-    "title1": "Tiny probiotic beads",
-    "title2": "that are proven to be good",
-    "subtitle": "Tear and consume"
+    "title": "Why Prove+",
+    "cards": [
+      {
+        "title": "Easy to take",
+        "subtitle": "Dissolves in seconds",
+        "description": "Micro probiotic beads melt right on your tongue.",
+        "image": "/images/benefits/benefit-easy-to-eat.png"
+      },
+      {
+        "title": "BC 198 tech",
+        "subtitle": "High-density sachet",
+        "description": "BC 198 keeps probiotics alive until you enjoy them.",
+        "image": "/images/benefits/powder.png"
+      },
+      {
+        "title": "Great taste",
+        "subtitle": "Loved by Thai palates",
+        "description": "A fruit-forward flavour that feels refreshing daily.",
+        "image": "/images/benefits/taste-product.png"
+      }
+    ]
   },
   "benefits": {
     "title": "Why Prove+",
-    "card1": {
-      "title": "Easy to take",
-      "subtitle": "Dissolves in your mouth"
-    },
-    "card2": {
-      "title": "Packed full",
-      "subtitle": "Good bacteria for the gut"
-    },
-    "card3": {
-      "title": "Great taste",
-      "subtitle": "Suits Thai palates"
-    }
+    "cards": [
+      {
+        "title": "Easy to take",
+        "subtitle": "Dissolves in your mouth"
+      },
+      {
+        "title": "BC 198",
+        "subtitle": "Tiny beads, all-in-one sachet"
+      },
+      {
+        "title": "Great taste",
+        "subtitle": "Suits Thai palates"
+      }
+    ]
+  },
+  "gutSupport": {
+    "title": "prove+ helps with...",
+    "items": [
+      "Gut balance",
+      "Less bloating",
+      "Better digestion",
+      "Immune support",
+      "Lower inflammation",
+      "Metabolism",
+      "Healthy skin",
+      "Better mood"
+    ]
   },
   "certifications": {
     "title1": "Gut health matters",
     "title2": "Trust prove+",
+    "modalDescription": "More about the certifications that keep prove+ safe",
     "sb5": {
       "title": "FDA Registered",
-      "subtitle": "(Food Registration Certificate)"
+      "subtitle": "(Food Registration Certificate)",
+      "description": "Approved by the Thai FDA for consumer safety."
     },
     "gmp": {
       "title": "GMP",
-      "subtitle": "Good Manufacturing Practice"
+      "subtitle": "Good Manufacturing Practice",
+      "description": "Manufactured under strict hygienic standards."
     },
-    "iso9001": "ISO 9001",
-    "iso22000": "ISO 22000"
+    "iso9001": {
+      "title": "ISO 9001",
+      "description": "Certified quality management system."
+    },
+    "iso22000": {
+      "title": "ISO 22000",
+      "description": "End-to-end food safety management."
+    }
   },
   "testimonials": {
     "title": "Proven by customers",
@@ -50,16 +98,84 @@
       "title2": "direct customers"
     },
     "platformReviews": {
-      "title": "Reviews from platforms"
+      "title": "Reviews from platforms",
+      "cards": [
+        {
+          "review": "Love how gentle it is on my stomach. I can feel the difference in a week.",
+          "author": "Janejira Saiboon",
+          "platform": "Instagram",
+          "rating": 5
+        },
+        {
+          "review": "Finally a probiotic that tastes good and fits right in my bag.",
+          "author": "Manee Jintana",
+          "platform": "Facebook",
+          "rating": 4
+        },
+        {
+          "review": "Took it on a work trip and had zero bloating. Totally hooked.",
+          "author": "Pailin W.",
+          "platform": "TikTok",
+          "rating": 5
+        },
+        {
+          "review": "Pairs perfectly with my wellness routine. Dissolves so fast too!",
+          "author": "Sasithorn",
+          "platform": "Line OA",
+          "rating": 4,
+          "dimmed": true
+        }
+      ]
+    },
+    "videoModal": {
+      "cta": "See more reviews",
+      "fallback": "The full video will be available soon."
     },
     "customer1": {
       "name": "Jalen kyle",
-      "title": "Founder of Mediahouse"
+      "title": "Founder of Mediahouse",
+      "description": "Jalen shares how prove+ keeps his gut calm and energy high.",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     "customer2": {
       "name": "Alexander",
-      "title": "Content Writer"
+      "title": "Content Writer",
+      "description": "Alexander loves the fruity taste and daily convenience.",
+      "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U"
     }
+  },
+  "events": {
+    "title": "Event by Prove+",
+    "subtitle": "Pop-ups and workshops across Thailand",
+    "cards": [
+      {
+        "title": "Gut Health Talk",
+        "description": "Meet our nutritionists and sample the latest sachets.",
+        "date": "12 Jun 2025",
+        "location": "Bangkok Design Center",
+        "image": "/placeholder.svg",
+        "cta": "Reserve seat",
+        "ctaUrl": "https://www.instagram.com/proveplus_th/"
+      },
+      {
+        "title": "Pop-up Experience",
+        "description": "Immersive tasting journey for prove+ lovers.",
+        "date": "25 Jul 2025",
+        "location": "Chiang Mai One Nimman",
+        "image": "/placeholder.svg",
+        "cta": "Register",
+        "ctaUrl": "https://www.tiktok.com/@proveplus"
+      },
+      {
+        "title": "Wellness Bootcamp",
+        "description": "Detox and nutrition bootcamp powered by prove+.",
+        "date": "9 Aug 2025",
+        "location": "Phuket Marina Hub",
+        "image": "/placeholder.svg",
+        "cta": "See details",
+        "ctaUrl": "https://www.facebook.com/proveplus"
+      }
+    ]
   },
   "footer": {
     "copyright": "copyright@proveplus",
@@ -68,6 +184,75 @@
       "phone": "0805361019",
       "email": "shop@proveplus-th.com",
       "address": "222 222/2 222/1 Phutthamonthon Sai 1 Road\nBang Ramat, Taling Chan\nBangkok 10170"
+    }
+  },
+  "about": {
+    "hero": {
+      "line1": "Prove in every dose",
+      "line2": "Plus in every need"
+    },
+    "intro": {
+      "heading": "Standard Union Medical Thailand is dedicated to bringing Prove+, a premium probiotic brand manufactured by Syngen, to consumers across Thailand with a strong foundation in",
+      "pillars": ["Science", "Quality", "Reliability"],
+      "description": "Prove+ is designed to support gut health, enhance immunity, and promote overall well-being  delivering on our promise of",
+      "tagline": "Prove in every dose, Plus in every need"
+    },
+    "partnership": {
+      "heading": "Made from partnership between...",
+      "unionMedical": {
+        "title": "Union Medical (Thailand)",
+        "description": "An experienced pharmaceutical importer and distributor established in 1976"
+      },
+      "standardPharma": {
+        "title": "Standard Pharma (Thailand)",
+        "description": "A probiotics developer specializing in functional health supplements"
+      },
+      "collaboration": {
+        "title": "Partnership built on over 20 years of collaboration",
+        "subtitle": "through Standard Chem and Pharma Taiwan (Headquarter) in pharmaceutical"
+      },
+      "quote": "We're Combining extensive market knowledge with advanced manufacturing capabilities"
+    },
+    "stats": {
+      "countries": "7+ Countries",
+      "rd": "200+ R&D",
+      "licenses": "110 License and certificates"
+    },
+    "product": {
+      "heading": "This is our products...",
+      "button": "Shop now"
+    }
+  },
+  "productPage": {
+    "backButton": "Back to home",
+    "pageTitle": "Our Prove+ Products",
+    "pageSubtitle": "Select a product to view details",
+    "detailsTitle": "Product Information",
+    "reviewsLabel": "reviews",
+    "orderButton": "Order now",
+    "tabs": {
+      "details": "Product Details",
+      "ingredients": "Key Ingredients"
+    },
+    "flavorLabel": "Flavor",
+    "howToUseLabel": "How to Consume",
+    "flowpro": {
+      "name": "prove+ FLOWPRO",
+      "subtitle": "Ready-to-eat probiotic",
+      "flavor": "Pineapple",
+      "size": "30 sachets",
+      "fullName": "prove+Synbiotics+VitaminC Pineapple Flavor (Ready-to-eat probiotic for balanced gut health)",
+      "description": "prove+ Synbiotics+VitaminC Pineapple Flavor (Ready-to-eat probiotic for balanced gut health) is your starting point for better health from Prove+",
+      "howToUse": "Take 1 sachet daily. Simply tear open and pour directly into your mouth. No water needed."
+    },
+    "allerpro": {
+      "name": "prove+ ALLERPRO",
+      "subtitle": "Ready-to-eat probiotic",
+      "flavor": "Apple",
+      "size": "30 sachets",
+      "fullName": "prove+Synbiotics+VitaminC Apple Flavor (Ready-to-eat probiotic for balanced gut health)",
+      "description": "prove+ Synbiotics+VitaminC Apple Flavor (Ready-to-eat probiotic for balanced gut health) is your starting point for better health from Prove+",
+      "howToUse": "Take 1 sachet daily. Simply tear open and pour directly into your mouth. No water needed."
     }
   }
 }

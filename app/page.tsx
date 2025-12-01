@@ -1,36 +1,44 @@
 'use client';
 
-import Navbar from '@/client/components/Navbar';
-import Footer from '@/client/components/Footer';
-import { LocaleProvider } from './components/v2/LocaleProvider';
+import { NavigationBar } from './components/v2/NavigationBar';
+import { FooterNav } from './components/v2/FooterNav';
 import { HeroSection } from './components/v2/HeroSection';
+import { MicroProbioticSection } from './components/v2/MicroProbioticSection';
 import { ProductFeaturesSection } from './components/v2/ProductFeaturesSection';
+import { GutSupportSection } from './components/v2/GutSupportSection';
 import { BenefitsSection } from './components/v2/BenefitsSection';
 import { CertificationSection } from './components/v2/CertificationSection';
 import { TestimonialsSection } from './components/v2/TestimonialsSection';
+import { EventsSection } from './components/v2/EventsSection';
 import { ScrollAnimatedElement } from './components/v2/ScrollAnimatedElement';
 
 export default function HomePage() {
   return (
-    <LocaleProvider>
-      <div className="relative min-h-screen bg-gradient-to-b from-white from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa]">
-        {/* Scroll-based animated element */}
+    <div className="relative min-h-screen bg-gradient-to-b from-white from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa]">
+      <div className="hidden sm:block">
         <ScrollAnimatedElement />
-        
-        {/* Use existing Navbar with color change on scroll */}
-        <Navbar />
-        
-        <main className="flex flex-col items-center gap-1 pt-20" aria-label="Featured product">
-          <HeroSection />
-          <ProductFeaturesSection />
-          <BenefitsSection />
-          <CertificationSection />
-          <TestimonialsSection />
-        </main>
-        
-        {/* Use existing Footer */}
-        <Footer />
       </div>
-    </LocaleProvider>
+
+      <div className="fixed top-2 sm:top-4 left-1/2 z-50 w-full max-w-6xl -translate-x-1/2 px-2 sm:px-4 pointer-events-none">
+        <div className="pointer-events-auto">
+          <NavigationBar />
+        </div>
+      </div>
+
+      <main className="flex flex-col items-center gap-1 pt-24 sm:pt-28 md:pt-32" aria-label="Featured product">
+        <HeroSection />
+        <MicroProbioticSection />
+        <ProductFeaturesSection />
+        <GutSupportSection />
+        <BenefitsSection />
+        <CertificationSection />
+        <TestimonialsSection />
+        <EventsSection />
+      </main>
+
+      <footer className="w-full mt-8 sm:mt-12 md:mt-16">
+        <FooterNav />
+      </footer>
+    </div>
   );
 }

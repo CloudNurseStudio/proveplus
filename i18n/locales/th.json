@@ -1,6 +1,7 @@
 {
   "nav": {
     "home": "หน้าหลัก",
+    "products": "สินค้า",
     "about": "เกี่ยวกับเรา",
     "contact": "ติดต่อ",
     "shopNow": "สั่งซื้อ"
@@ -9,39 +10,86 @@
     "headline1": "ลำไส้ดี... มีตัวช่วย",
     "headline2": "ด้วย Prove+"
   },
+  "microProbiotic": {
+    "line1": "โพรไบโอติกส์เม็ดจิ๋ว",
+    "line2": "ที่พรูฟแล้วว่าดี",
+    "line3": "ฉีกซองแล้วทาน"
+  },
   "productFeatures": {
-    "title1": "โพรไบโอติกส์เม็ดจิ๋ว",
-    "title2": "ที่พรูฟแล้วว่าดี",
-    "subtitle": "ฉีกซองแล้วทาน"
+    "title": "ทำไมต้อง prove+",
+    "cards": [
+      {
+        "title": "ทานง่าย",
+        "subtitle": "ละลายในปาก",
+        "description": "โพรไบโอติกส์เม็ดจิ๋วที่ละลายในไม่กี่วินาที",
+        "image": "/images/benefits/benefit-easy-to-eat.png"
+      },
+      {
+        "title": "BC 198",
+        "subtitle": "เม็ดจิ๋ว จัดหนักในซองเดียว",
+        "description": "เทคโนโลยี BC 198 ช่วยให้จุลินทรีย์ยังมีชีวิต",
+        "image": "/images/benefits/powder.png"
+      },
+      {
+        "title": "รสชาติดี",
+        "subtitle": "ถูกปากคนไทย",
+        "description": "ผสานรสชาติผลไม้แสนอร่อยในทุกซอง",
+        "image": "/images/benefits/taste-product.png"
+      }
+    ]
   },
   "benefits": {
     "title": "ทำไมต้อง prove+",
-    "card1": {
-      "title": "ทานง่าย",
-      "subtitle": "ละลายในปาก"
-    },
-    "card2": {
-      "title": "อัดมาแน่น",
-      "subtitle": "จุลินทรีย์ที่ดีต่อลำไส้"
-    },
-    "card3": {
-      "title": "รสชาติดี",
-      "subtitle": "ถูกปากคนไทย"
-    }
+    "cards": [
+      {
+        "title": "ทานง่าย",
+        "subtitle": "ละลายในปาก"
+      },
+      {
+        "title": "BC 198",
+        "subtitle": "เม็ดจิ๋ว จัดหนัก จบในซองเดียว"
+      },
+      {
+        "title": "รสชาติดี",
+        "subtitle": "ถูกปากคนไทย"
+      }
+    ]
+  },
+  "gutSupport": {
+    "title": "prove+ ช่วยเรื่อง...",
+    "items": [
+      "สมดุลลำไส้",
+      "ลดท้องอืด",
+      "ย่อยอาหารดีขึ้น",
+      "เสริมภูมิคุ้มกัน",
+      "ลดการอักเสบ",
+      "การเผาผลาญ",
+      "ผิวสุขภาพดี",
+      "อารมณ์ดี"
+    ]
   },
   "certifications": {
     "title1": "เรื่องของลำไส้",
     "title2": "ไว้ใจ prove+",
+    "modalDescription": "รายละเอียดเพิ่มเติมเกี่ยวกับใบรับรอง prove+",
     "sb5": {
       "title": "สบ.5",
-      "subtitle": "(ใบสำคัญการจดทะเบียนอาหาร)"
+      "subtitle": "(ใบสำคัญการจดทะเบียนอาหาร)",
+      "description": "มั่นใจได้ว่าผ่านการรับรองจาก อย. ประเทศไทย"
     },
     "gmp": {
       "title": "GMP",
-      "subtitle": "Good Manufacturing Practice"
+      "subtitle": "Good Manufacturing Practice",
+      "description": "กระบวนการผลิตตามมาตรฐานความปลอดภัย"
     },
-    "iso9001": "ISO 9001",
-    "iso22000": "ISO 22000"
+    "iso9001": {
+      "title": "ISO 9001",
+      "description": "ระบบบริหารคุณภาพระดับสากล"
+    },
+    "iso22000": {
+      "title": "ISO 22000",
+      "description": "มาตรฐานความปลอดภัยด้านอาหารครบวงจร"
+    }
   },
   "testimonials": {
     "title": "Prove+ แล้วโดยลูกค้า",
@@ -50,16 +98,84 @@
       "title2": "ลูกค้าโดยตรง"
     },
     "platformReviews": {
-      "title": "รีวิวจาก platforms"
+      "title": "รีวิวจาก platforms",
+      "cards": [
+        {
+          "review": "ยินดีค่ะสินค้าทานดีค่ะ ลำไส้ดีไม่เหมือนทานไฟเบอร์ เพิ่งหมดตั้งใจจะสั่งอีก",
+          "author": "Janejira Saiboon",
+          "platform": "Instagram",
+          "rating": 5
+        },
+        {
+          "review": "ชอบที่ละลายไวมาก พกซองเดียวก็พร้อมดูแลท้องได้ทั้งวัน",
+          "author": "มณี จินตนา",
+          "platform": "Facebook",
+          "rating": 4
+        },
+        {
+          "review": "ไปออกทริปกับเพื่อน ๆ ไม่ท้องอืดเลยสักวัน รักมาก",
+          "author": "ไพลิน ดับเบิลยู",
+          "platform": "TikTok",
+          "rating": 5
+        },
+        {
+          "review": "เข้าคู่กับรูทีนสุขภาพประจำวันสุด ๆ ละลายแล้วกลืนง่ายมาก",
+          "author": "ศศิธร",
+          "platform": "Line OA",
+          "rating": 4,
+          "dimmed": true
+        }
+      ]
+    },
+    "videoModal": {
+      "cta": "ดูรีวิวเพิ่มเติม",
+      "fallback": "คลิปฉบับเต็มจะพร้อมให้ชมเร็วๆ นี้"
     },
     "customer1": {
       "name": "Jalen kyle",
-      "title": "Founder of Mediahouse"
+      "title": "Founder of Mediahouse",
+      "description": "Jalen แชร์ว่า prove+ ช่วยให้ลำไส้สงบลง\nและมีพลังงานเพิ่มขึ้นในแต่ละวัน",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
     },
     "customer2": {
       "name": "Alexander",
-      "title": "Content Writer"
+      "title": "Content Writer",
+      "description": "Alexander หลงรักในรสชาติผลไม้และความสะดวก",
+      "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U"
     }
+  },
+  "events": {
+    "title": "Event by Prove+",
+    "subtitle": "พบกับกิจกรรมและเวิร์กช็อปทั่วไทย",
+    "cards": [
+      {
+        "title": "Gut Health Talk",
+        "description": "พูดคุยกับผู้เชี่ยวชาญด้านลำไส้ พร้อมชิม prove+",
+        "date": "12 มิ.ย. 2025",
+        "location": "Bangkok Design Center",
+        "image": "/placeholder.svg",
+        "cta": "สำรองที่นั่ง",
+        "ctaUrl": "https://www.instagram.com/proveplus_th/"
+      },
+      {
+        "title": "Pop-up Experience",
+        "description": "สัมผัสประสบการณ์ prove+ เต็มรูปแบบ",
+        "date": "25 ก.ค. 2025",
+        "location": "Chiang Mai One Nimman",
+        "image": "/placeholder.svg",
+        "cta": "ลงทะเบียน",
+        "ctaUrl": "https://www.tiktok.com/@proveplus"
+      },
+      {
+        "title": "Wellness Bootcamp",
+        "description": "เวิร์กช็อปดีท็อกซ์ลำไส้และโภชนาการ",
+        "date": "9 ส.ค. 2025",
+        "location": "Phuket Marina Hub",
+        "image": "/placeholder.svg",
+        "cta": "ดูรายละเอียด",
+        "ctaUrl": "https://www.facebook.com/proveplus"
+      }
+    ]
   },
   "footer": {
     "copyright": "copyrigt@proveplus",
@@ -68,6 +184,75 @@
       "phone": "0805361019",
       "email": "shop@proveplus-th.com",
       "address": "222 222/2 222/1 ถนน พุทธมณฑลสาย 1\nแขวงบางระมาด เขตตลิ่งชัน\nกรุงเทพมหานคร 10170"
+    }
+  },
+  "about": {
+    "hero": {
+      "line1": "Prove in every dose",
+      "line2": "Plus in every need"
+    },
+    "intro": {
+      "heading": "ที่ Standard Union Medical Thailand เราเชื่อว่า การดูแลสุขภาพต้องเริ่มจากความมั่นใจในคุณภาพ มั่นใจในความปลอดภัย และ มั่นใจในผลลัพธ์",
+      "pillars": ["คุณภาพ", "ความปลอดภัย", "ผลลัพธ์"],
+      "description": "เราจึงนำ Prove+ แบรนด์โพรไบโอติกส์คุณภาพพรีเมียม จากผู้ผลิตชั้นนำระดับโลกอย่าง Syngen มาสู่คนไทย   เพื่อดูแลสุขภาพลำไส้ เสริมภูมิคุ้มกันและช่วยให้คุณ มีสุขภาพที่ดีในทุกวัน พร้อมยึดมั่นในสัญญาของเรา",
+      "tagline": "Prove in every dose, Plus in every need"
+    },
+    "partnership": {
+      "heading": "เราเกิดจากการร่วมทุนระหว่าง...",
+      "unionMedical": {
+        "title": "Union Medical (Thailand)",
+        "description": "ผู้นำด้านการนำเข้าและ จัดจำหน่ายยา ที่อยู่เคียงข้างคนไทย มาตั้งแต่ปี 1976"
+      },
+      "standardPharma": {
+        "title": "Standard Pharma (Thailand)",
+        "description": "ผู้เชี่ยวชาญด้านการผลิต โพรไบโอติกส์และ อาหารเสริมเพื่อสุขภาพ"
+      },
+      "collaboration": {
+        "title": "ความร่วมมือนี้ต่อยอดจาก ประสบการณ์มากกว่า 20 ปี",
+        "subtitle": "ผ่าน Standard Chem and Pharma Taiwan (สำนักงานใหญ่)"
+      },
+      "quote": "เราผสมผสานความเข้าใจตลาด เข้ากับ เทคโนโลยีการผลิต ที่ได้มาตรฐานสากล"
+    },
+    "stats": {
+      "countries": "7+ Countries",
+      "rd": "200+ R&D",
+      "licenses": "110 License and certificates"
+    },
+    "product": {
+      "heading": "นี่คือผลิตภัณฑ์ของเรา",
+      "button": "Shop now"
+    }
+  },
+  "productPage": {
+    "backButton": "กลับไปหน้าหลัก",
+    "pageTitle": "นี่คือผลิตภัณฑ์ของ Prove+",
+    "pageSubtitle": "กดเลือกสินค้าเพื่อดูข้อมูล",
+    "detailsTitle": "ข้อมูลผลิตภัณฑ์",
+    "reviewsLabel": "reviews",
+    "orderButton": "สั่งซื้อ",
+    "tabs": {
+      "details": "รายละเอียดสินค้า",
+      "ingredients": "ส่วนประกอบสำคัญ"
+    },
+    "flavorLabel": "รสชาติ",
+    "howToUseLabel": "วิธีรับประทาน",
+    "flowpro": {
+      "name": "prove+ FLOWPRO",
+      "subtitle": "โพรไบโอติกส์พร้อมทาน",
+      "flavor": "รสสับปะรด",
+      "size": "ขนาด 30 ซอง",
+      "fullName": "prove+Synbiotics+VitaminC รสสับปะรด (Probiotic พร้อมทานตัวช่วยเรื่องลำไส้ให้มีสมดุลที่ดี)",
+      "description": "prove+ Synbiotics+VitaminC รสสับปะรด (Probiotic พร้อมทาน ตัวช่วยเรื่องลำไส้ให้มีสมดุลที่ดี) เพื่อเป็นจุดเริ่มต้นของการมีสุขภาพที่ดีจากพรูฟพลัส",
+      "howToUse": "รับประทานวันละ 1 ซอง เพียงฉีกซองและกรอกปากทานได้ทันที ไม่จำเป็นต้องดื่มน้ำตาม"
+    },
+    "allerpro": {
+      "name": "prove+ ALLERPRO",
+      "subtitle": "โพรไบโอติกส์พร้อมทาน",
+      "flavor": "รสแอปเปิ้ล",
+      "size": "ขนาด 30 ซอง",
+      "fullName": "prove+Synbiotics+VitaminC รสแอปเปิ้ล (Probiotic พร้อมทานตัวช่วยเรื่องลำไส้ให้มีสมดุลที่ดี)",
+      "description": "prove+ Synbiotics+VitaminC รสแอปเปิ้ล (Probiotic พร้อมทาน ตัวช่วยเรื่องลำไส้ให้มีสมดุลที่ดี) เพื่อเป็นจุดเริ่มต้นของการมีสุขภาพที่ดีจากพรูฟพลัส",
+      "howToUse": "รับประทานวันละ 1 ซอง เพียงฉีกซองและกรอกปากทานได้ทันที ไม่จำเป็นต้องดื่มน้ำตาม"
     }
   }
 }

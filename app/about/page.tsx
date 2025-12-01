@@ -1,433 +1,396 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-
-type Language = 'en' | 'th';
-
-const content: Record<Language, {
-  hero: {
-    line1: string;
-    line2: string;
-  };
-  intro: {
-    heading: string;
-    pillars: [string, string, string];
-    description: string;
-    tagline: string;
-  };
-  partnership: {
-    heading: string;
-    unionMedical: {
-      title: string;
-      description: string;
-    };
-    standardPharma: {
-      title: string;
-      description: string;
-    };
-    collaboration: string;
-    quote: string;
-  };
-  product: {
-    heading: string;
-    button: string;
-  };
-}> = {
-  en: {
-    hero: {
-      line1: 'Prove in every dose',
-      line2: 'Plus in every need',
-    },
-    intro: {
-      heading: 'At Standard Union Medical Thailand we believe that healthcare must start with confidence',
-      pillars: ['Confidence in Quality', 'Confidence in Safety', 'Confidence in Results'],
-      description: 'We therefore bring Prove+ premium quality probiotic brand from world-leading manufacturer Syngen to Thai people to take care of intestinal health, strengthen immunity and help you have good health every day. Ready to uphold our promise',
-      tagline: '"Prove in every dose, Plus in every need"',
-    },
-    partnership: {
-      heading: 'We were born from a joint venture between...',
-      unionMedical: {
-        title: 'Union Medical (Thailand)',
-        description: 'Leader in drug import and distribution who has been by Thai people\'s side since 1976',
-      },
-      standardPharma: {
-        title: 'Standard Pharma (Thailand)',
-        description: 'Expert in the production of probiotics and health supplements',
-      },
-      collaboration: 'This collaboration builds on over 20 years of experience through Standard Chem and Pharma Taiwan (headquarters)',
-      quote: '"We combine market understanding with internationally standardized manufacturing technology"',
-    },
-    product: {
-      heading: 'This is our first product',
-      button: 'Shop now',
-    },
-  },
-  th: {
-    hero: {
-      line1: 'Prove in every dose',
-      line2: 'Plus in every need',
-    },
-    intro: {
-      heading: 'ที่ Standard Union Medical Thailand เราเชื่อว่าการดูแลสุขภาพต้องเริ่มจากความมั่นใจ',
-      pillars: ['มั่นใจในคุณภาพ', 'มั่นใจในความปลอดภัย', 'มั่นใจในผลลัพธ์'],
-      description: 'เราจึงนำ Prove+ แบรนด์โพรไบโอติกส์คุณภาพพรีเมียมจากผู้ผลิตชั้นนำระดับโลกอย่าง Syngen มาสู่คนไทย เพื่อดูแลสุขภาพลำไส้ เสริมภูมิคุ้มกันและช่วยให้คุณมีสุขภาพที่ดีในทุกวัน พร้อมยึดมั่นในสัญญาของเรา',
-      tagline: '"Prove in every dose, Plus in every need"',
-    },
-    partnership: {
-      heading: 'เราเกิดจากการร่วมทุนระหว่าง...',
-      unionMedical: {
-        title: 'Union Medical (Thailand)',
-        description: 'ผู้นำด้านการนำเข้าและจัดจำหน่ายยา ที่อยู่เคียงข้างคนไทย มาตั้งแต่ปี 1976',
-      },
-      standardPharma: {
-        title: 'Standard Pharma (Thailand)',
-        description: 'ผู้เชี่ยวชาญด้านการผลิตโพรไบโอติกส์และอาหารเสริมเพื่อสุขภาพ',
-      },
-      collaboration: 'ความร่วมมือนี้ต่อยอดจากประสบการณ์มากกว่า 20 ปี ผ่าน Standard Chem and Pharma Taiwan (สำนักงานใหญ่)',
-      quote: '"เราผสมผสานความเข้าใจตลาดเข้ากับเทคโนโลยีการผลิตที่ได้มาตรฐานสากล"',
-    },
-    product: {
-      heading: 'นี่คือผลิตภัณฑ์แรกของเรา',
-      button: 'Shop now',
-    },
-  },
-};
+import Image from 'next/image';
+import Link from 'next/link';
+import { NavigationBar } from '../components/v2/NavigationBar';
+import { FooterNav } from '../components/v2/FooterNav';
+import { useLocale } from '../components/v2/LocaleProvider';
+import { useModalService } from '../components/v2/ModalServiceProvider';
 
 export default function AboutPage() {
-  const [language, setLanguage] = useState<Language>('th');
-  const t = content[language];
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === 'en' ? 'th' : 'en'));
-  };
+  const { t } = useLocale();
+  const { openShopModal } = useModalService();
 
   return (
-    <div className="w-full overflow-x-hidden overflow-y-auto min-h-screen bg-gradient-to-b from-[#ffffff] from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa] relative">
-      <Navbar />
-
-      {/* Language Toggle Button */}
-      <div className="fixed top-24 right-8 z-40">
-        <button
-          onClick={toggleLanguage}
-          className="flex items-center gap-2 px-4 py-2 bg-brand-primary-700 text-white rounded-full shadow-lg hover:bg-brand-primary-400 transition-colors duration-200 text-sm font-semibold"
-          aria-label={`Switch to ${language === 'en' ? 'Thai' : 'English'}`}
-        >
-          {language === 'en' ? '🇹🇭 ไทย' : '🇬🇧 EN'}
-        </button>
+    <div className="relative min-h-screen bg-gradient-to-b from-white from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa] overflow-x-hidden">
+      {/* Navigation */}
+      <div className="fixed top-2 sm:top-4 left-1/2 z-50 w-full max-w-6xl -translate-x-1/2 px-2 sm:px-4 pointer-events-none">
+        <div className="pointer-events-auto">
+          <NavigationBar />
+        </div>
       </div>
 
-      <main className="relative w-full mx-auto">
-        {/* Hero Section - Absolute positioned text as in Figma */}
-        <section className="relative h-[467px]">
+      <main className="relative w-full mx-auto pt-24 sm:pt-28 md:pt-32">
+        {/* Hero Section */}
+        <section className="relative px-6 sm:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
           <motion.div
-            className="absolute left-[213px] top-[86px]"
-            initial={{ opacity: 0, y: 60 }}
+            className="max-w-7xl mx-auto"
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
-            <p className="absolute left-[432.62px] top-[82px] -translate-x-1/2 font-fc-orbit font-medium text-[72px] leading-[1.5] text-[#4456a6] text-center whitespace-nowrap">
-              <span>Prove </span>
-              <span className="text-[#5d6fcd]">in every dose</span>
-            </p>
-            <p className="absolute left-[124.62px] top-[146px] font-fc-orbit font-medium text-[72px] leading-[1.5] text-[#4456a6] whitespace-nowrap">
-              <span>Plus </span>
-              <span className="text-[#5d6fcd]">in every need</span>
-            </p>
-            
-            {/* Decorative line rotated */}
-            <div className="absolute left-0 top-0 w-[325.809px] h-[255.933px] rotate-[14.835deg]">
-              <img 
-                src="/about-decorative-line.svg" 
-                alt="" 
-                className="w-full h-full"
-              />
-            </div>
-          </motion.div>
-        </section>
-
-        {/* Company Introduction Section - Following Figma structure */}
-        <section className="relative h-screen px-12 flex items-end">
-          {/* Left: Overlapping masked images */}
-          <div className="relative h-full shrink-0" style={{ width: '670px' }}>
-            {/* Background layer with tinted frame */}
-            <div className="absolute top-[170.433px] left-[82px]">
-              <div 
-                className="absolute bg-[rgba(166,180,220,0.24)] rounded-[24px]"
-                style={{ 
-                  width: '537px',
-                  height: '527.726px',
-                  left: '-34px',
-                  top: '-35.935px'
-                }}
-              />
-              <img 
-                src="/about-founder-photo.png"
-                alt="Company Representative"
-                className="relative rounded-full object-cover"
-                style={{
-                  width: '430.889px',
-                  height: '420.567px'
-                }}
-              />
-            </div>
-            
-            {/* Top overlay layer */}
-            <div className="absolute top-0 left-0">
-              <img 
-                src="/about-founder-photo-overlay.png"
-                alt=""
-                className="object-cover"
-                style={{
-                  width: '595px',
-                  height: '581.115px',
-                  clipPath: 'inset(0 0 0 0 round 24px)'
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Right: Text content */}
-          <motion.div
-            className="flex-1 flex flex-col gap-6 items-center justify-center py-6"
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true }}
-          >
-            <p className="font-fc-orbit font-medium text-[24px] leading-[1.5] text-[#424242] w-full">
-              {language === 'th' ? (
-                <>
-                  <span>ที่ </span>
-                  <span className="text-[#4456a6]">Standard Union Medical Thailand</span>
-                  <span> เราเชื่อว่าการดูแลสุขภาพต้องเริ่มจากความมั่นใจ</span>
-                </>
-              ) : (
-                <>
-                  <span>At </span>
-                  <span className="text-[#4456a6]">Standard Union Medical Thailand</span>
-                  <span> we believe that healthcare must start with confidence</span>
-                </>
-              )}
-            </p>
-
-            {/* Three Pillars */}
-            <div className="flex gap-3 w-full">
-              {t.intro.pillars.map((pillar, index) => (
-                <motion.div
-                  key={pillar}
-                  className="flex-1 bg-[rgba(255,255,255,0.5)] rounded-[24px] py-1 flex items-center justify-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="font-fc-orbit font-medium text-[18px] leading-[1.5] text-[#4456a6] text-center">
-                    {pillar}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-
-            <div className="font-fc-orbit font-medium text-[24px] leading-[1.5] text-[#424242] w-[589px]">
-              {language === 'th' ? (
-                <>
-                  <p className="mb-0">
-                    <span>เราจึงนำ </span>
-                    <span className="text-[#4456a6]">Prove+</span>
-                    <span> แบรนด์โพรไบโอติกส์คุณภาพพรีเมียม</span>
-                  </p>
-                  <p>
-                    จากผู้ผลิตชั้นนำระดับโลกอย่าง Syngen มาสู่คนไทย
-                    <br />
-                    <br />
-                    เพื่อดูแลสุขภาพลำไส้ เสริมภูมิคุ้มกันและช่วยให้คุณ
-                    <br />
-                    มีสุขภาพที่ดีในทุกวัน พร้อมยึดมั่นในสัญญาของเรา
-                  </p>
-                </>
-              ) : (
-                <p>{t.intro.description}</p>
-              )}
-            </div>
-
-            <div className="bg-[rgba(255,255,255,0.5)] rounded-[24px] py-0.5 flex items-center justify-center w-full">
-              <div className="font-fc-orbit font-medium text-[28px] leading-[1.5] text-[#4456a6] text-center w-[612px]">
-                <p className="mb-0">"Prove in every dose,</p>
-                <p>Plus in every need"</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Decorative plus icon */}
-          <img 
-            src="/about-decorative-plus.png"
-            alt=""
-            className="absolute rotate-[355.09deg]"
-            style={{
-              width: '81.164px',
-              height: '81.164px',
-              left: '1131px',
-              top: '435px'
-            }}
-          />
-        </section>
-
-        {/* Partnership Section - Following Figma structure */}
-        <section className="relative h-auto w-full px-14 flex gap-9 items-center">
-          {/* Left: Partnership Details */}
-          <motion.div
-            className="flex-1 flex flex-col gap-9 h-full items-center justify-center py-6"
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true }}
-          >
-            <div className="flex flex-col gap-3 w-full">
-              <p className="font-fc-orbit font-medium text-[24px] leading-[1.5] text-[#424242] w-full">
-                {t.partnership.heading}
-              </p>
-
-              {/* Company Cards */}
-              <div className="flex gap-6 h-[160px] w-full">
-                <div className="bg-[rgba(255,255,255,0.5)] rounded-[24px] p-3 flex items-center justify-center">
-                  <p className="font-fc-orbit font-medium text-center h-full w-[295.5px] text-[#424242] flex flex-col justify-center">
-                    <span className="font-fc-orbit font-semibold text-[#4456a6] text-[24px]">
-                      {t.partnership.unionMedical.title}
-                      <br />
-                    </span>
-                    <span className="text-[18px]">
-                      {t.partnership.unionMedical.description}
-                    </span>
-                  </p>
-                </div>
-
-                <div className="flex-1 bg-[rgba(255,255,255,0.5)] rounded-[24px] p-1 flex items-center justify-center">
-                  <p className="flex-1 font-fc-orbit font-medium text-center h-full text-[#424242] flex flex-col justify-center">
-                    <span className="font-fc-orbit font-semibold text-[#4456a6] text-[24px]">{t.partnership.standardPharma.title} </span>
-                    <span className="text-[18px]">
-                      {t.partnership.standardPharma.description}
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <p className="font-fc-orbit font-medium leading-[1.5] text-[#424242] w-full">
-              <span className="font-fc-orbit font-semibold text-[24px]">
-                {language === 'th' ? 'ความร่วมมือนี้ต่อยอดจากประสบการณ์มากกว่า 20 ปี ' : 'This collaboration builds on over 20 years of experience '}
-              </span>
-              <span className="text-[24px]">
-                <br />
-              </span>
-              <span className="text-[20px]">
-                {language === 'th' ? 'ผ่าน Standard Chem and Pharma Taiwan (สำนักงานใหญ่)' : 'through Standard Chem and Pharma Taiwan (headquarters)'}
-              </span>
-            </p>
-
-            <div className="bg-[rgba(255,255,255,0.56)] rounded-[24px] p-3 flex items-center justify-center w-full">
-              <p className="flex-1 font-fc-orbit font-medium leading-[1.5] text-[#424242] text-[32px] text-center">
-                {t.partnership.quote}
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Right: Team Photos with masked frames */}
-          <motion.div
-            className="relative shrink-0"
-            style={{ width: '579.874px', height: '539.12px' }}
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true }}
-          >
-            {/* Background layer with tinted frame */}
-            <div className="absolute top-[85px] left-[23px]">
-              <div 
-                className="absolute bg-[#e5ecff] rounded-[24px]"
-                style={{ 
-                  width: '576.809px',
-                  height: '514.184px',
-                  left: '-33.009px',
-                  top: '-29.664px'
-                }}
-              />
-              <img 
-                src="/about-team-photo.png"
-                alt="Team"
-                className="relative object-cover rounded-full"
-                style={{
-                  width: '501px',
-                  height: '489.464px'
-                }}
-              />
-            </div>
-            
-            {/* Top overlay layer */}
-            <div className="absolute top-0 left-0">
-              <img 
-                src="/about-team-photo.png"
-                alt=""
-                className="object-cover rounded-full"
-                style={{
-                  width: '547px',
-                  height: '584px',
-                  clipPath: 'circle(50% at 50% 50%)'
-                }}
-              />
-            </div>
-          </motion.div>
-        </section>
-
-        {/* Product Showcase Section */}
-        <section className="relative flex flex-col items-center gap-6 px-6 py-24">
-          <motion.div
-            className="flex flex-col items-center gap-12"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true }}
-          >
-            <p className="font-fc-orbit font-medium text-[#4554a4] text-[48px] leading-normal text-center">
-              {t.product.heading}
-            </p>
-
-            {/* Product Image */}
-            <div className="flex flex-col items-center">
-              <div className="relative" style={{ width: '500px', height: '325px' }}>
-                <img
-                  src="/about-product-mascot.png"
-                  alt="Prove+ Product"
-                  className="absolute inset-0 w-full h-full object-contain"
+            <div className="relative flex flex-col items-center sm:items-start">
+              <h1 className="font-fc-orbit font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.5] text-center sm:text-left">
+                <span className="text-[#5d6fcd]">{t.about.hero.line1}</span>
+              </h1>
+              <h1 className="font-fc-orbit font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.5] text-center sm:text-left mt-1 sm:mt-2">
+                <span className="text-[#5d6fcd]">{t.about.hero.line2}</span>
+              </h1>
+              
+              {/* Decorative line - hidden on mobile */}
+              <div className="hidden sm:block absolute -top-8 md:-top-12 lg:-top-16 left-16 md:left-24 lg:left-32 w-40 md:w-56 lg:w-72 h-40 md:h-56 lg:h-72 opacity-40 rotate-[14.835deg] pointer-events-none -z-10">
+                <Image 
+                  src="/about-decorative-line.svg" 
+                  alt="" 
+                  width={326}
+                  height={256}
+                  className="w-full h-full"
                 />
               </div>
-
-              {/* Shop Now Button */}
-              <motion.a
-                href="/#where-to-buy"
-                className="bg-white flex gap-1.5 items-center justify-center pl-3.5 pr-2.5 py-1 rounded-[32px] hover:shadow-md transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <span className="font-outfit font-bold text-[16px] leading-[24px] text-[#4456a6] whitespace-nowrap">
-                  {t.product.button}
-                </span>
-                <div className="w-[16.667px] h-[16.667px]">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-full h-full text-[#4456a6]">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </motion.a>
             </div>
           </motion.div>
         </section>
 
-        {/* Footer */}
-        <Footer />
+        {/* Company Introduction Section */}
+        <section className="relative px-6 sm:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-center">
+              {/* Left: Overlapping masked images */}
+              <motion.div
+                className="relative w-full lg:w-1/2 flex justify-center order-1"
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true }}
+              >
+                <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square">
+                  {/* Background layer with tinted frame */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="relative w-[80%] sm:w-[85%] aspect-square">
+                      <div className="absolute inset-0 bg-[rgba(166,180,220,0.24)] rounded-[24px] transform scale-110" />
+                      <Image 
+                        src="/about-founder-photo.png"
+                        alt="Company Representative"
+                        width={431}
+                        height={421}
+                        className="relative rounded-full object-cover w-full h-full"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Top overlay layer */}
+                  <div className="absolute top-0 left-0 w-full h-full">
+                    <Image 
+                      src="/about-founder-photo-overlay.png"
+                      alt=""
+                      width={595}
+                      height={581}
+                      className="object-cover w-full h-full rounded-[24px]"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right: Text content */}
+              <motion.div
+                className="flex-1 flex flex-col gap-4 sm:gap-5 md:gap-6 items-center lg:items-start order-2"
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true }}
+              >
+                <p className="font-fc-orbit font-medium text-base sm:text-lg md:text-xl lg:text-2xl leading-[1.5] text-[#424242] text-center lg:text-left">
+                  {t.about.intro.heading}
+                </p>
+
+                {/* Three Pillars */}
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full">
+                  {t.about.intro.pillars.map((pillar, index) => (
+                    <motion.div
+                      key={pillar}
+                      className="flex-1 bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] py-2 px-3 sm:px-4 flex items-center justify-center min-h-[44px]"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <p className="font-fc-orbit font-medium text-sm sm:text-base md:text-lg leading-[1.5] text-[#4456a6] text-center">
+                        {pillar}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <p className="font-fc-orbit font-medium text-base sm:text-lg md:text-xl lg:text-2xl leading-[1.5] text-[#424242] text-center lg:text-left">
+                  {t.about.intro.description}
+                </p>
+
+                <div className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-center w-full">
+                  <p className="font-fc-orbit font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl leading-[1.5] text-[#4456a6] text-center">
+                    "{t.about.intro.tagline}"
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Decorative plus icon - mobile version */}
+              <div className="block sm:hidden absolute top-8 right-4 opacity-40">
+                <Image 
+                  src="/about-decorative-plus.png"
+                  alt=""
+                  width={55}
+                  height={55}
+                  className="rotate-[355.09deg]"
+                />
+              </div>
+              
+              {/* Decorative plus icon - desktop version */}
+              <div className="hidden xl:block absolute right-12 top-1/2 -translate-y-1/2 opacity-50">
+                <Image 
+                  src="/about-decorative-plus.png"
+                  alt=""
+                  width={81}
+                  height={81}
+                  className="rotate-[355.09deg]"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Partnership Section */}
+        <section className="relative px-6 sm:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 xl:gap-16 items-center">
+              {/* Left: Partnership Details */}
+              <motion.div
+                className="flex-1 flex flex-col gap-6 sm:gap-8 md:gap-9 order-2 lg:order-1"
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true }}
+              >
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <p className="font-fc-orbit font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl leading-[1.5] text-[#424242] text-center lg:text-left">
+                    {t.about.partnership.collaboration.title}
+                  </p>
+                  <p className="font-fc-orbit font-medium text-base sm:text-lg md:text-xl leading-[1.5] text-[#424242] text-center lg:text-left">
+                    {t.about.partnership.collaboration.subtitle}
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <p className="font-fc-orbit font-medium text-base sm:text-lg md:text-xl lg:text-2xl leading-[1.5] text-[#424242] text-center lg:text-left">
+                    {t.about.partnership.heading}
+                  </p>
+
+                  {/* Company Cards */}
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6">
+                    <div className="flex-1 bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-4 sm:p-5 md:p-6 flex items-center justify-center min-h-[140px] sm:min-h-[160px]">
+                      <div className="text-center">
+                        <p className="font-fc-orbit font-semibold text-base sm:text-lg md:text-xl lg:text-2xl text-[#4456a6] mb-2">
+                          {t.about.partnership.unionMedical.title}
+                        </p>
+                        <p className="font-fc-orbit font-medium text-sm sm:text-base md:text-lg text-[#424242]">
+                          {t.about.partnership.unionMedical.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex-1 bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-4 sm:p-5 md:p-6 flex items-center justify-center min-h-[140px] sm:min-h-[160px]">
+                      <div className="text-center">
+                        <p className="font-fc-orbit font-semibold text-base sm:text-lg md:text-xl lg:text-2xl text-[#4456a6] mb-2">
+                          {t.about.partnership.standardPharma.title}
+                        </p>
+                        <p className="font-fc-orbit font-medium text-sm sm:text-base md:text-lg text-[#424242]">
+                          {t.about.partnership.standardPharma.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-[rgba(255,255,255,0.56)] rounded-[16px] sm:rounded-[24px] p-4 sm:p-5 md:p-6 flex items-center justify-center">
+                  <p className="font-fc-orbit font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl leading-[1.5] text-[#424242] text-center">
+                    "{t.about.partnership.quote}"
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Right: Team Photos with masked frames */}
+              <motion.div
+                className="relative w-full lg:w-1/2 flex justify-center order-1 lg:order-2"
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true }}
+              >
+                <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square">
+                  {/* Background layer with tinted frame */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="relative w-[80%] sm:w-[85%] aspect-square">
+                      <div className="absolute inset-0 bg-[#e5ecff] rounded-[24px] transform scale-110" />
+                      <Image 
+                        src="/about-team-photo.png"
+                        alt="Team"
+                        width={501}
+                        height={489}
+                        className="relative object-cover w-full h-full rounded-full"
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Top overlay layer */}
+                  <div className="absolute top-0 left-0 w-full h-full">
+                    <Image 
+                      src="/about-team-photo.png"
+                      alt=""
+                      width={547}
+                      height={584}
+                      className="object-cover w-full h-full rounded-full"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Decorative plus icon - mobile */}
+              <div className="block sm:hidden absolute top-32 left-4 opacity-40">
+                <Image 
+                  src="/about-decorative-plus.png"
+                  alt=""
+                  width={40}
+                  height={40}
+                  className="rotate-[355.09deg]"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats & Product Showcase Section */}
+        <section className="relative px-6 sm:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="flex flex-col gap-8 sm:gap-10 md:gap-12"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              viewport={{ once: true }}
+            >
+              {/* Stats Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+                <motion.div 
+                  className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-5 sm:p-6 md:p-8 flex items-center justify-center min-h-[100px] sm:min-h-[120px]"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <p className="font-fc-orbit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#4456a6] text-center">
+                    {t.about.stats.countries}
+                  </p>
+                </motion.div>
+                <motion.div 
+                  className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-5 sm:p-6 md:p-8 flex items-center justify-center min-h-[100px] sm:min-h-[120px]"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <p className="font-fc-orbit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#4456a6] text-center">
+                    {t.about.stats.rd}
+                  </p>
+                </motion.div>
+                <motion.div 
+                  className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-5 sm:p-6 md:p-8 flex items-center justify-center min-h-[100px] sm:min-h-[120px]"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <p className="font-fc-orbit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#4456a6] text-center">
+                    {t.about.stats.licenses}
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Product Heading */}
+              <h2 className="font-fc-orbit font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-normal text-[#4554a4] text-center px-4">
+                {t.about.product.heading}
+              </h2>
+
+              {/* Product Images */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+                <motion.div 
+                  className="flex flex-col items-center gap-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative w-full aspect-[500/325] max-w-md">
+                    <Image
+                      src="/about-product-mascot.png"
+                      alt="Prove+ Product"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <motion.button
+                    onClick={() => openShopModal({ heading: t.nav.shopNow })}
+                    className="bg-white flex gap-1.5 items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-[32px] hover:shadow-lg transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className="font-outfit font-bold text-sm sm:text-base leading-[24px] text-[#4456a6] whitespace-nowrap">
+                      {t.about.product.button}
+                    </span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 text-[#4456a6]">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </motion.button>
+                </motion.div>
+
+                <motion.div 
+                  className="flex flex-col items-center gap-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="relative w-full aspect-[500/325] max-w-md">
+                    <Image
+                      src="/about-product-mascot.png"
+                      alt="Prove+ Product"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <motion.button
+                    onClick={() => openShopModal({ heading: t.nav.shopNow })}
+                    className="bg-white flex gap-1.5 items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-[32px] hover:shadow-lg transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className="font-outfit font-bold text-sm sm:text-base leading-[24px] text-[#4456a6] whitespace-nowrap">
+                      {t.about.product.button}
+                    </span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-4 h-4 text-[#4456a6]">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </motion.button>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </main>
+
+      {/* Footer */}
+      <footer className="w-full mt-8 sm:mt-12 md:mt-16">
+        <FooterNav />
+      </footer>
     </div>
   );
 }

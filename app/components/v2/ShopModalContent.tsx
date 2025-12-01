@@ -1,3 +1,5 @@
+'use client';
+
 import Image from 'next/image';
 
 interface ShopModalContentProps {
@@ -74,5 +76,4 @@ export function ShopModalContent({ heading }: ShopModalContentProps) {
     </div>
   );
 }
-
 
