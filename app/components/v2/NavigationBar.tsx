@@ -99,7 +99,7 @@ export function NavigationBar() {
             {t.nav.shopNow}
             <Image
               src="/images/testimonials/shopping-cart-icon.svg"
-              alt=""
+              alt="shopping cart"
               width={24}
               height={24}
             />
@@ -115,7 +115,7 @@ export function NavigationBar() {
             {t.nav.shopNow}
             <Image
               src="/images/testimonials/shopping-cart-icon.svg"
-              alt=""
+              alt="shopping cart"
               width={24}
               height={24}
             />

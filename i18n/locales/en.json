@@ -254,6 +254,16 @@
       "description": "prove+ Synbiotics+VitaminC Apple Flavor (Ready-to-eat probiotic for balanced gut health) is your starting point for better health from Prove+",
       "howToUse": "Take 1 sachet daily. Simply tear open and pour directly into your mouth. No water needed."
     }
+  },
+  "contactPage": {
+    "hero": {
+      "title": "Contact Us"
+    },
+    "info": {
+      "phone": "0805361019",
+      "email": "shop@proveplus-th.com",
+      "address": "222 222/2 222/1 Phutthamonthon Sai 1 Road,\nBang Ramat, Taling Chan\nBangkok 10170"
+    }
   }
 }
 
