@@ -119,8 +119,8 @@ function EventCard({
   ]);
 
   return (
-    <div className="flex w-[280px] sm:w-[320px] flex-shrink-0 flex-col gap-3 sm:gap-4 rounded-[32px] sm:rounded-[40px] border border-white/40 bg-white/80 p-4 sm:p-6 text-left shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur">
-      <div className="relative h-[180px] sm:h-[220px] w-full overflow-hidden rounded-2xl sm:rounded-3xl">
+    <div className="flex w-[280px] sm:w-[320px] flex-shrink-0 flex-col gap-3 sm:gap-4 rounded-[32px] sm:rounded-[40px] border border-white/40 bg-white/80 p-4 sm:p-6 text-left shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur h-full">
+      <div className="relative aspect-video w-full overflow-hidden rounded-2xl sm:rounded-3xl">
         <Image
           src={image}
           alt={title}

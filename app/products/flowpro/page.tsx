@@ -15,9 +15,9 @@ export default function FlowproPage() {
 
   const flowproImages = [
     'https://www.figma.com/api/mcp/asset/876f3bf5-465c-48dc-9f8a-9c94c92c2cfa',
-    'https://www.figma.com/api/mcp/asset/25c4611f-eb5a-4c23-95ce-8223c7d4a93d',
     'https://www.figma.com/api/mcp/asset/5d9cc881-5d4f-45b7-a099-82934c48d6aa',
     'https://www.figma.com/api/mcp/asset/320de9d0-9d0e-4551-9da4-e03e85c8c473',
+    'https://www.figma.com/api/mcp/asset/5d9cc881-5d4f-45b7-a099-82934c48d6aa',
   ];
 
   const ingredientIcons = [
