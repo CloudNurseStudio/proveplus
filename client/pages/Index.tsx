@@ -1,6 +1,6 @@
 import Navbar from "../components/Navbar";
 import HeroImage from "../components/HeroImage";
-import WhereToBuy from "../components/WhereToBuy";
+import { ShopModalContent as WhereToBuy } from "../components/WhereToBuy";
 import Footer from "../components/Footer";
 
 export default function Index() {
