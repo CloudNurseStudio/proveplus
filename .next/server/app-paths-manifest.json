@@ -1,5 +1,5 @@
 {
+  "/products/flowpro/page": "app/products/flowpro/page.js",
   "/page": "app/page.js",
-  "/about/page": "app/about/page.js",
-  "/products/flowpro/page": "app/products/flowpro/page.js"
+  "/about/page": "app/about/page.js"
 }

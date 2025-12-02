@@ -14,16 +14,16 @@ export default function FlowproPage() {
   const { openShopModal } = useModalService();
 
   const flowproImages = [
-    'https://www.figma.com/api/mcp/asset/876f3bf5-465c-48dc-9f8a-9c94c92c2cfa',
-    'https://www.figma.com/api/mcp/asset/5d9cc881-5d4f-45b7-a099-82934c48d6aa',
-    'https://www.figma.com/api/mcp/asset/320de9d0-9d0e-4551-9da4-e03e85c8c473',
-    'https://www.figma.com/api/mcp/asset/5d9cc881-5d4f-45b7-a099-82934c48d6aa',
+    '/images/flowpro-slide-1.webp',
+    '/images/flowpro-slide-2.webp',
+    '/images/flowpro-slide-3.webp',
+    '/images/flowpro-slide-2.webp',
   ];
 
   const ingredientIcons = [
-    'https://www.figma.com/api/mcp/asset/3bca5214-afd4-4f69-b30f-3bcbb73c19ed',
-    'https://www.figma.com/api/mcp/asset/d5256eb5-1253-4463-8c9e-004de73a079a',
-    'https://www.figma.com/api/mcp/asset/2417a896-fd27-482a-bc3b-02b8370923a9',
+    '/images/flowpro-ingredient-1.webp',
+    '/images/flowpro-ingredient-2.webp',
+    '/images/flowpro-ingredient-3.webp',
   ];
 
   const handleOrderClick = () => {
@@ -40,7 +40,7 @@ export default function FlowproPage() {
           subtitle={t.productPage.flowpro.subtitle}
           flavor={t.productPage.flowpro.flavor}
           size={t.productPage.flowpro.size}
-          image="https://www.figma.com/api/mcp/asset/320de9d0-9d0e-4551-9da4-e03e85c8c473"
+          image="/images/flowpro-slide-3.webp"
           href="/products/flowpro"
           isSelected={true}
           bgColor="#e5ecfe"
@@ -50,7 +50,7 @@ export default function FlowproPage() {
           subtitle={t.productPage.allerpro.subtitle}
           flavor={t.productPage.allerpro.flavor}
           size={t.productPage.allerpro.size}
-          image="https://www.figma.com/api/mcp/asset/25fb5735-5d54-43a4-82c4-c5c08bd403c2"
+          image="/images/flowpro-benefit-image.webp"
           href="/products/allerpro"
           isSelected={false}
           bgColor="#fbf7e2"

@@ -42,7 +42,7 @@ export default function ContactPage() {
           <div className="absolute inset-0" aria-hidden="true">
             <div className="absolute inset-0 overflow-hidden">
               <img
-                src="https://www.figma.com/api/mcp/asset/663b733b-91fc-4b76-a567-946102e31221"
+                src="/images/contact-image.webp"
                 alt=""
                 className="absolute w-full h-full object-cover"
                 style={{

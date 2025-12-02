@@ -5,12 +5,12 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useLocale } from './LocaleProvider';
 
-// Figma asset URLs
-const imgImage45 = "https://www.figma.com/api/mcp/asset/37d3396a-c104-4c18-bbc3-304bca47b168";
-const imgProduct1 = "https://www.figma.com/api/mcp/asset/8dcf5f8c-8050-4f51-ba6e-5427a753c122";
-const imgProduct2 = "https://www.figma.com/api/mcp/asset/acd553df-bc42-4e29-89e6-6330e1004ca5";
-const imgMix1 = "https://www.figma.com/api/mcp/asset/cab5d9f9-4ec6-4924-91da-c4b433292f8a";
-const imgElementPlus030 = "https://www.figma.com/api/mcp/asset/5904ca24-0226-4f8e-b91e-49241d8ddf65";
+// Local asset URLs
+const imgImage45 = "/images/microprobiotic-image-45.webp";
+const imgProduct1 = "/images/microprobiotic-product-1.webp";
+const imgProduct2 = "/images/microprobiotic-product-2.webp";
+const imgMix1 = "/images/microprobiotic-mix-1.webp";
+const imgElementPlus030 = "/images/microprobiotic-element-plus-030.webp";
 export const MICRO_SECTION_ID = 'micro-probiotic-section';
 export const MICRO_IMAGE_ANCHOR_ID = 'micro-probiotic-anchor';
 

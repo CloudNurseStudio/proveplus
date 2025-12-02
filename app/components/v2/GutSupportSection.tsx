@@ -39,7 +39,7 @@ export function GutSupportSection() {
     <section
       className={cn(
         'w-full px-4 sm:px-6 py-12 sm:py-16 md:py-20',
-        'bg-[#fff6e6] flex flex-col items-center gap-8 sm:gap-10',
+        ' overflow-y-hidden flex flex-col items-center gap-8 sm:gap-10',
       )}
     >
       <motion.h2
@@ -55,10 +55,10 @@ export function GutSupportSection() {
         {t.gutSupport.title}
       </motion.h2>
 
-      <div className="w-full max-w-6xl px-8 sm:px-10 py-4">
+      <div className="w-full max-w-6xl px-8 sm:px-10 py-4 overflow-y-hidden" >
         <div
           className={cn(
-            'flex gap-5 sm:gap-6 overflow-x-auto overflow-y-visible',
+            'flex gap-5 sm:gap-6 overflow-x-auto overflow-y-hidden',
             'scrollbar-hide scroll-smooth snap-x snap-mandatory',
           )}
         >

@@ -14,16 +14,16 @@ export default function AllerproPage() {
   const { openShopModal } = useModalService();
 
   const allerproImages = [
-    'https://www.figma.com/api/mcp/asset/4d0ae9b9-aef2-4fad-ae52-11caacea69e4',
-    'https://www.figma.com/api/mcp/asset/fa62f73a-b1ec-4a61-b461-ac59f9488179',
-    'https://www.figma.com/api/mcp/asset/d1cf3d0a-565a-48c9-abba-98562d80c552',
-    'https://www.figma.com/api/mcp/asset/c7534154-d17a-4996-afc7-5e1dee2149c7',
+    '/images/allerpro-slide-1.webp',
+    '/images/allerpro-slide-2.webp',
+    '/images/allerpro-slide-3.webp',
+    '/images/allerpro-slide-4.webp',
   ];
 
   const ingredientIcons = [
-    'https://www.figma.com/api/mcp/asset/aa3f1561-10df-4abd-85be-02c99e94c9a0',
-    'https://www.figma.com/api/mcp/asset/cc1a6016-34cb-4141-ae30-a0b3c133a30e',
-    'https://www.figma.com/api/mcp/asset/95fd8218-982a-46b4-a9b6-f6db97a2afc2',
+    '/images/allerpro-ingredient-1.webp',
+    '/images/allerpro-ingredient-2.webp',
+    '/images/allerpro-ingredient-3.webp',
   ];
 
   const handleOrderClick = () => {
@@ -40,7 +40,7 @@ export default function AllerproPage() {
           subtitle={t.productPage.flowpro.subtitle}
           flavor={t.productPage.flowpro.flavor}
           size={t.productPage.flowpro.size}
-          image="https://www.figma.com/api/mcp/asset/320de9d0-9d0e-4551-9da4-e03e85c8c473"
+          image="/images/flowpro-slide-3.webp"
           href="/products/flowpro"
           isSelected={false}
           bgColor="#e5ecfe"
@@ -50,7 +50,7 @@ export default function AllerproPage() {
           subtitle={t.productPage.allerpro.subtitle}
           flavor={t.productPage.allerpro.flavor}
           size={t.productPage.allerpro.size}
-          image="https://www.figma.com/api/mcp/asset/25fb5735-5d54-43a4-82c4-c5c08bd403c2"
+          image="/images/flowpro-benefit-image.webp"
           href="/products/allerpro"
           isSelected={true}
           bgColor="#fbf7e2"
