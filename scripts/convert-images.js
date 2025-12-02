@@ -20,35 +20,39 @@ async function convertImages(dir) {
   for (const file of files) {
     const filePath = path.join(dir, file);
     const stats = fs.statSync(filePath);
+    const ext = path.extname(file).toLowerCase();
 
     if (stats.isDirectory()) {
       await convertImages(filePath);
-    } else if (path.extname(file).toLowerCase() === '.png') {
-      const baseName = path.basename(file, '.png');
+    } else if (ext === '.png' || ext === '.jpg' || ext === '.jpeg') {
+      const baseName = path.basename(file, ext);
       const webpPath = path.join(dir, `${baseName}.webp`);
       const jpgPath = path.join(dir, `${baseName}.jpg`);
 
-      console.log(`Converting ${filePath}...`);
+      // Skip if we're processing a jpg and it already exists (don't convert jpg to jpg)
+      // unless we need to create webp
+      if (ext === '.webp') continue;
+
+      console.log(`Checking ${filePath}...`);
 
       try {
-        // Convert to WebP
+        // Convert to WebP if it doesn't exist
         if (!fs.existsSync(webpPath)) {
-            await sharp(filePath)
+          console.log(`  Converting to WebP: ${webpPath}`);
+          await sharp(filePath)
             .webp({ quality: 80 })
             .toFile(webpPath);
-            console.log(`  Created ${webpPath}`);
-        } else {
-             console.log(`  Skipping ${webpPath} (exists)`);
+          console.log(`  Created ${webpPath}`);
         }
 
-        // Convert to JPG
-        if (!fs.existsSync(jpgPath)) {
-            await sharp(filePath)
+        // Convert to JPG if it doesn't exist and source is PNG
+        // (If source is already JPG, we don't need to convert to JPG)
+        if (ext === '.png' && !fs.existsSync(jpgPath)) {
+          console.log(`  Converting to JPG: ${jpgPath}`);
+          await sharp(filePath)
             .jpeg({ quality: 80 })
             .toFile(jpgPath);
-            console.log(`  Created ${jpgPath}`);
-        } else {
-             console.log(`  Skipping ${jpgPath} (exists)`);
+          console.log(`  Created ${jpgPath}`);
         }
 
       } catch (error) {

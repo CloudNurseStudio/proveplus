@@ -1,7 +1,16 @@
 {
-  "/page": "app/page.js",
-  "/products/flowpro/page": "app/products/flowpro/page.js",
-  "/about/page": "app/about/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/accessibility/page": "app/accessibility/page.js",
   "/blog/page": "app/blog/page.js",
-  "/contact/page": "app/contact/page.js"
+  "/cookie-notice/page": "app/cookie-notice/page.js",
+  "/about/page": "app/about/page.js",
+  "/legal-warning/page": "app/legal-warning/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/page": "app/page.js",
+  "/products/allerpro/page": "app/products/allerpro/page.js",
+  "/products/flowpro/page": "app/products/flowpro/page.js",
+  "/privacy-notice/page": "app/privacy-notice/page.js",
+  "/terms-of-use/page": "app/terms-of-use/page.js",
+  "/products/page": "app/products/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js"
 }
