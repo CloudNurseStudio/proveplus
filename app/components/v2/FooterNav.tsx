@@ -29,9 +29,9 @@ const socialLinks = [
   },
 ];
 
-function SocialLinks() {
+function SocialLinks({ className = '' }: { className?: string }) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+    <div className={`flex flex-col gap-3 ${className}`}>
       {socialLinks.map((social) => (
         <a
           key={social.label}
@@ -48,14 +48,14 @@ function SocialLinks() {
   );
 }
 
-function NavPills({ links }: { links: FooterLink[] }) {
+function NavLinks({ links }: { links: FooterLink[] }) {
   return (
     <div className="flex flex-col gap-2">
       {links.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className="px-4 py-1.5 rounded-[32px] text-brand-primary-700 font-semibold text-sm hover:bg-white transition-colors"
+          className="px-3 py-1.5 text-base font-semibold text-brand-primary-700 transition-colors hover:text-prove-main"
         >
           {link.label}
         </Link>
@@ -67,46 +67,60 @@ function NavPills({ links }: { links: FooterLink[] }) {
 function ContactInfo({
   contact,
   heading,
+  companyName,
 }: {
   contact: { phone: string; email: string; address: string };
   heading: string;
+  companyName: string;
 }) {
-  const contactItems = [
-    {
-      icon: '/images/phone-icon.svg',
-      alt: 'phone icon',
-      value: contact.phone,
-    },
-    {
-      icon: '/images/email-icon.svg',
-      alt: 'email icon',
-      value: contact.email,
-    },
-  ];
-
   return (
-    <div className="flex flex-col gap-2">
-      <span className="px-4 py-1.5 rounded-[32px] text-brand-primary-700 font-semibold text-sm">
+    <div className="flex flex-col gap-1">
+      {/* <span className="px-3 py-1.5 text-base font-semibold text-brand-primary-700">
         {heading}
-      </span>
+      </span> */}
       <div className="h-px w-full bg-prove-secondary" />
-      {contactItems.map((item) => (
-        <div key={item.alt} className="flex items-center gap-2 px-3 py-1">
-          <Image src={item.icon} alt={item.alt} width={18} height={18} />
-          <span className="text-xs text-[#546e7a]">{item.value}</span>
+      <div className="flex flex-col">
+        <a
+          href={`tel:${contact.phone}`}
+          className="flex items-center gap-1.5 px-3 py-0.5 text-xs text-[#546e7a] hover:text-prove-main transition-colors"
+        >
+          <Image
+            src="/images/phone-icon.svg"
+            alt="phone"
+            width={18}
+            height={18}
+            className="shrink-0"
+          />
+          <span>{contact.phone}</span>
+        </a>
+        <a
+          href={`mailto:${contact.email}`}
+          className="flex items-center gap-1.5 px-3 py-0.5 text-xs text-[#546e7a] hover:text-prove-main transition-colors"
+        >
+          <Image
+            src="/images/email-icon.svg"
+            alt="email"
+            width={18}
+            height={18}
+            className="shrink-0"
+          />
+          <span>{contact.email}</span>
+        </a>
+        <div className="flex items-start gap-1.5 px-3 py-0.5">
+          <Image
+            src="/images/location-icon.svg"
+            alt="location"
+            width={18}
+            height={18}
+            className="mt-0.5 shrink-0"
+          />
+          <div className="flex flex-col gap-1.5 text-[#546e7a]">
+            <span className="text-xs leading-normal">{companyName}</span>
+            <span className="text-[10px] leading-normal whitespace-pre-line">
+              {contact.address}
+            </span>
+          </div>
         </div>
-      ))}
-      <div className="flex items-start gap-2 px-3 py-1">
-        <Image
-          src="/images/location-icon.svg"
-          alt="location icon"
-          width={18}
-          height={18}
-          className="mt-0.5"
-        />
-        <span className="text-xs text-[#546e7a] whitespace-pre-line">
-          {contact.address}
-        </span>
       </div>
     </div>
   );
@@ -120,11 +134,11 @@ function FooterBottomRow({
   termsLabel: string;
 }) {
   return (
-    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-      <span className="text-xs text-[#546e7a] px-3 py-0.5">{copyright}</span>
+    <div className="flex items-center gap-3">
+      <span className="px-3 py-0.5 text-xs text-[#546e7a]">{copyright}</span>
       <Link
         href="/terms-of-use"
-        className="text-xs text-[#546e7a] px-3 py-0.5 hover:text-prove-main transition-colors"
+        className="px-3 py-0.5 text-xs text-[#546e7a] hover:text-prove-main transition-colors"
       >
         {termsLabel}
       </Link>
@@ -133,22 +147,28 @@ function FooterBottomRow({
 }
 
 export function FooterNav() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const { openShopModal } = useModalService();
 
   const navLinks: FooterLink[] = [
     { href: '/', label: t.nav.home },
-    { href: '/#products', label: t.nav.products },
+    { href: '/products', label: t.nav.products },
     { href: '/about', label: t.nav.about },
-    { href: '/#why-prove', label: t.nav.whyProve },
     { href: '/contact', label: t.nav.contact },
   ];
 
+  const companyName =
+    locale === 'th'
+      ? 'บริษัท สแตนดาร์ด ยูเนี่ยน เมดิคอล (ประเทศไทย) จํากัด'
+      : 'Standard Union Medical (Thailand) Co., Ltd.';
+
   return (
     <footer className="w-full">
-      <div className="backdrop-blur-[9.6px] bg-prove-grey rounded-t-3xl px-5 sm:px-8 pt-6 pb-4 flex flex-col gap-5">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
-          <div className="flex flex-col gap-6 lg:w-2/5">
+      <div className="flex flex-col gap-3 rounded-t-3xl bg-prove-grey px-5 pb-3 pt-5">
+        {/* Main content */}
+        <div className="flex flex-col gap-3">
+          {/* Top row: Logo + Shop button */}
+          <div className="flex items-start justify-between">
             <div className="px-2 py-1">
               <Image
                 src="/images/hero/logo-primary.svg"
@@ -158,18 +178,9 @@ export function FooterNav() {
                 className="h-[34px] w-auto"
               />
             </div>
-            <SocialLinks />
-            <LanguageSwitcher className="shadow-[0_2px_10px_rgba(138,0,75,0.02),0_4px_60px_rgba(138,0,75,0.04)]" />
-          </div>
-
-          <div className="flex flex-col gap-4 w-full lg:flex-row lg:items-start lg:justify-between">
-            <NavPills links={navLinks} />
-
-            <ContactInfo contact={t.footer.contact} heading={t.nav.contact} />
-
             <button
               onClick={() => openShopModal({ heading: t.nav.shopNow })}
-              className="bg-white px-5 py-2 rounded-[32px] text-brand-primary-700 font-semibold text-sm flex items-center justify-center gap-2 hover:bg-gray-50 transition-colors self-start"
+              className="flex items-center justify-center gap-1.5 rounded-[32px] bg-white px-3 py-1.5 text-base font-semibold text-brand-primary-700 transition-colors hover:bg-gray-50"
             >
               {t.nav.shopNow}
               <Image
@@ -180,10 +191,31 @@ export function FooterNav() {
               />
             </button>
           </div>
+
+          {/* Two column layout: social/lang on left, nav/contact on right */}
+          <div className="flex items-start">
+            {/* Left column: social icons + language switcher */}
+            <div className="flex flex-col justify-between self-stretch pr-6">
+              <SocialLinks />
+              <LanguageSwitcher className="shadow-[0_2px_10px_rgba(138,0,75,0.02),0_4px_60px_rgba(138,0,75,0.04)]" />
+            </div>
+
+            {/* Right column: nav links + contact info */}
+            <div className="flex flex-col gap-2">
+              <NavLinks links={navLinks} />
+              <ContactInfo
+                contact={t.footer.contact}
+                heading={t.nav.contact}
+                companyName={companyName}
+              />
+            </div>
+          </div>
         </div>
 
+        {/* Divider */}
         <div className="h-px w-full bg-black/10" />
 
+        {/* Bottom row */}
         <FooterBottomRow
           copyright={t.footer.copyright}
           termsLabel={t.footer.terms}

@@ -35,7 +35,7 @@ export function ProductFeaturesSection() {
       </motion.h2>
 
       <div
-        className="flex w-full max-w-5xl flex-col gap-6 md:flex-row md:gap-4 lg:gap-6"
+        className="flex w-full flex-col gap-6 md:flex-row md:gap-4 lg:gap-6"
         onMouseLeave={handleMouseLeave}
       >
         {cards.map((card, index) => (

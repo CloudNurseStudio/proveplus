@@ -54,7 +54,8 @@ export function VideoCard({
     <button
       type="button"
       onClick={handleSelect}
-      className={`relative w-[240px] sm:w-[260px] md:w-[288px] h-[380px] sm:h-[415px] md:h-[450px] overflow-hidden rounded-2xl sm:rounded-3xl text-left transition-transform hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white flex-shrink-0 ${className}`}
+      className={`relative h-[380px] sm:h-[415px] md:h-[450px] overflow-hidden rounded-2xl sm:rounded-3xl text-left transition-transform hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white flex-shrink-0 ${className}`}
+      style={{ aspectRatio: '9 / 16' }}
       aria-label={`Watch testimonial from ${customerName}`}
     >
       <picture className="absolute inset-0 w-full h-full">
@@ -76,7 +77,7 @@ export function VideoCard({
           <p className="text-xs sm:text-sm text-zinc-300">{customerTitle}</p>
         </div>
 
-        <div className="flex h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-lg border border-white bg-white/10">
+        <div className="flex h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-lg border border-white bg-transparent">
           <Image
             src="/images/play-icon.svg"
             alt="Play"

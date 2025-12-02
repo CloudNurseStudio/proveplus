@@ -91,6 +91,16 @@
     "iso22000": {
       "title": "ISO 22000",
       "description": "End-to-end food safety management."
+    },
+    "haccp": {
+      "title": "HACCP",
+      "subtitle": "Hazard Analysis Critical Control Point",
+      "description": "Controls every production touchpoint to keep prove+ safe."
+    },
+    "nsf": {
+      "title": "NSF",
+      "subtitle": "NSF International Certification",
+      "description": "Independent verification of facility safety and quality."
     }
   },
   "testimonials": {
@@ -124,8 +134,64 @@
           "review": "Pairs perfectly with my wellness routine. Dissolves so fast too!",
           "author": "Sasithorn",
           "platform": "Line OA",
-          "rating": 4,
-          "dimmed": true
+          "rating": 4
+        },
+        {
+          "review": "ประสิทธิภาพ:กล่องเล็กแต่ได้ผลลัพธ์ชัดเจน ใครลังเลแนะนำให้ลองขนาดนี้ก่อนเลยค่ะ",
+          "author": "4arjd1r7h5",
+          "platform": "Shopee",
+          "rating": 5
+        },
+        {
+          "review": "ลองทานครั้งแรก ทานง่ายมากค่ะ รสชาติก็อร่อยมากค่ะ ชอบรสเปรี้ยวๆ หอมกลิ่นสับปะรด จากที่ตอนแรกซื้อเพื่อไปงานแฟนมีต ตอนนี้อาจจะต้องมีทานกล่องที่ 3 ที่ 4 ต่อละ แต่รอหมดก่อนนะ 5555",
+          "author": "benyaporn.086",
+          "platform": "Shopee",
+          "rating": 5
+        },
+        {
+          "review": "ประสิทธิภาพ:ทานตอนตื่นนอน ช่วยให้ไม่รู้สึกหนักท้องครับ",
+          "author": "sa4uhh9ivv",
+          "platform": "Shopee",
+          "rating": 5
+        },
+        {
+          "review": "รสชาติ:ดีมาก\\nคุณภาพ:ดีที่สุด\\nประสิทธิภาพ:โคตรดี\\n\\nใช้มากล่องที่3แล้ว",
+          "author": "aornwharinz",
+          "platform": "Shopee",
+          "rating": 5
+        },
+        {
+          "review": "คุณภาพ:จากที่เคยถ่ายวันเว้นวัน ตอนนี้ถ่ายทุกเช้าแบบรู้สึกดีมากครับ",
+          "author": "icyaeqs6wf",
+          "platform": "Shopee",
+          "rating": 5
+        },
+        {
+          "review": "ประสิทธิภาพ:เห็นผลจริง ตั้งแต่ 2-3 วัน\\nรสชาติ:อร่อยดี\\nคุณภาพ:ดีมาก\\n\\nสั่งรอบ 2 เพราะใช้แล้วเวิคจริง ทานต่อเนื่องตลอดด",
+          "author": "paninwza",
+          "platform": "Shopee",
+          "rating": 5
+        },
+        {
+          "review": "แพ้อาหารหลายชนิดเช่น น้ำตาลจากอ้อย น้ำชาทุกชนิด และอื่นๆอีกมากมาย มีอาการคัน เป็นผื่นแดง\\nก่อนหน้านี้ทาน prove+ ตัวแรก ไปประมาณ3กล่อง อาการดีขึ้นบ้าง\\nแต่ก็ยังไม่หายขาด ยังต้องทานยาแก้แพ้เมื่อมีอาการ เป็นมา10กว่าปีแล้วค่ะ",
+          "author": "es2mk43rtv",
+          "platform": "Shopee"
+        },
+        {
+          "review": "ยินดีคะสินค้าทานดีคะลำไส้ดีไม่เหมือนทานไฟเบอร์\\nเพิ่งทานหมดไปพี่กะว่าจะสั่งอยู่แล้ว",
+          "author": "Janejira Saiboon",
+          "platform": "Shopee"
+        },
+        {
+          "review": "ประสิทธิภาพ:ใช้หลังมื้อเย็น รู้สึกไม่อึดท้องเลยค่ะ",
+          "author": "rendu99oai",
+          "platform": "Shopee",
+          "rating": 5
+        },
+        {
+          "review": "เปิดใจลองทาน ชอบตั้งแต่แรกคือรสชาดดีมากกกถูกใจค่ะและชอบที่ละลายในปากง่ายมากไม่ดื่มน้ำตามก็ได้",
+          "author": "30nr2a8kax",
+          "platform": "Shopee"
         }
       ]
     },
@@ -185,7 +251,7 @@
     "contact": {
       "phone": "0805361019",
       "email": "shop@proveplus-th.com",
-      "address": "222 222/2 222/1 Phutthamonthon Sai 1 Road\nBang Ramat, Taling Chan\nBangkok 10170"
+      "address": "388 Building B, 16th Floor, Phahonyothin Road, Samsen Nai, Phaya Thai, Bangkok 10400"
     }
   },
   "about": {
@@ -264,7 +330,7 @@
     "info": {
       "phone": "0805361019",
       "email": "shop@proveplus-th.com",
-      "address": "222 222/2 222/1 Phutthamonthon Sai 1 Road,\nBang Ramat, Taling Chan\nBangkok 10170"
+      "address": "Standard Union Medical (Thailand) Co., Ltd.\n\n388 Building B, 16th Floor, Phahonyothin Road, Samsen Nai, Phaya Thai, Bangkok 10400"
     }
   }
 }

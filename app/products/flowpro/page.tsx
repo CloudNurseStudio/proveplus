@@ -15,7 +15,6 @@ export default function FlowproPage() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const flowproImages = [
-    '/images/products/flowpro/primary.webp',
     '/images/products/flowpro/S__6004741_0.webp',
     '/images/products/flowpro/S__6004742_0.webp',
     '/images/products/flowpro/S__6004744_0.webp',
@@ -36,51 +35,58 @@ export default function FlowproPage() {
 
   return (
     <ProductPageLayout>
+      {/* Banner Image */}
+      <div className="px-4 sm:px-8 md:px-16 max-w-[1200px] mx-auto">
+        <ProductMainImage
+          image={flowproImages[selectedIndex]}
+          productName={t.productPage.flowpro.name}
+        />
+      </div>
+
+      {/* Product Details Card */}
       <div className="px-4 sm:px-8 md:px-16 max-w-[1200px] mx-auto">
         <div className="bg-white/50 backdrop-blur-sm rounded-[32px] p-6 sm:p-8">
           <h2 className="text-[clamp(1.75rem,5vw,2.25rem)] font-semibold text-[#4554a4] mb-6">
             {t.productPage.detailsTitle}
           </h2>
 
-          <div className="flex flex-col gap-8">
-            <div className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-15">
+            {/* Left Column: Primary Image + Thumbnails */}
+            <div className="w-full flex flex-col gap-4">
               <ProductMainImage
                 image={flowproImages[selectedIndex]}
                 productName={t.productPage.flowpro.name}
               />
+              <ProductThumbnailGrid
+                images={flowproImages}
+                productName={t.productPage.flowpro.name}
+                selectedIndex={selectedIndex}
+                onSelect={setSelectedIndex}
+              />
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-15">
-              <div className="w-full">
-                <ProductThumbnailGrid
-                  images={flowproImages}
-                  productName={t.productPage.flowpro.name}
-                  selectedIndex={selectedIndex}
-                  onSelect={setSelectedIndex}
-                />
-              </div>
+            {/* Right Column: Product Details & Tabs */}
+            <div className="flex flex-col gap-10">
+              <ProductDetails
+                productName={t.productPage.flowpro.name}
+                fullName={t.productPage.flowpro.fullName}
+                rating={4.5}
+                reviewCount={288}
+                onOrderClick={handleOrderClick}
+              />
 
-              <div className="flex flex-col gap-10">
-                <ProductDetails
-                  productName={t.productPage.flowpro.name}
-                  fullName={t.productPage.flowpro.fullName}
-                  rating={4.5}
-                  reviewCount={288}
-                  onOrderClick={handleOrderClick}
-                />
-
-                <ProductTabs
-                  description={t.productPage.flowpro.description}
-                  flavor={t.productPage.flowpro.flavor}
-                  howToUse={t.productPage.flowpro.howToUse}
-                  ingredientIcons={ingredientIcons}
-                />
-              </div>
+              <ProductTabs
+                description={t.productPage.flowpro.description}
+                flavor={t.productPage.flowpro.flavor}
+                howToUse={t.productPage.flowpro.howToUse}
+                ingredientIcons={ingredientIcons}
+              />
             </div>
           </div>
         </div>
       </div>
 
+      {/* Product Selector */}
       <div className="flex flex-col sm:flex-row gap-6 sm:gap-9 justify-center items-center px-4 sm:px-8 md:px-16 pb-8">
         <ProductCard
           name={t.productPage.flowpro.name}

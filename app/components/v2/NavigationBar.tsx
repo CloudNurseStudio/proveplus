@@ -56,7 +56,7 @@ export function NavigationBar() {
                 </div>
 
                 {/* Mobile Language Switcher */}
-                <div className="px-4">
+                <div className="px-4 flex justify-start">
                   <LanguageSwitcher />
                 </div>
               </div>

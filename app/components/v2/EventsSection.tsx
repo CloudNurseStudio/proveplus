@@ -60,7 +60,7 @@ export function EventsSection() {
         <p className="text-[clamp(2rem,6vw,3rem)] font-semibold text-prove-primary">
           {t.events.title}
         </p>
-        <p className="text-base sm:text-lg text-prove-primary/80">{t.events.subtitle}</p>
+        {/* <p className="text-base sm:text-lg text-prove-primary/80">{t.events.subtitle}</p> */}
       </motion.div>
 
       <Carousel
@@ -73,7 +73,7 @@ export function EventsSection() {
       >
         <CarouselContent className="-ml-4 sm:-ml-6">
           {events.map((event) => (
-            <CarouselItem key={event.title} className="pl-4 sm:pl-6 basis-auto">
+            <CarouselItem key={event.title} className="pl-4 sm:pl-6 basis-[280px] sm:basis-[320px]">
               <EventCard {...event} />
             </CarouselItem>
           ))}
@@ -119,35 +119,26 @@ function EventCard({
   ]);
 
   return (
-    <div className="flex w-[280px] sm:w-[320px] flex-shrink-0 flex-col gap-3 sm:gap-4 rounded-[32px] sm:rounded-[40px] border border-white/40 bg-white/80 p-4 sm:p-6 text-left shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur h-full">
-      <div className="relative aspect-video w-full overflow-hidden rounded-2xl sm:rounded-3xl">
+    <div 
+      onClick={handleSelect}
+      className="bg-white flex w-full flex-shrink-0 cursor-pointer flex-col gap-[12px] items-center overflow-clip p-[20px] rounded-[16px] h-full"
+    >
+      <div className="aspect-square relative rounded-[16px] shrink-0 w-full">
         <Image
           src={image}
           alt={title}
           fill
-          sizes="(max-width: 640px) 280px, 320px"
-          className="object-cover"
+          sizes="320px"
+          className="object-cover rounded-[16px]"
         />
       </div>
-      <div className="flex flex-col gap-1">
-        <p className="text-xs sm:text-sm font-semibold uppercase tracking-wide text-prove-main/70">
-          {date}
+      <div className="bg-white flex flex-col gap-[8px] items-start w-full text-[#333333]">
+        <p className="font-medium leading-[1.4] text-[20px] w-full whitespace-pre-wrap">
+          {title}
         </p>
-        <h3 className="text-xl sm:text-2xl font-semibold text-prove-main">{title}</h3>
-        <p className="text-sm sm:text-base text-prove-primary/80">{description}</p>
-      </div>
-      <div className="mt-auto flex flex-col gap-2 sm:gap-3">
-        <div className="text-xs sm:text-sm text-prove-primary">
-          <span className="font-semibold">{location}</span>
+        <div className="font-normal leading-[1.4] opacity-80 text-[12px] tracking-[0.18px] w-full whitespace-pre-wrap">
+          {description}
         </div>
-        <button
-          type="button"
-          onClick={handleSelect}
-          className="w-full rounded-full bg-prove-main px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base text-white transition hover:bg-prove-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-prove-primary"
-          aria-label={`${cta} for ${title}`}
-        >
-          {cta}
-        </button>
       </div>
     </div>
   );

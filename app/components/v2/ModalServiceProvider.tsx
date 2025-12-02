@@ -120,8 +120,8 @@ export function ModalServiceProvider({ children }: { children: ReactNode }) {
     modalState?.type === 'certificate'
       ? 'max-w-[90vw] max-h-[90vh] w-full h-full'
       : modalState?.type === 'shop'
-        ? 'max-w-[667px] sm:max-w-[667px]'
-        : 'max-w-3xl';
+        ? 'max-w-[90vw] sm:max-w-[667px] max-h-[90vh] overflow-y-auto'
+        : 'max-w-[90vw] sm:max-w-3xl max-h-[90vh] overflow-y-auto';
 
   return (
     <ModalServiceContext.Provider value={contextValue}>
@@ -149,64 +149,32 @@ export function ModalServiceProvider({ children }: { children: ReactNode }) {
 }
 
 function VideoModal({
-  customerName,
-  customerTitle,
   thumbnailSrc,
   videoUrl,
-  description,
-  ctaUrl,
-  ctaLabel,
 }: VideoModalPayload) {
   return (
     <>
-      <DialogHeader>
-        <DialogTitle className="text-2xl text-prove-main">
-          {customerName}
-        </DialogTitle>
-        <DialogDescription className="text-base text-prove-primary">
-          {customerTitle}
-        </DialogDescription>
-      </DialogHeader>
-
-      <div className="space-y-4">
-        {videoUrl ? (
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
-            <iframe
-              src={videoUrl}
-              title={customerName}
-              className="h-full w-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        ) : (
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
-            <Image
-              src={thumbnailSrc}
-              alt={customerName}
-              fill
-              sizes="(max-width: 768px) 90vw, 640px"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          </div>
-        )}
-        {description && (
-          <p className="text-base leading-relaxed text-prove-primary">
-            {description}
-          </p>
-        )}
-        {ctaUrl && ctaLabel && (
-          <a
-            href={ctaUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center rounded-full bg-prove-main px-6 py-2 text-white transition hover:bg-prove-primary"
-          >
-            {ctaLabel}
-          </a>
-        )}
-      </div>
+      {videoUrl ? (
+        <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+          <iframe
+            src={videoUrl}
+            title="Video testimonial"
+            className="h-full w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      ) : (
+        <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+          <Image
+            src={thumbnailSrc}
+            alt="Video testimonial"
+            fill
+            sizes="(max-width: 768px) 90vw, 640px"
+            className="object-cover"
+          />
+        </div>
+      )}
     </>
   );
 }
@@ -218,33 +186,38 @@ function CertificateModal({
   description,
 }: CertificateModalPayload) {
   return (
-    <div className="flex flex-col h-full overflow-y-auto">
-      <DialogHeader className="flex-shrink-0">
-        <DialogTitle className="text-2xl sm:text-3xl md:text-4xl text-prove-main">{title}</DialogTitle>
-        {subtitle && (
-          <DialogDescription className="text-base sm:text-lg md:text-xl text-prove-primary">
-            {subtitle}
-          </DialogDescription>
-        )}
-      </DialogHeader>
+    <div className="flex h-full w-full flex-col overflow-y-auto">
+      <div className="flex flex-1 items-center justify-center p-3 sm:p-6 lg:p-10">
+        <div className="flex w-full max-w-[1100px] flex-col items-center gap-6 rounded-[48px] bg-gradient-to-br from-[#f4f6ff] via-[#dfe6ff] to-[#b9c9ff] p-6 text-center shadow-[0_25px_80px_rgba(68,86,166,0.25)] sm:gap-7 sm:p-10 lg:gap-10 lg:p-14">
+          <DialogHeader className="w-full space-y-2 text-center sm:text-center">
+            <DialogTitle className="text-[clamp(2rem,4vw,3.25rem)] font-semibold text-prove-main">
+              {title}
+            </DialogTitle>
+            {subtitle && (
+              <DialogDescription className="text-center text-lg text-prove-primary sm:text-center">
+                {subtitle}
+              </DialogDescription>
+            )}
+          </DialogHeader>
 
-      <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12 items-center justify-center flex-1 py-6 sm:py-8">
-        <div className="relative w-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px] h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] flex-shrink-0">
-          <Image
-            src={imageSrc}
-            alt={title}
-            fill
-            sizes="(max-width: 640px) 400px, (max-width: 768px) 500px, (max-width: 1024px) 600px, 700px"
-            className="object-contain"
-          />
-        </div>
-        {description && (
-          <div className="flex-1 max-w-2xl">
-            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-prove-primary">
+          <div className="relative w-full max-w-[520px] flex-1">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[520px] overflow-hidden rounded-[32px] bg-white/70 p-4 shadow-[0_12px_40px_rgba(68,86,166,0.15)]">
+              <Image
+                src={imageSrc}
+                alt={title}
+                fill
+                sizes="(max-width: 640px) 80vw, (max-width: 1024px) 60vw, 520px"
+                className="object-contain"
+              />
+            </div>
+          </div>
+
+          {description && (
+            <p className="max-w-3xl text-center text-base leading-relaxed text-prove-primary sm:text-lg">
               {description}
             </p>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

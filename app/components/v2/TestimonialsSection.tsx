@@ -63,8 +63,8 @@ export function TestimonialsSection() {
 
   const videoTestimonials = [
     {
-      thumbnailSrc: '/images/testimonials/customer-video-1.jpg',
-      thumbnailSrcWebp: '/images/testimonials/customer-video-1.webp',
+      thumbnailSrc: '/images/testimonials/poster1.jpg',
+      thumbnailSrcWebp: '/images/testimonials/poster1.webp',
       customerName: t.testimonials.customer1.name,
       customerTitle: t.testimonials.customer1.title,
       description: t.testimonials.customer1.description,
@@ -72,8 +72,8 @@ export function TestimonialsSection() {
       ctaUrl: 'https://www.instagram.com/proveplus_th/',
     },
     {
-      thumbnailSrc: '/images/testimonials/customer-video-2.jpg',
-      thumbnailSrcWebp: '/images/testimonials/customer-video-2.webp',
+      thumbnailSrc: '/images/testimonials/poster2.jpg',
+      thumbnailSrcWebp: '/images/testimonials/poster2.webp',
       customerName: t.testimonials.customer2.name,
       customerTitle: t.testimonials.customer2.title,
       description: t.testimonials.customer2.description,

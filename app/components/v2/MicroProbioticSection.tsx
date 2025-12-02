@@ -39,7 +39,7 @@ export function MicroProbioticSection() {
         />
       </motion.div>
 
-      <div className="relative z-10 w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+      <div className="relative z-10 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-12">
         {/* Left side - Text content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}

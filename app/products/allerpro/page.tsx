@@ -15,7 +15,6 @@ export default function AllerproPage() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const allerproImages = [
-    '/images/products/allerpro/primary.webp',
     '/images/products/allerpro/S__79380490_0.webp',
     '/images/products/allerpro/S__79380492_0.webp',
     '/images/products/allerpro/S__79380493_0.webp',
@@ -38,51 +37,58 @@ export default function AllerproPage() {
 
   return (
     <ProductPageLayout>
+      {/* Banner Image */}
+      <div className="px-4 sm:px-8 md:px-16 max-w-[1200px] mx-auto">
+        <ProductMainImage
+          image={allerproImages[selectedIndex]}
+          productName={t.productPage.allerpro.name}
+        />
+      </div>
+
+      {/* Product Details Card */}
       <div className="px-4 sm:px-8 md:px-16 max-w-[1200px] mx-auto">
         <div className="bg-white/50 backdrop-blur-sm rounded-[32px] p-6 sm:p-8">
           <h2 className="text-[clamp(1.75rem,5vw,2.25rem)] font-semibold text-[#4554a4] mb-6">
             {t.productPage.detailsTitle}
           </h2>
 
-          <div className="flex flex-col gap-8">
-            <div className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-15">
+            {/* Left Column: Primary Image + Thumbnails */}
+            <div className="w-full flex flex-col gap-4">
               <ProductMainImage
                 image={allerproImages[selectedIndex]}
                 productName={t.productPage.allerpro.name}
               />
+              <ProductThumbnailGrid
+                images={allerproImages}
+                productName={t.productPage.allerpro.name}
+                selectedIndex={selectedIndex}
+                onSelect={setSelectedIndex}
+              />
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-15">
-              <div className="w-full">
-                <ProductThumbnailGrid
-                  images={allerproImages}
-                  productName={t.productPage.allerpro.name}
-                  selectedIndex={selectedIndex}
-                  onSelect={setSelectedIndex}
-                />
-              </div>
+            {/* Right Column: Product Details & Tabs */}
+            <div className="flex flex-col gap-10">
+              <ProductDetails
+                productName={t.productPage.allerpro.name}
+                fullName={t.productPage.allerpro.fullName}
+                rating={4.5}
+                reviewCount={288}
+                onOrderClick={handleOrderClick}
+              />
 
-              <div className="flex flex-col gap-10">
-                <ProductDetails
-                  productName={t.productPage.allerpro.name}
-                  fullName={t.productPage.allerpro.fullName}
-                  rating={4.5}
-                  reviewCount={288}
-                  onOrderClick={handleOrderClick}
-                />
-
-                <ProductTabs
-                  description={t.productPage.allerpro.description}
-                  flavor={t.productPage.allerpro.flavor}
-                  howToUse={t.productPage.allerpro.howToUse}
-                  ingredientIcons={ingredientIcons}
-                />
-              </div>
+              <ProductTabs
+                description={t.productPage.allerpro.description}
+                flavor={t.productPage.allerpro.flavor}
+                howToUse={t.productPage.allerpro.howToUse}
+                ingredientIcons={ingredientIcons}
+              />
             </div>
           </div>
         </div>
       </div>
 
+      {/* Product Selector */}
       <div className="flex flex-col sm:flex-row gap-6 sm:gap-9 justify-center items-center px-4 sm:px-8 md:px-16 pb-8">
         <ProductCard
           name={t.productPage.flowpro.name}

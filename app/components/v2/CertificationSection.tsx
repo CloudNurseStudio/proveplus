@@ -114,6 +114,20 @@ export function CertificationSection() {
       title: t.certifications.iso22000.title,
       description: t.certifications.iso22000.description,
     },
+    {
+      imageSrc: '/images/certifications/cert-haccp.jpg',
+      imageSrcWebp: '/images/certifications/cert-haccp.webp',
+      title: t.certifications.haccp.title,
+      subtitle: t.certifications.haccp.subtitle,
+      description: t.certifications.haccp.description,
+    },
+    {
+      imageSrc: '/images/certifications/cert-nsf.jpg',
+      imageSrcWebp: '/images/certifications/cert-nsf.webp',
+      title: t.certifications.nsf.title,
+      subtitle: t.certifications.nsf.subtitle,
+      description: t.certifications.nsf.description,
+    },
   ];
 
   return (

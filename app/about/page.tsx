@@ -235,7 +235,7 @@ export default function AboutPage() {
                         src="/about-team-photo.png"
                         alt="Team"
                         className="w-full h-full object-contain object-bottom"
-                        style={{ clipPath: 'inset(0 0 8% 0 round 0 0 40% 40%)' }}
+                       
                       />
                     </picture>
                   </div>
