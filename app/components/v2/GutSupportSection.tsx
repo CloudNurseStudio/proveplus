@@ -2,28 +2,19 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import {
-  Activity,
-  Flame,
-  HeartPulse,
-  Laugh,
-  ShieldCheck,
-  Sparkles,
-  SunMedium,
-  Wind,
-} from 'lucide-react';
+import Image from 'next/image';
 import { cn } from '@/app/lib/utils';
 import { useLocale } from './LocaleProvider';
 
-const iconSequence = [
-  HeartPulse,
-  Wind,
-  Activity,
-  ShieldCheck,
-  Flame,
-  Sparkles,
-  SunMedium,
-  Laugh,
+const iconPaths = [
+  '/images/gut/gut-balance.svg',
+  '/images/gut/less-bloating.svg',
+  '/images/gut/better-digestion.svg',
+  '/images/gut/immune-support.svg',
+  '/images/gut/lower-inflammation.svg',
+  '/images/gut/metabolism.svg',
+  '/images/gut/healthy-skin.svg',
+  '/images/gut/better-mood.svg',
 ];
 
 const buttonAuras = [
@@ -64,7 +55,7 @@ export function GutSupportSection() {
           )}
         >
           {supportItems.map((label, index) => {
-            const Icon = iconSequence[index % iconSequence.length];
+            const iconPath = iconPaths[index % iconPaths.length];
             const aura = buttonAuras[index % buttonAuras.length];
 
             return (
@@ -87,7 +78,7 @@ export function GutSupportSection() {
                 >
                   <span
                     className={cn(
-                      'relative flex size-[112px] sm:size-[120px]',
+                      'relative flex size-[88px]',
                       'items-center justify-center rounded-full',
                       'border-[3px] border-[#5d6fcd]',
                       'bg-white shadow-[0_14px_40px_rgba(93,111,205,0.14)]',
@@ -96,14 +87,17 @@ export function GutSupportSection() {
                   >
                     <span
                       className={cn(
-                        'flex size-[92px] sm:size-[100px] items-center',
+                        'flex size-[76px] items-center',
                         'justify-center rounded-full bg-gradient-to-br',
                         aura,
                       )}
                     >
-                      <Icon
-                        className="size-10 text-[#5d6fcd]"
-                        strokeWidth={1.6}
+                      <Image
+                        src={iconPath}
+                        alt={label}
+                        width={64}
+                        height={64}
+                        className="size-16"
                         aria-hidden="true"
                       />
                     </span>

@@ -121,7 +121,9 @@ export function ModalServiceProvider({ children }: { children: ReactNode }) {
       ? 'max-w-[90vw] max-h-[90vh] w-full h-full'
       : modalState?.type === 'shop'
         ? 'max-w-[90vw] sm:max-w-[667px] max-h-[90vh] overflow-y-auto'
-        : 'max-w-[90vw] sm:max-w-3xl max-h-[90vh] overflow-y-auto';
+        : modalState?.type === 'video'
+          ? 'max-w-[90vw] sm:max-w-[45vh] max-h-[80vh] h-[80vh] overflow-hidden'
+          : 'max-w-[90vw] sm:max-w-3xl max-h-[90vh] overflow-y-auto';
 
   return (
     <ModalServiceContext.Provider value={contextValue}>
@@ -155,7 +157,7 @@ function VideoModal({
   return (
     <>
       {videoUrl ? (
-        <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+        <div className="relative w-full h-full overflow-hidden rounded-2xl" style={{ aspectRatio: '9 / 16' }}>
           <iframe
             src={videoUrl}
             title="Video testimonial"
@@ -165,7 +167,7 @@ function VideoModal({
           />
         </div>
       ) : (
-        <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+        <div className="relative w-full h-full overflow-hidden rounded-2xl" style={{ aspectRatio: '9 / 16' }}>
           <Image
             src={thumbnailSrc}
             alt="Video testimonial"
