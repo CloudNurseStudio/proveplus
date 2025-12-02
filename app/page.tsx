@@ -32,13 +32,10 @@ export default function HomePage() {
         <MicroProbioticSection />
         <GutSupportSection />
 
-        <div className="hidden sm:block">
         <ProductFeaturesSection />
 
-        </div>
-        <div className='block sm:hidden'>
-          <BenefitsSection />
-        </div>
+        
+       
         
         <CertificationSection />
         <TestimonialsSection />

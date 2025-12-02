@@ -203,13 +203,13 @@
       "name": "Jalen kyle",
       "title": "Founder of Mediahouse",
       "description": "Jalen shares how prove+ keeps his gut calm and energy high.",
-      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "videoUrl": "https://youtube.com/shorts/ayKrm8ki9jo?si=nPqlPDMVJdO00ZoM"
     },
     "customer2": {
       "name": "Alexander",
       "title": "Content Writer",
       "description": "Alexander loves the fruity taste and daily convenience.",
-      "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U"
+      "videoUrl": "https://youtube.com/shorts/jjw9PWi3gMo?si=kVTIuALjVSgFl4NN"
     }
   },
   "events": {
@@ -289,6 +289,29 @@
     "product": {
       "heading": "This is our products...",
       "button": "Shop now"
+    },
+    "worldMapModal": {
+      "title": "Our Global Presence",
+      "countries": {
+        "title": "Countries We Serve",
+        "list": [
+          "Japan",
+          "USA / United States",
+          "Korea",
+          "Taiwan",
+          "Switzerland",
+          "Germany",
+          "Thailand"
+        ]
+      },
+      "achievements": {
+        "title": "Our Achievements",
+        "list": [
+          "20+ global partners",
+          "200+ R&D specialists",
+          "110+ certificates & patents"
+        ]
+      }
     }
   },
   "productPage": {
@@ -334,4 +357,3 @@
     }
   }
 }
-

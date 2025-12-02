@@ -203,13 +203,13 @@
       "name": "Jalen kyle",
       "title": "Founder of Mediahouse",
       "description": "Jalen แชร์ว่า prove+ ช่วยให้ลำไส้สงบลง\nและมีพลังงานเพิ่มขึ้นในแต่ละวัน",
-      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      "videoUrl": "https://youtube.com/embed/ayKrm8ki9jo?si=nPqlPDMVJdO00ZoM"
     },
     "customer2": {
       "name": "Alexander",
       "title": "Content Writer",
       "description": "Alexander หลงรักในรสชาติผลไม้และความสะดวก",
-      "videoUrl": "https://www.youtube.com/embed/ysz5S6PUM-U"
+      "videoUrl": "https://youtube.com/embed/jjw9PWi3gMo?si=kVTIuALjVSgFl4NN"
     }
   },
   "events": {
@@ -289,6 +289,29 @@
     "product": {
       "heading": "นี่คือผลิตภัณฑ์ของเรา",
       "button": "Shop now"
+    },
+    "worldMapModal": {
+      "title": "ความเป็นสากลของเรา",
+      "countries": {
+        "title": "ประเทศที่เราให้บริการ",
+        "list": [
+          "ญี่ปุ่น",
+          "อเมริกา (สหรัฐฯ)",
+          "เกาหลี",
+          "ไต้หวัน",
+          "สวิตเซอร์แลนด์",
+          "เยอรมนี",
+          "ไทย"
+        ]
+      },
+      "achievements": {
+        "title": "ความสำเร็จของเรา",
+        "list": [
+          "พันธมิตรในกว่า 20 ประเทศ",
+          "ทีมนักวิจัยกว่า 200 คน",
+          "มาตรฐานและสิทธิบัตรกว่า 110 รายการ"
+        ]
+      }
     }
   },
   "productPage": {
@@ -334,4 +357,3 @@
     }
   }
 }
-

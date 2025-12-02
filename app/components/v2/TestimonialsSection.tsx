@@ -200,7 +200,7 @@ export function TestimonialsSection() {
                     author={review.author}
                     platform={review.platform}
                     rating={review.rating}
-                    dimmed={review.dimmed}
+                    // dimmed={review.dimmed}
                   />
                 </CarouselItem>
               ))}

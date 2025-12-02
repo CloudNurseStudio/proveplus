@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,10 +8,12 @@ import { NavigationBar } from '../components/v2/NavigationBar';
 import { FooterNav } from '../components/v2/FooterNav';
 import { useLocale } from '../components/v2/LocaleProvider';
 import { useModalService } from '../components/v2/ModalServiceProvider';
+import { WorldMapModal } from '../components/v2/WorldMapModal';
 
 export default function AboutPage() {
   const { t } = useLocale();
   const { openShopModal } = useModalService();
+  const [isWorldMapOpen, setIsWorldMapOpen] = useState(false);
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-white from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa] overflow-x-hidden">
@@ -25,31 +28,34 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="relative px-6 sm:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
           <motion.div
-            className="max-w-7xl mx-auto"
+            className="max-w-7xl mx-auto "
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
-            <div className="relative flex flex-col items-center sm:items-start">
-              <h1 className="font-fc-orbit font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.5] text-center sm:text-left">
-                <span className="text-[#5d6fcd]">{t.about.hero.line1}</span>
-              </h1>
-              <h1 className="font-fc-orbit font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.5] text-center sm:text-left mt-1 sm:mt-2">
-                <span className="text-[#5d6fcd]">{t.about.hero.line2}</span>
-              </h1>
-              
-              {/* Decorative line - hidden on mobile */}
-              <div className="hidden sm:block absolute -top-8 md:-top-12 lg:-top-16 left-16 md:left-24 lg:left-32 w-40 md:w-56 lg:w-72 h-40 md:h-56 lg:h-72 opacity-40 rotate-[14.835deg] pointer-events-none -z-10">
-                <Image 
-                  src="/about-decorative-line.svg" 
-                  alt="" 
-                  width={326}
-                  height={256}
-                  className="w-full h-full"
-                />
+            <div className="flex flex-row items-center justify-center">
+              <div className="relative flex flex-col items-center sm:items-start">
+                <h1 className="font-fc-orbit font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[1.5] text-center sm:text-left">
+                  <span className="text-[#5d6fcd]">{t.about.hero.line1}</span>
+                </h1>
+                <h1 className="font-fc-orbit font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-[1.5] text-center sm:text-left mt-1 sm:mt-2">
+                  <span className="text-[#5d6fcd]">{t.about.hero.line2}</span>
+                </h1>
+                
+                {/* Decorative line - hidden on mobile */}
+                <div className="hidden sm:block absolute -top-20 -left-20 opacity-40 rotate-[14.835deg] pointer-events-none z-10">
+                  <Image 
+                    src="/about-decorative-line.svg" 
+                    alt="" 
+                    width={326}
+                    height={256}
+                    className="w-full h-full"
+                  />
+                </div>
               </div>
             </div>
+            
           </motion.div>
         </section>
 
@@ -269,40 +275,71 @@ export default function AboutPage() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
             >
-              {/* Stats Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-                <motion.div 
-                  className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-5 sm:p-6 md:p-8 flex items-center justify-center min-h-[100px] sm:min-h-[120px]"
+              {/* Stats Cards Wrapper */}
+              <div className="bg-[#fefce8] rounded-[20px] sm:rounded-[28px] md:rounded-[32px] p-5 sm:p-6 md:p-8 lg:p-10">
+                {/* Stats Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
+                  <motion.div 
+                    className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-5 sm:p-6 md:p-8 flex items-center justify-center min-h-[100px] sm:min-h-[120px]"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    <p className="font-fc-orbit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#4456a6] text-center">
+                      {t.about.stats.countries}
+                    </p>
+                  </motion.div>
+                  <motion.div 
+                    className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-5 sm:p-6 md:p-8 flex items-center justify-center min-h-[100px] sm:min-h-[120px]"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <p className="font-fc-orbit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#4456a6] text-center">
+                      {t.about.stats.rd}
+                    </p>
+                  </motion.div>
+                  <motion.div 
+                    className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-5 sm:p-6 md:p-8 flex items-center justify-center min-h-[100px] sm:min-h-[120px]"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <p className="font-fc-orbit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#4456a6] text-center">
+                      {t.about.stats.licenses}
+                    </p>
+                  </motion.div>
+                </div>
+
+                {/* View Global Presence Button */}
+                <motion.div
+                  className="flex justify-center"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <p className="font-fc-orbit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#4456a6] text-center">
-                    {t.about.stats.countries}
-                  </p>
-                </motion.div>
-                <motion.div 
-                  className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-5 sm:p-6 md:p-8 flex items-center justify-center min-h-[100px] sm:min-h-[120px]"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="font-fc-orbit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#4456a6] text-center">
-                    {t.about.stats.rd}
-                  </p>
-                </motion.div>
-                <motion.div 
-                  className="bg-[rgba(255,255,255,0.5)] rounded-[16px] sm:rounded-[24px] p-5 sm:p-6 md:p-8 flex items-center justify-center min-h-[100px] sm:min-h-[120px]"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="font-fc-orbit font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#4456a6] text-center">
-                    {t.about.stats.licenses}
-                  </p>
+                  <motion.button
+                    onClick={() => setIsWorldMapOpen(true)}
+                    className="bg-white flex flex-col sm:flex-row gap-1 sm:gap-2 items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-[32px] shadow-md hover:shadow-lg transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <div className="flex items-center gap-2">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5 text-[#4456a6]">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="font-fc-orbit font-semibold text-base sm:text-lg leading-[24px] text-[#4456a6]">
+                        ดูความเป็นสากล
+                      </span>
+                    </div>
+                    <span className="font-fc-orbit font-medium text-sm sm:text-base leading-[20px] text-[#6b7280]">
+                      View Global Presence
+                    </span>
+                  </motion.button>
                 </motion.div>
               </div>
 
@@ -386,6 +423,9 @@ export default function AboutPage() {
       <footer className="w-full mt-8 sm:mt-12 md:mt-16">
         <FooterNav />
       </footer>
+
+      {/* World Map Modal */}
+      <WorldMapModal isOpen={isWorldMapOpen} onClose={() => setIsWorldMapOpen(false)} />
     </div>
   );
 }

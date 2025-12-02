@@ -89,6 +89,13 @@ function FeatureCardTile({
         }}
       />
 
+      {/* White overlay to boost text contrast */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none bg-white"
+        animate={{ opacity: isHovered ? 0 : 0.35 }}
+        transition={{ duration: 0.3 }}
+      />
+
       {/* Text content */}
       <div
         className={`relative z-10 flex flex-col items-center w-full p-6 sm:p-8 lg:p-9 transition-all duration-300 ${
@@ -134,7 +141,7 @@ function FeatureCardTile({
 
       {/* Images - only visible when not hovered */}
       <motion.div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[55%] pointer-events-none"
+        className="absolute top-0 left-0 w-full h-full pointer-events-none"
         animate={{
           opacity: isHovered ? 0 : 1,
           scale: isHovered ? 0.8 : 1,
@@ -148,20 +155,20 @@ function FeatureCardTile({
             src={card.image}
             alt={card.title}
             fill
-            sizes="(max-width: 640px) 70vw, (max-width: 1024px) 40vw, 300px"
-            className="object-contain object-bottom"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+            className="object-contain object-center"
           />
         </div>
         
         {/* Secondary image (for fruit card) */}
         {card.image2 && (
-          <div className="absolute -left-[15%] bottom-0 w-[60%] h-[80%]">
+          <div className="absolute -left-[10%] top-1/2 -translate-y-1/2 w-[50%] h-[80%]">
             <Image
               src={card.image2}
               alt={`${card.title} secondary`}
               fill
               sizes="(max-width: 640px) 40vw, (max-width: 1024px) 25vw, 180px"
-              className="object-contain object-bottom"
+              className="object-contain object-center"
             />
           </div>
         )}

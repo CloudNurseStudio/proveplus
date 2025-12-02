@@ -69,13 +69,13 @@ export function VideoCard({
 
       <div className="absolute bottom-0 left-0 right-0 h-[180px] sm:h-[200px] md:h-[223px] bg-gradient-to-t from-black/80 to-transparent" />
 
-      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-start gap-2 sm:gap-3 md:gap-3.5 px-5 sm:px-6 md:px-[30px] py-5 sm:py-6 md:py-[30px]">
-        <div className="flex-1">
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex items-start justify-end gap-2 sm:gap-3 md:gap-3.5 px-5 sm:px-6 md:px-[30px] py-5 sm:py-6 md:py-[30px]">
+        {/* <div className="flex-1">
           <p className="mb-1 text-base sm:text-lg font-semibold tracking-tight text-white">
             {customerName}
           </p>
           <p className="text-xs sm:text-sm text-zinc-300">{customerTitle}</p>
-        </div>
+        </div> */}
 
         <div className="flex h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-lg border border-white bg-transparent">
           <Image

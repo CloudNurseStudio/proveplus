@@ -40,12 +40,12 @@ export function ProductThumbnailGrid({
   onSelect,
 }: ProductThumbnailGridProps) {
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-3 w-[75%]">
+    <div className="flex flex-wrap gap-3 w-full">
       {images.map((image, index) => (
         <button
           key={index}
           onClick={() => onSelect(index)}
-          className={`relative aspect-square w-full rounded-[18px] overflow-hidden transition-all ${
+          className={`relative aspect-square w-[calc(20%-0.6rem)] min-w-[80px] max-w-[120px] rounded-[18px] overflow-hidden transition-all ${
             index === selectedIndex
               ? 'ring-[3px] ring-[#5d6fcd] scale-105'
               : 'opacity-70 hover:opacity-100'
@@ -56,7 +56,7 @@ export function ProductThumbnailGrid({
             alt={`${productName} thumbnail ${index + 1}`}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 25vw, (max-width: 1024px) 18vw, 15vw"
+            sizes="120px"
           />
         </button>
       ))}
