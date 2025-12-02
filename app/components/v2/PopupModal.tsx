@@ -8,11 +8,41 @@ import {
 } from '@/components/ui/dialog';
 import Image from 'next/image';
 
+const popupImageSrc = '/images/popup.jpg';
+
 export function PopupModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   useEffect(() => {
-    setIsOpen(true);
+    if (isImageLoaded) {
+      setIsOpen(true);
+    }
+  }, [isImageLoaded]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const preload = new window.Image();
+
+    const handleLoad = () => {
+      setIsImageLoaded(true);
+    };
+
+    preload.src = popupImageSrc;
+
+    if (preload.complete) {
+      handleLoad();
+      return;
+    }
+
+    preload.addEventListener('load', handleLoad);
+
+    return () => {
+      preload.removeEventListener('load', handleLoad);
+    };
   }, []);
 
   return (
@@ -21,12 +51,13 @@ export function PopupModal() {
         <DialogTitle className="sr-only">Special Offer</DialogTitle>
         <div className="relative w-full flex items-center justify-center">
           <Image
-            src="/images/popup.jpg"
+            src={popupImageSrc}
             alt="Special Offer Popup"
             width={800}
             height={800}
             className="w-full h-auto object-contain rounded-lg"
             priority
+            onLoadingComplete={() => setIsImageLoaded(true)}
           />
         </div>
       </DialogContent>

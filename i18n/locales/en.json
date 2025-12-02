@@ -20,21 +20,22 @@
     "cards": [
       {
         "title": "Easy to take",
-        "subtitle": "Dissolves in seconds",
-        "description": "Micro probiotic beads melt right on your tongue.",
-        "image": "/images/benefits/benefit-easy-to-eat.png"
+        "subtitle": "Dissolves in your mouth",
+        "description": "The power of Fine granules format creates micro probiotic beads that dissolve easily without sticking in your throat. Plus, special 5-layer Encapsulation technology protects probiotic value all the way to your gut.",
+        "image": "/images/benefits/feature-easy.webp"
       },
       {
-        "title": "BC 198 tech",
-        "subtitle": "High-density sachet",
-        "description": "BC 198 keeps probiotics alive until you enjoy them.",
-        "image": "/images/benefits/powder.png"
+        "title": "BC 198",
+        "subtitle": "Tiny beads, packed in one sachet",
+        "description": "Quality microorganisms that withstand heat and acid. Bacillus coagulans BC198 is research-backed for producing SCFAs (short-chain fatty acids) up to 8x higher than normal, effectively benefiting your gut.",
+        "image": "/images/benefits/feature-bc198.webp"
       },
       {
         "title": "Great taste",
         "subtitle": "Loved by Thai palates",
-        "description": "A fruit-forward flavour that feels refreshing daily.",
-        "image": "/images/benefits/taste-product.png"
+        "description": "Bursting with delicious pineapple powder that's refreshing and suits Thai palates. Pineapple also contains Bromelain enzyme that helps reduce bloating and improves digestion.",
+        "image": "/images/benefits/feature-taste-pineapple.webp",
+        "image2": "/images/benefits/feature-taste-apple.webp"
       }
     ]
   },

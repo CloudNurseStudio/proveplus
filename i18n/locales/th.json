@@ -21,20 +21,21 @@
       {
         "title": "ทานง่าย",
         "subtitle": "ละลายในปาก",
-        "description": "โพรไบโอติกส์เม็ดจิ๋วที่ละลายในไม่กี่วินาที",
-        "image": "/images/benefits/benefit-easy-to-eat.png"
+        "description": "การผสานพลังของ Fine granules format เกิดเป็นโพรไบโอติกเม็ดจิ๋ว ที่ละลายง่าย ไม่ติดคอ อีกทั้งยังมีเทคโนโลยีพิเศษ Encapsulation ถึง 5 ชั้น เพื่อพกป้องคุณค่าของโพรไบโอติกให้ถึงลำไส้",
+        "image": "/images/benefits/feature-easy.webp"
       },
       {
         "title": "BC 198",
-        "subtitle": "เม็ดจิ๋ว จัดหนักในซองเดียว",
-        "description": "เทคโนโลยี BC 198 ช่วยให้จุลินทรีย์ยังมีชีวิต",
-        "image": "/images/benefits/powder.png"
+        "subtitle": "เม็ดจิ๋ว จัดหนัก จบในซองเดียว",
+        "description": "จุลินทรีย์สายพันธุ์ดี ทนร้อน ทนกรด Bacillus coagulans BC198 มีงานวิจัยรองรับ เกี่ยวกับการสร้าง SCFAs (กรดไขมันสายสั้น) สูงกว่าค่าปกติมากถึง 8 เท่า ทำให้ส่งผลดีต่อลำไส้ได้อย่างมีประสิทธิภาพ",
+        "image": "/images/benefits/feature-bc198.webp"
       },
       {
         "title": "รสชาติดี",
         "subtitle": "ถูกปากคนไทย",
-        "description": "ผสานรสชาติผลไม้แสนอร่อยในทุกซอง",
-        "image": "/images/benefits/taste-product.png"
+        "description": "เต็มที่ความอร่อยไปด้วยผงน้ำสัปปะรด ที่มีความสดชื่น ถูกปากคนไทย และสัปปะรดยังมีเอนไซม์ Bromelain ที่ช่วยลดอาการแน่นท้อง และช่วยให้การย่อยอาหารดีขึ้น",
+        "image": "/images/benefits/feature-taste-pineapple.webp",
+        "image2": "/images/benefits/feature-taste-apple.webp"
       }
     ]
   },

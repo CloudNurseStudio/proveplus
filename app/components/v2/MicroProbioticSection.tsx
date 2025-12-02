@@ -132,7 +132,7 @@ export function MicroProbioticSection() {
           </motion.div>
 
           {/* Main product mix image with circular mask */}
-          <div className="relative w-full h-full rounded-[40px] sm:rounded-[60px] overflow-hidden bg-[rgba(166,180,220,0.24)]">
+          <div className="relative w-full h-full rounded-full sm:rounded-full overflow-hidden bg-[rgba(166,180,220,0.24)]">
             <Image
               src={imgMix1}
               alt="Prove+ Sampling Kit"

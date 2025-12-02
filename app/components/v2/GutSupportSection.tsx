@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import {
   Activity,
   Flame,
@@ -75,8 +76,8 @@ export function GutSupportSection() {
                 transition={{ duration: 0.35, delay: index * 0.04 }}
                 className="flex-shrink-0 snap-start"
               >
-                <button
-                  type="button"
+                <Link
+                  href="/blog"
                   aria-label={label}
                   className={cn(
                     'group flex w-[140px] sm:w-[150px] md:w-[168px]',
@@ -115,7 +116,7 @@ export function GutSupportSection() {
                   >
                     {label}
                   </span>
-                </button>
+                </Link>
               </motion.div>
             );
           })}

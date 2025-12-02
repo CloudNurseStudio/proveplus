@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { useLocale } from './LocaleProvider';
 
@@ -10,12 +10,17 @@ type FeatureCard = {
   subtitle: string;
   description: string;
   image: string;
+  image2?: string;
 };
 
 export function ProductFeaturesSection() {
   const { t } = useLocale();
   const cards: FeatureCard[] = t.productFeatures.cards ?? [];
-  const [activeCard, setActiveCard] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+  };
 
   return (
     <section className="w-full px-4 sm:px-6 py-12 sm:py-16 md:py-20 flex flex-col items-center gap-6 sm:gap-8">
@@ -29,13 +34,17 @@ export function ProductFeaturesSection() {
         {t.productFeatures.title}
       </motion.h2>
 
-      <div className="flex w-full max-w-6xl flex-col gap-4 sm:grid sm:grid-cols-2 lg:flex lg:flex-row">
+      <div
+        className="flex w-full max-w-5xl flex-col gap-6 md:flex-row md:gap-4 lg:gap-6"
+        onMouseLeave={handleMouseLeave}
+      >
         {cards.map((card, index) => (
           <FeatureCardTile
             key={card.title}
             card={card}
-            isActive={index === activeCard}
-            onActivate={() => setActiveCard(index)}
+            isHovered={index === hoveredCard}
+            hasHoveredCard={hoveredCard !== null}
+            onHover={() => setHoveredCard(index)}
           />
         ))}
       </div>
@@ -45,61 +54,118 @@ export function ProductFeaturesSection() {
 
 function FeatureCardTile({
   card,
-  isActive,
-  onActivate,
+  isHovered,
+  hasHoveredCard,
+  onHover,
 }: {
   card: FeatureCard;
-  isActive: boolean;
-  onActivate: () => void;
+  isHovered: boolean;
+  hasHoveredCard: boolean;
+  onHover: () => void;
 }) {
-  return (
-    <motion.button
-      type="button"
-      initial={false}
-      animate={{ flex: isActive ? 1.4 : 0.9 }}
-      transition={{ type: 'spring', stiffness: 200, damping: 32 }}
-      onMouseEnter={onActivate}
-      onFocus={onActivate}
-      onClick={onActivate}
-      aria-pressed={isActive}
-      className="group relative flex min-h-[320px] sm:min-h-[380px] lg:min-h-[420px] w-full flex-1 overflow-hidden rounded-[48px] sm:rounded-[60px] lg:rounded-[72px] border border-white/40 bg-white/80 text-left shadow-[0_30px_80px_rgba(15,23,42,0.08)] backdrop-blur-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-prove-main/40"
-    >
-      <div className="relative z-10 flex flex-col gap-2 sm:gap-3 p-5 sm:p-7 lg:p-9 lg:max-w-xs">
-        <p className="text-[clamp(2rem,5vw,3rem)] font-semibold text-prove-main leading-tight">
-          {card.title}
-        </p>
-        <p className="text-[clamp(1.125rem,3vw,1.5rem)] font-medium text-prove-primary">
-          {card.subtitle}
-        </p>
-        <p className="text-sm sm:text-base text-prove-primary/80">
-          {card.description}
-        </p>
-      </div>
+  // Determine flex value based on hover state
+  const getFlexValue = () => {
+    if (!hasHoveredCard) return 1; // All equal when none hovered
+    return isHovered ? 2.2 : 0.7; // Expanded or shrunk
+  };
 
+  return (
+    <motion.div
+      initial={false}
+      animate={{ flex: getFlexValue() }}
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      onMouseEnter={onHover}
+      onFocus={onHover}
+      className="group relative flex h-[320px] sm:h-[400px] lg:h-[480px] w-full md:w-auto md:min-w-0 overflow-hidden rounded-[48px] sm:rounded-[60px] lg:rounded-[72px] bg-gradient-to-br from-white/90 to-[#8FDAFA]/20 backdrop-blur-lg cursor-pointer"
+    >
+      {/* Background gradient overlay */}
       <motion.div
-        className="absolute inset-0 transition-opacity duration-500"
-        animate={{ opacity: isActive ? 0.45 : 0.2 }}
+        className="absolute inset-0 pointer-events-none"
+        animate={{ opacity: isHovered ? 0.3 : 0.15 }}
+        transition={{ duration: 0.3 }}
         style={{
           background:
-            'linear-gradient(135deg, rgba(255,255,255,0.2), rgba(143,218,250,0.35))',
+            'linear-gradient(135deg, rgba(255,255,255,0.4), rgba(143,218,250,0.4))',
         }}
       />
 
-      <motion.div
-        initial={{ scale: 0.9, rotate: -4 }}
-        animate={{ scale: isActive ? 1.05 : 0.9, rotate: isActive ? 0 : -4 }}
-        transition={{ type: 'spring', stiffness: 180, damping: 26 }}
-        className="absolute bottom-0 right-0 h-[65%] sm:h-[70%] lg:h-[75%] w-[65%] sm:w-[70%] lg:w-[75%] min-h-[200px] sm:min-h-[240px] lg:min-h-[260px]"
+      {/* Text content */}
+      <div
+        className={`relative z-10 flex flex-col items-center w-full p-6 sm:p-8 lg:p-9 transition-all duration-300 ${
+          isHovered ? 'justify-center' : 'justify-start pt-8 sm:pt-10 lg:pt-12'
+        }`}
       >
-        <Image
-          src={card.image}
-          alt={card.title}
-          fill
-          sizes="(max-width: 640px) 60vw, (max-width: 1024px) 50vw, 400px"
-          className="object-contain"
-        />
+        <motion.p
+          animate={{
+            fontSize: isHovered ? 'clamp(2.5rem, 5vw, 4.5rem)' : 'clamp(2rem, 4vw, 3rem)',
+          }}
+          transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          className="font-bold text-black text-center leading-tight"
+        >
+          {card.title}
+        </motion.p>
+        
+        <motion.p
+          animate={{
+            opacity: isHovered ? 0 : 1,
+            height: isHovered ? 0 : 'auto',
+            marginTop: isHovered ? 0 : 8,
+          }}
+          transition={{ duration: 0.2 }}
+          className="text-[clamp(1rem, 2vw, 1.5rem)] font-medium text-black text-center overflow-hidden"
+        >
+          {card.subtitle}
+        </motion.p>
+
+        <AnimatePresence>
+          {isHovered && (
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25, delay: 0.1 }}
+              className="mt-4 text-base sm:text-lg lg:text-xl text-prove-primary text-center max-w-md leading-relaxed"
+            >
+              {card.description}
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Images - only visible when not hovered */}
+      <motion.div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[55%] pointer-events-none"
+        animate={{
+          opacity: isHovered ? 0 : 1,
+          scale: isHovered ? 0.8 : 1,
+          y: isHovered ? 20 : 0,
+        }}
+        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      >
+        {/* Primary image */}
+        <div className="relative w-full h-full">
+          <Image
+            src={card.image}
+            alt={card.title}
+            fill
+            sizes="(max-width: 640px) 70vw, (max-width: 1024px) 40vw, 300px"
+            className="object-contain object-bottom"
+          />
+        </div>
+        
+        {/* Secondary image (for fruit card) */}
+        {card.image2 && (
+          <div className="absolute -left-[15%] bottom-0 w-[60%] h-[80%]">
+            <Image
+              src={card.image2}
+              alt={`${card.title} secondary`}
+              fill
+              sizes="(max-width: 640px) 40vw, (max-width: 1024px) 25vw, 180px"
+              className="object-contain object-bottom"
+            />
+          </div>
+        )}
       </motion.div>
-    </motion.button>
+    </motion.div>
   );
 }
-

@@ -40,15 +40,16 @@ export default function ContactPage() {
         >
           {/* Background Video/Image */}
           <div className="absolute inset-0" aria-hidden="true">
-            <div className="absolute inset-0 overflow-hidden">
-              <img
-                src="/images/contact-image.webp"
-                alt=""
+            <div className="absolute inset-0 overflow-hidden bg-[#b7eaff]">
+              <video
+                src="/contact_background.mp4"
+                autoPlay
+                muted
+                loop
                 className="absolute w-full h-full object-cover"
                 style={{
-                  transform: 'scale(2.38) translate(-29.3%, -16.3%)',
+                  background: '#b7eaff'
                 }}
-                loading="eager"
               />
             </div>
             {/* Dark Overlay */}

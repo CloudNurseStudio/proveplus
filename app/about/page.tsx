@@ -227,15 +227,15 @@ export default function AboutPage() {
                 <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square flex items-end justify-center">
                   {/* Background Circle */}
                   <div className="absolute bottom-0 w-[85%] sm:w-[90%] aspect-square bg-[#e5ecff] rounded-full" />
-                  {/* Image with bottom mask - wider than circle, overflows on sides and top */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] sm:w-[115%] h-[110%] z-10">
+                  {/* Image with bottom mask - cut at bottom so team appears standing in circle */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] sm:w-[125%] h-[120%] z-10">
                     <picture>
                       <source srcSet="/about-team-photo.webp" type="image/webp" />
                       <img 
                         src="/about-team-photo.png"
                         alt="Team"
                         className="w-full h-full object-contain object-bottom"
-                        style={{ clipPath: 'ellipse(50% 55% at 50% 100%)' }}
+                        style={{ clipPath: 'inset(0 0 8% 0 round 0 0 40% 40%)' }}
                       />
                     </picture>
                   </div>
