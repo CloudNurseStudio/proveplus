@@ -65,30 +65,22 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
               >
-                <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square">
-                  {/* Background layer with tinted frame */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative w-[80%] sm:w-[85%] aspect-square">
-                      <div className="absolute inset-0 bg-[rgba(166,180,220,0.24)] rounded-[24px] transform scale-110" />
-                      <Image 
-                        src="/about-founder-photo.png"
-                        alt="Company Representative"
-                        width={431}
-                        height={421}
-                        className="relative rounded-full object-cover w-full h-full"
-                      />
+                <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square flex items-center justify-center">
+                  <div className="relative w-[80%] sm:w-[85%] aspect-square">
+                    {/* Background Circle */}
+                    <div className="absolute inset-0 bg-[rgba(166,180,220,0.24)] rounded-full" />
+                    {/* Image with bottom mask and top overflow */}
+                    <div className="absolute bottom-0 left-0 w-full h-[120%] z-10">
+                      <picture>
+                        <source srcSet="/about-founder-photo-overlay.webp" type="image/webp" />
+                        <img 
+                          src="/about-founder-photo.png"
+                          alt="Company Representative"
+                          className="w-full h-full object-cover object-bottom"
+                          style={{ clipPath: 'inset(0 0 0 0 round 0 0 50% 50%)' }}
+                        />
+                      </picture>
                     </div>
-                  </div>
-                  
-                  {/* Top overlay layer */}
-                  <div className="absolute top-0 left-0 w-full h-full">
-                    <Image 
-                      src="/about-founder-photo-overlay.png"
-                      alt=""
-                      width={595}
-                      height={581}
-                      className="object-cover w-full h-full rounded-[24px]"
-                    />
                   </div>
                 </div>
               </motion.div>
@@ -136,24 +128,30 @@ export default function AboutPage() {
 
               {/* Decorative plus icon - mobile version */}
               <div className="block sm:hidden absolute top-8 right-4 opacity-40">
-                <Image 
-                  src="/about-decorative-plus.png"
-                  alt=""
-                  width={55}
-                  height={55}
-                  className="rotate-[355.09deg]"
-                />
+                <picture>
+                    <source srcSet="/about-decorative-plus.webp" type="image/webp" />
+                    <img 
+                      src="/about-decorative-plus.jpg"
+                      alt=""
+                      width={55}
+                      height={55}
+                      className="rotate-[355.09deg]"
+                    />
+                </picture>
               </div>
               
               {/* Decorative plus icon - desktop version */}
               <div className="hidden xl:block absolute right-12 top-1/2 -translate-y-1/2 opacity-50">
-                <Image 
-                  src="/about-decorative-plus.png"
-                  alt=""
-                  width={81}
-                  height={81}
-                  className="rotate-[355.09deg]"
-                />
+                <picture>
+                    <source srcSet="/about-decorative-plus.webp" type="image/webp" />
+                    <img 
+                      src="/about-decorative-plus.jpg"
+                      alt=""
+                      width={81}
+                      height={81}
+                      className="rotate-[355.09deg]"
+                    />
+                </picture>
               </div>
             </div>
           </div>
@@ -226,43 +224,36 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
               >
-                <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square">
-                  {/* Background layer with tinted frame */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative w-[80%] sm:w-[85%] aspect-square">
-                      <div className="absolute inset-0 bg-[#e5ecff] rounded-[24px] transform scale-110" />
-                      <Image 
+                <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square flex items-end justify-center">
+                  {/* Background Circle */}
+                  <div className="absolute bottom-0 w-[85%] sm:w-[90%] aspect-square bg-[#e5ecff] rounded-full" />
+                  {/* Image with bottom mask - wider than circle, overflows on sides and top */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] sm:w-[115%] h-[110%] z-10">
+                    <picture>
+                      <source srcSet="/about-team-photo.webp" type="image/webp" />
+                      <img 
                         src="/about-team-photo.png"
                         alt="Team"
-                        width={501}
-                        height={489}
-                        className="relative object-cover w-full h-full rounded-full"
+                        className="w-full h-full object-contain object-bottom"
+                        style={{ clipPath: 'ellipse(50% 55% at 50% 100%)' }}
                       />
-                    </div>
-                  </div>
-                  
-                  {/* Top overlay layer */}
-                  <div className="absolute top-0 left-0 w-full h-full">
-                    <Image 
-                      src="/about-team-photo.png"
-                      alt=""
-                      width={547}
-                      height={584}
-                      className="object-cover w-full h-full rounded-full"
-                    />
+                    </picture>
                   </div>
                 </div>
               </motion.div>
 
               {/* Decorative plus icon - mobile */}
               <div className="block sm:hidden absolute top-32 left-4 opacity-40">
-                <Image 
-                  src="/about-decorative-plus.png"
-                  alt=""
-                  width={40}
-                  height={40}
-                  className="rotate-[355.09deg]"
-                />
+                <picture>
+                    <source srcSet="/about-decorative-plus.webp" type="image/webp" />
+                    <img 
+                      src="/about-decorative-plus.jpg"
+                      alt=""
+                      width={40}
+                      height={40}
+                      className="rotate-[355.09deg]"
+                    />
+                </picture>
               </div>
             </div>
           </div>
@@ -330,12 +321,14 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                 >
                   <div className="relative w-full aspect-[500/325] max-w-md">
-                    <Image
-                      src="/about-product-mascot.png"
-                      alt="Prove+ Product"
-                      fill
-                      className="object-contain"
-                    />
+                    <picture className="absolute inset-0 w-full h-full">
+                        <source srcSet="/about-product-mascot.webp" type="image/webp" />
+                        <img
+                          src="/about-product-mascot.jpg"
+                          alt="Prove+ Product"
+                          className="object-contain w-full h-full"
+                        />
+                    </picture>
                   </div>
                   <motion.button
                     onClick={() => openShopModal({ heading: t.nav.shopNow })}
@@ -360,12 +353,14 @@ export default function AboutPage() {
                   viewport={{ once: true }}
                 >
                   <div className="relative w-full aspect-[500/325] max-w-md">
-                    <Image
-                      src="/about-product-mascot.png"
-                      alt="Prove+ Product"
-                      fill
-                      className="object-contain"
-                    />
+                    <picture className="absolute inset-0 w-full h-full">
+                        <source srcSet="/about-product-mascot.webp" type="image/webp" />
+                        <img
+                          src="/about-product-mascot.jpg"
+                          alt="Prove+ Product"
+                          className="object-contain w-full h-full"
+                        />
+                    </picture>
                   </div>
                   <motion.button
                     onClick={() => openShopModal({ heading: t.nav.shopNow })}

@@ -1,5 +1,6 @@
 import GutSymbol from '@/assets/images/gut_symbol.svg';
-import Product from '@/assets/images/product.png';
+import ProductWebp from '@/assets/images/product.webp';
+import ProductJpg from '@/assets/images/product.jpg';
 
 import HeroContent from './HeroContent';
 import HeroText from '@/assets/images/heroText.svg';
@@ -31,14 +32,24 @@ export default function HeroImage() {
 
           {/* Hero Product */}
           <div className="flex-3 min-w-0 min-h-0 flex items-center justify-center">
-            <motion.img
-              src={(Product as unknown as { src: string }).src ?? (Product as unknown as string)}
-              alt="Prove+ Product"
-              className="z-20 h-full w-full object-contain"
+            <motion.div
+              className="z-20 h-full w-full"
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
-            />
+            >
+              <picture className="w-full h-full block">
+                <source
+                    srcSet={(ProductWebp as unknown as { src: string }).src ?? (ProductWebp as unknown as string)}
+                    type="image/webp"
+                />
+                <img
+                  src={(ProductJpg as unknown as { src: string }).src ?? (ProductJpg as unknown as string)}
+                  alt="Prove+ Product"
+                  className="h-full w-full object-contain"
+                />
+              </picture>
+            </motion.div>
           </div>
         </div>
       </div>

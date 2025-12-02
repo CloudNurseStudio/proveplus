@@ -31,14 +31,14 @@ function EventCarouselControls() {
   return (
     <div className="flex gap-3 sm:gap-4">
       <Arrow
-        direction="left"
-        onClick={scrollPrev}
-        className={!canScrollPrev ? 'opacity-50 cursor-not-allowed' : ''}
-      />
-      <Arrow
         direction="right"
         onClick={scrollNext}
         className={!canScrollNext ? 'opacity-50 cursor-not-allowed' : ''}
+      />
+      <Arrow
+        direction="left"
+        onClick={scrollPrev}
+        className={!canScrollPrev ? 'opacity-50 cursor-not-allowed' : ''}
       />
     </div>
   );

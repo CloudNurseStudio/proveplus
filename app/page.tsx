@@ -11,10 +11,12 @@ import { CertificationSection } from './components/v2/CertificationSection';
 import { TestimonialsSection } from './components/v2/TestimonialsSection';
 import { EventsSection } from './components/v2/EventsSection';
 import { ScrollAnimatedElement } from './components/v2/ScrollAnimatedElement';
+import { PopupModal } from './components/v2/PopupModal';
 
 export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-white from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa]">
+      <PopupModal />
       <div className="hidden sm:block">
         <ScrollAnimatedElement />
       </div>
@@ -29,8 +31,13 @@ export default function HomePage() {
         <HeroSection />
         <MicroProbioticSection />
         <ProductFeaturesSection />
-        <GutSupportSection />
-        <BenefitsSection />
+        <div className="hidden sm:block">
+          <GutSupportSection />
+        </div>
+        <div className='block sm:hidden'>
+          <BenefitsSection />
+        </div>
+        
         <CertificationSection />
         <TestimonialsSection />
         <EventsSection />

@@ -14,6 +14,7 @@ import {
 
 interface CertificateCardProps {
   imageSrc: string;
+  imageSrcWebp?: string;
   title: string;
   subtitle?: string;
   onSelect: () => void;
@@ -21,6 +22,7 @@ interface CertificateCardProps {
 
 function CertificateCard({
   imageSrc,
+  imageSrcWebp,
   title,
   subtitle,
   onSelect,
@@ -33,13 +35,16 @@ function CertificateCard({
     >
       {/* Certificate Image */}
       <div className="relative flex-1 flex items-center justify-center p-4 sm:p-5 md:p-6">
-        <Image
-          src={imageSrc}
-          alt={title}
-          width={140}
-          height={195}
-          className="object-contain w-[100px] sm:w-[120px] md:w-[140px] h-auto"
-        />
+        <picture>
+           {imageSrcWebp && <source srcSet={imageSrcWebp} type="image/webp" />}
+           <img
+            src={imageSrc}
+            alt={title}
+            width={140}
+            height={195}
+            className="object-contain w-[100px] sm:w-[120px] md:w-[140px] h-auto"
+           />
+        </picture>
       </div>
 
       {/* Title Overlay */}
@@ -65,14 +70,14 @@ function CarouselControls() {
   return (
     <div className="flex gap-4 sm:gap-5 md:gap-[21px] items-center">
       <Arrow
-        direction="left"
-        onClick={scrollPrev}
-        className={!canScrollPrev ? 'opacity-50 cursor-not-allowed' : ''}
-      />
-      <Arrow
         direction="right"
         onClick={scrollNext}
         className={!canScrollNext ? 'opacity-50 cursor-not-allowed' : ''}
+      />
+      <Arrow
+        direction="left"
+        onClick={scrollPrev}
+        className={!canScrollPrev ? 'opacity-50 cursor-not-allowed' : ''}
       />
     </div>
   );
@@ -84,24 +89,28 @@ export function CertificationSection() {
 
   const certificates = [
     {
-      imageSrc: '/images/certifications/cert-sb5.png',
+      imageSrc: '/images/certifications/cert-sb5.jpg',
+      imageSrcWebp: '/images/certifications/cert-sb5.webp',
       title: t.certifications.sb5.title,
       subtitle: t.certifications.sb5.subtitle,
       description: t.certifications.sb5.description,
     },
     {
-      imageSrc: '/images/certifications/cert-gmp.png',
+      imageSrc: '/images/certifications/cert-gmp.jpg',
+      imageSrcWebp: '/images/certifications/cert-gmp.webp',
       title: t.certifications.gmp.title,
       subtitle: t.certifications.gmp.subtitle,
       description: t.certifications.gmp.description,
     },
     {
-      imageSrc: '/images/certifications/cert-iso-9001.png',
+      imageSrc: '/images/certifications/cert-iso-9001.jpg',
+      imageSrcWebp: '/images/certifications/cert-iso-9001.webp',
       title: t.certifications.iso9001.title,
       description: t.certifications.iso9001.description,
     },
     {
-      imageSrc: '/images/certifications/cert-iso-22000.png',
+      imageSrc: '/images/certifications/cert-iso-22000.jpg',
+      imageSrcWebp: '/images/certifications/cert-iso-22000.webp',
       title: t.certifications.iso22000.title,
       description: t.certifications.iso22000.description,
     },
@@ -150,6 +159,7 @@ export function CertificationSection() {
                 >
                   <CertificateCard
                     imageSrc={cert.imageSrc}
+                    imageSrcWebp={cert.imageSrcWebp}
                     title={cert.title}
                     subtitle={cert.subtitle}
                     onSelect={() =>

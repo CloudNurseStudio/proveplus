@@ -13,12 +13,14 @@ export function HeroSection() {
     <section className="relative w-full min-h-screen pt-20 sm:pt-24 md:pt-28 flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-52 overflow-hidden">
       {/* Background Pattern - faded */}
       <div className="absolute inset-0 opacity-[0.56] pointer-events-none">
-        <Image
-          src="/images/hero/background-pattern.png"
-          alt=""
-          fill
-          className="object-cover opacity-5"
-        />
+        <picture className="absolute inset-0 w-full h-full">
+          <source srcSet="/images/hero/background-pattern.webp" type="image/webp" />
+          <img
+            src="/images/hero/background-pattern.jpg"
+            alt=""
+            className="object-cover opacity-5 w-full h-full"
+          />
+        </picture>
       </div>
 
       {/* Decorative Plus Elements with Y Axis Rotation Animation - Hidden on mobile */}
@@ -29,12 +31,14 @@ export function HeroSection() {
         style={{ perspective: 800 }}
         className="hidden lg:block absolute right-[15%] xl:right-[298px] top-[35%] md:top-[402px] w-[120px] md:w-[180px] lg:w-[220px] h-[120px] md:h-[180px] lg:h-[220px] pointer-events-none"
       >
-        <Image
-          src="/images/hero/element-plus-02.png"
-          alt=""
-          fill
-          className="object-contain"
-        />
+        <picture className="absolute inset-0 w-full h-full">
+          <source srcSet="/images/hero/element-plus-02.webp" type="image/webp" />
+          <img
+            src="/images/hero/element-plus-02.jpg"
+            alt=""
+            className="object-contain w-full h-full"
+          />
+        </picture>
       </motion.div>
 
       <motion.div
@@ -44,12 +48,14 @@ export function HeroSection() {
         style={{ perspective: 800 }}
         className="hidden lg:block absolute left-[10%] xl:left-[216px] top-[25%] md:top-[269px] w-[100px] md:w-[140px] lg:w-[161px] h-[100px] md:h-[140px] lg:h-[161px] pointer-events-none"
       >
-        <Image
-          src="/images/hero/element-plus-03.png"
-          alt=""
-          fill
-          className="object-contain"
-        />
+        <picture className="absolute inset-0 w-full h-full">
+          <source srcSet="/images/hero/element-plus-03.webp" type="image/webp" />
+          <img
+            src="/images/hero/element-plus-03.jpg"
+            alt=""
+            className="object-contain w-full h-full"
+          />
+        </picture>
       </motion.div>
 
       {/* Main Content */}
@@ -76,12 +82,14 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[424px] md:h-[424px]"
         >
-          <Image
-            src="/images/hero/sku-gut-re.png"
-            alt="Prove+ Product"
-            fill
-            className="object-contain"
-          />
+          <picture className="absolute inset-0 w-full h-full">
+            <source srcSet="/images/hero/sku-gut-re.webp" type="image/webp" />
+            <img
+              src="/images/hero/sku-gut-re.jpg"
+              alt="Prove+ Product"
+              className="object-contain w-full h-full"
+            />
+          </picture>
         </motion.div>
 
         {/* CTA Button */}

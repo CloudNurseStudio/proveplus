@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
 import {
   Activity,
   Flame,
@@ -12,6 +11,7 @@ import {
   SunMedium,
   Wind,
 } from 'lucide-react';
+import { cn } from '@/app/lib/utils';
 import { useLocale } from './LocaleProvider';
 
 const iconSequence = [
@@ -25,38 +25,46 @@ const iconSequence = [
   Laugh,
 ];
 
-const tileGradients = [
-  'from-white via-[#fdf5e6] to-[#ffe4f3]',
-  'from-white via-[#f7f0ff] to-[#e0f2ff]',
-  'from-white via-[#f6fbff] to-[#e5f8f5]',
-  'from-white via-[#fff2f2] to-[#ffe7d9]',
+const buttonAuras = [
+  'from-[#f8f2ff] to-[#e0e8ff]',
+  'from-[#fff4ee] to-[#ffe6fb]',
+  'from-[#f0f9ff] to-[#e6fff5]',
 ];
 
 export function GutSupportSection() {
   const { t } = useLocale();
   const supportItems = t.gutSupport.items;
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="w-full flex flex-col items-center gap-6 sm:gap-9 px-4 sm:px-6 py-12 sm:py-16 md:py-20">
+    <section
+      className={cn(
+        'w-full px-4 sm:px-6 py-12 sm:py-16 md:py-20',
+        'bg-[#fff6e6] flex flex-col items-center gap-8 sm:gap-10',
+      )}
+    >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-[clamp(2rem,6vw,4.5rem)] font-medium text-prove-primary text-center"
+        className={cn(
+          'text-[clamp(2rem,6vw,4.25rem)] font-medium',
+          'text-prove-primary text-center',
+        )}
       >
         {t.gutSupport.title}
       </motion.h2>
 
-      <div className="w-full max-w-7xl">
+      <div className="w-full max-w-6xl px-8 sm:px-10 py-4">
         <div
-          ref={scrollRef}
-          className="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory pb-2"
+          className={cn(
+            'flex gap-5 sm:gap-6 overflow-x-auto overflow-y-visible',
+            'scrollbar-hide scroll-smooth snap-x snap-mandatory',
+          )}
         >
           {supportItems.map((label, index) => {
             const Icon = iconSequence[index % iconSequence.length];
-            const gradient = tileGradients[index % tileGradients.length];
+            const aura = buttonAuras[index % buttonAuras.length];
 
             return (
               <motion.div
@@ -64,17 +72,50 @@ export function GutSupportSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] lg:w-[200px] snap-start rounded-[24px] sm:rounded-[32px] border border-white/60 bg-white/70 p-4 sm:p-5 shadow-[0_10px_60px_rgba(0,0,0,0.08)] backdrop-blur"
+                transition={{ duration: 0.35, delay: index * 0.04 }}
+                className="flex-shrink-0 snap-start"
               >
-                <div
-                  className={`mb-3 sm:mb-4 flex h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-br ${gradient}`}
+                <button
+                  type="button"
+                  aria-label={label}
+                  className={cn(
+                    'group flex w-[140px] sm:w-[150px] md:w-[168px]',
+                    'flex-col items-center gap-4 focus-visible:outline-none',
+                    'focus-visible:ring-4 focus-visible:ring-[#bcc9ff]/70',
+                  )}
                 >
-                  <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-prove-main" strokeWidth={1.75} />
-                </div>
-                <p className="text-lg sm:text-xl md:text-2xl font-semibold text-prove-main leading-snug">
-                  {label}
-                </p>
+                  <span
+                    className={cn(
+                      'relative flex size-[112px] sm:size-[120px]',
+                      'items-center justify-center rounded-full',
+                      'border-[3px] border-[#5d6fcd]',
+                      'bg-white shadow-[0_14px_40px_rgba(93,111,205,0.14)]',
+                      'transition-transform duration-300 group-hover:-translate-y-1',
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        'flex size-[92px] sm:size-[100px] items-center',
+                        'justify-center rounded-full bg-gradient-to-br',
+                        aura,
+                      )}
+                    >
+                      <Icon
+                        className="size-10 text-[#5d6fcd]"
+                        strokeWidth={1.6}
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </span>
+                  <span
+                    className={cn(
+                      'text-center text-lg font-semibold',
+                      'text-[#1e3497] leading-tight',
+                    )}
+                  >
+                    {label}
+                  </span>
+                </button>
               </motion.div>
             );
           })}

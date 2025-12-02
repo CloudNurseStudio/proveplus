@@ -23,13 +23,16 @@ export function ShopModalContent({ heading }: ShopModalContentProps) {
           className="w-full"
         >
           <div className="bg-[rgba(255,255,255,0.56)] border border-white rounded-[56px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] h-[97px] flex items-center justify-center px-[14px] py-1 hover:bg-white transition-colors">
-            <Image
-              src="/images/shopee-logo.png"
-              alt="Shopee"
-              width={183}
-              height={59}
-              className="object-contain"
-            />
+            <picture>
+                <source srcSet="/images/shopee-logo.webp" type="image/webp" />
+                <img
+                  src="/images/shopee-logo.jpg"
+                  alt="Shopee"
+                  width={183}
+                  height={59}
+                  className="object-contain"
+                />
+            </picture>
           </div>
         </a>
 

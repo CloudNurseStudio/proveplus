@@ -21,14 +21,14 @@ function VideoCarouselControls() {
   return (
     <div className="flex gap-3 sm:gap-4 mt-4">
       <Arrow
-        direction="left"
-        onClick={scrollPrev}
-        className={!canScrollPrev ? 'opacity-50 cursor-not-allowed' : ''}
-      />
-      <Arrow
         direction="right"
         onClick={scrollNext}
         className={!canScrollNext ? 'opacity-50 cursor-not-allowed' : ''}
+      />
+      <Arrow
+        direction="left"
+        onClick={scrollPrev}
+        className={!canScrollPrev ? 'opacity-50 cursor-not-allowed' : ''}
       />
     </div>
   );
@@ -42,14 +42,14 @@ function ReviewCarouselControls() {
   return (
     <div className="flex gap-[10px] items-start">
       <Arrow
-        direction="left"
-        onClick={scrollPrev}
-        className={!canScrollPrev ? 'opacity-50 cursor-not-allowed' : ''}
-      />
-      <Arrow
         direction="right"
         onClick={scrollNext}
         className={!canScrollNext ? 'opacity-50 cursor-not-allowed' : ''}
+      />
+      <Arrow
+        direction="left"
+        onClick={scrollPrev}
+        className={!canScrollPrev ? 'opacity-50 cursor-not-allowed' : ''}
       />
     </div>
   );
@@ -63,7 +63,8 @@ export function TestimonialsSection() {
 
   const videoTestimonials = [
     {
-      thumbnailSrc: '/images/testimonials/customer-video-1.png',
+      thumbnailSrc: '/images/testimonials/customer-video-1.jpg',
+      thumbnailSrcWebp: '/images/testimonials/customer-video-1.webp',
       customerName: t.testimonials.customer1.name,
       customerTitle: t.testimonials.customer1.title,
       description: t.testimonials.customer1.description,
@@ -71,7 +72,8 @@ export function TestimonialsSection() {
       ctaUrl: 'https://www.instagram.com/proveplus_th/',
     },
     {
-      thumbnailSrc: '/images/testimonials/customer-video-2.png',
+      thumbnailSrc: '/images/testimonials/customer-video-2.jpg',
+      thumbnailSrcWebp: '/images/testimonials/customer-video-2.webp',
       customerName: t.testimonials.customer2.name,
       customerTitle: t.testimonials.customer2.title,
       description: t.testimonials.customer2.description,
@@ -85,12 +87,14 @@ export function TestimonialsSection() {
       {/* Background Pattern - faded */}
       <div className="absolute inset-0 opacity-[0.56] pointer-events-none overflow-hidden">
         <div className="absolute left-1/2 top-[119px] -translate-x-1/2 w-[400px] sm:w-[600px] lg:w-[731px] h-[600px] sm:h-[900px] lg:h-[1050px]">
-          <Image
-            src="/images/hero/background-pattern.png"
-            alt=""
-            fill
-            className="object-cover opacity-12"
-          />
+          <picture className="absolute inset-0 w-full h-full">
+            <source srcSet="/images/hero/background-pattern.webp" type="image/webp" />
+            <img
+              src="/images/hero/background-pattern.jpg"
+              alt=""
+              className="object-cover opacity-12 w-full h-full"
+            />
+          </picture>
         </div>
       </div>
 
@@ -144,6 +148,7 @@ export function TestimonialsSection() {
                 <CarouselItem key={video.customerName} className="pl-6 sm:pl-8 lg:pl-12 basis-auto">
                   <VideoCard
                     thumbnailSrc={video.thumbnailSrc}
+                    thumbnailSrcWebp={video.thumbnailSrcWebp}
                     customerName={video.customerName}
                     customerTitle={video.customerTitle}
                     videoUrl={video.videoUrl}

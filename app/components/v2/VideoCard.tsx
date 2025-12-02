@@ -6,6 +6,7 @@ import { useModalService } from './ModalServiceProvider';
 
 interface VideoCardProps {
   thumbnailSrc: string;
+  thumbnailSrcWebp?: string;
   customerName: string;
   customerTitle: string;
   videoUrl?: string;
@@ -17,6 +18,7 @@ interface VideoCardProps {
 
 export function VideoCard({
   thumbnailSrc,
+  thumbnailSrcWebp,
   customerName,
   customerTitle,
   videoUrl,
@@ -55,12 +57,14 @@ export function VideoCard({
       className={`relative w-[240px] sm:w-[260px] md:w-[288px] h-[380px] sm:h-[415px] md:h-[450px] overflow-hidden rounded-2xl sm:rounded-3xl text-left transition-transform hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white flex-shrink-0 ${className}`}
       aria-label={`Watch testimonial from ${customerName}`}
     >
-      <Image
-        src={thumbnailSrc}
-        alt={customerName}
-        fill
-        className="object-cover"
-      />
+      <picture className="absolute inset-0 w-full h-full">
+        {thumbnailSrcWebp && <source srcSet={thumbnailSrcWebp} type="image/webp" />}
+        <img
+          src={thumbnailSrc}
+          alt={customerName}
+          className="object-cover w-full h-full"
+        />
+      </picture>
 
       <div className="absolute bottom-0 left-0 right-0 h-[180px] sm:h-[200px] md:h-[223px] bg-gradient-to-t from-black/80 to-transparent" />
 

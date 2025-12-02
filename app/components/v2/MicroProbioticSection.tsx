@@ -11,12 +11,17 @@ const imgProduct1 = "https://www.figma.com/api/mcp/asset/8dcf5f8c-8050-4f51-ba6e
 const imgProduct2 = "https://www.figma.com/api/mcp/asset/acd553df-bc42-4e29-89e6-6330e1004ca5";
 const imgMix1 = "https://www.figma.com/api/mcp/asset/cab5d9f9-4ec6-4924-91da-c4b433292f8a";
 const imgElementPlus030 = "https://www.figma.com/api/mcp/asset/5904ca24-0226-4f8e-b91e-49241d8ddf65";
+export const MICRO_SECTION_ID = 'micro-probiotic-section';
+export const MICRO_IMAGE_ANCHOR_ID = 'micro-probiotic-anchor';
 
 export function MicroProbioticSection() {
   const { t } = useLocale();
 
   return (
-    <section className="relative w-full min-h-[600px] sm:min-h-[680px] px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20 flex items-center justify-center overflow-hidden">
+    <section
+      id={MICRO_SECTION_ID}
+      className="relative w-full min-h-[600px] sm:min-h-[680px] px-4 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 md:py-20 flex items-center justify-center overflow-hidden"
+    >
       {/* Background decorative elements */}
       <motion.div
         initial={{ opacity: 0, rotateZ: 0 }}
@@ -62,7 +67,7 @@ export function MicroProbioticSection() {
             className="flex gap-4 sm:gap-5 mt-4 sm:mt-6 justify-center lg:justify-start"
           >
             {/* Product 1 - Flowpro */}
-            <Link href="/products/flowpro" className="flex flex-col items-center rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] cursor-pointer hover:scale-105 transition-transform">
+            <Link href="/products/flowpro" className="flex flex-col items-center rounded-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] cursor-pointer hover:scale-105 transition-transform">
               <div className="bg-[#e5ecfe] p-2 rounded-t-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
                 <div className="relative w-[120px] h-[120px]">
                   <Image
@@ -103,6 +108,7 @@ export function MicroProbioticSection() {
 
         {/* Right side - Product image with mask */}
         <motion.div
+          id={MICRO_IMAGE_ANCHOR_ID}
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}

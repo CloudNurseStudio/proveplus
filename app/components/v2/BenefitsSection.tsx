@@ -7,17 +7,20 @@ import { useLocale } from './LocaleProvider';
 
 const cardMedia = [
   {
-    imageSrc: '/images/benefits/benefit-easy-to-eat.png',
+    imageSrc: '/images/benefits/benefit-easy-to-eat.jpg',
+    imageSrcWebp: '/images/benefits/benefit-easy-to-eat.webp',
     imageAlt: 'Easy to take illustration',
     gradient: 'from-[#fef6e7] via-[#fde6f3] to-[#f6f7ff]',
   },
   {
-    imageSrc: '/images/benefits/powder.png',
+    imageSrc: '/images/benefits/powder.jpg',
+    imageSrcWebp: '/images/benefits/powder.webp',
     imageAlt: 'BC 198 sachet',
     gradient: 'from-[#f4f8ff] via-[#e6f4ff] to-[#fef5e7]',
   },
   {
-    imageSrc: '/images/benefits/taste-graphic.png',
+    imageSrc: '/images/benefits/taste-graphic.jpg',
+    imageSrcWebp: '/images/benefits/taste-graphic.webp',
     imageAlt: 'Great taste fruits',
     gradient: 'from-[#fff3f3] via-[#fde6f3] to-[#f4f9ff]',
   },
@@ -80,13 +83,14 @@ export function BenefitsSection() {
                 className={`absolute inset-0 rounded-[40px] sm:rounded-[56px] bg-gradient-to-br opacity-70 blur-3xl ${card.gradient}`}
               />
               <div className="relative mx-auto mt-4 sm:mt-6 h-[200px] sm:h-[240px] lg:h-[260px] w-full max-w-[280px] sm:max-w-[320px]">
-                <Image
-                  src={card.imageSrc}
-                  alt={card.imageAlt}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 320px"
-                />
+                <picture className="absolute inset-0 w-full h-full">
+                  <source srcSet={card.imageSrcWebp} type="image/webp" />
+                  <img
+                    src={card.imageSrc}
+                    alt={card.imageAlt}
+                    className="object-contain w-full h-full"
+                  />
+                </picture>
               </div>
             </div>
           </motion.button>
