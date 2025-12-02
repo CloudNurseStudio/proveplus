@@ -38,7 +38,7 @@ export default function FlowproPage() {
       {/* Banner Image */}
       <div className="px-4 sm:px-8 md:px-16 max-w-[1200px] mx-auto">
         <ProductMainImage
-          image={flowproImages[selectedIndex]}
+          image={'/images/products/flowpro/primary.webp'}
           productName={t.productPage.flowpro.name}
         />
       </div>

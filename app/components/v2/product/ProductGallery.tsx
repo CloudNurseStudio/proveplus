@@ -40,7 +40,7 @@ export function ProductThumbnailGrid({
   onSelect,
 }: ProductThumbnailGridProps) {
   return (
-    <div className="grid grid-cols-3 sm:grid-cols-4 gap-3 w-[75%]">
+    <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-3 w-[75%]">
       {images.map((image, index) => (
         <button
           key={index}
@@ -56,7 +56,7 @@ export function ProductThumbnailGrid({
             alt={`${productName} thumbnail ${index + 1}`}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 25vw, 18vw"
+            sizes="(max-width: 768px) 25vw, (max-width: 1024px) 18vw, 15vw"
           />
         </button>
       ))}

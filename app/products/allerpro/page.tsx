@@ -40,7 +40,7 @@ export default function AllerproPage() {
       {/* Banner Image */}
       <div className="px-4 sm:px-8 md:px-16 max-w-[1200px] mx-auto">
         <ProductMainImage
-          image={allerproImages[selectedIndex]}
+          image={'/images/products/allerpro/primary.webp'}
           productName={t.productPage.allerpro.name}
         />
       </div>
