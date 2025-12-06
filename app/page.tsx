@@ -15,13 +15,13 @@ import { PopupModal } from './components/v2/PopupModal';
 
 export default function HomePage() {
   return (
-    <div className="relative min-h-screen w-screen bg-gradient-to-b from-white from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa]">
+    <div className="relative overflow-x-hidden min-h-screen w-screen bg-gradient-to-b from-white from-[4.238%] via-[#fef0ca] via-[47.881%] to-[#8fdafa]">
       <PopupModal />
       {/* <div className="hidden sm:block">
         <ScrollAnimatedElement />
       </div> */}
 
-      <div className="fixed top-2 w-full sm:top-4 z-50 pointer-events-none">
+      <div className="fixed max-w-screen top-2 w-full sm:top-4 z-50 pointer-events-none">
         <div className="pointer-events-auto mx-auto w-full max-w-6xl px-2 sm:px-4">
           <NavigationBar />
         </div>

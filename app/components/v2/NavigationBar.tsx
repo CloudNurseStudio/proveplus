@@ -25,7 +25,7 @@ export function NavigationBar() {
 
   return (
     <div className="w-full px-4 py-3">
-      <nav className="backdrop-blur-[9.6px] bg-[rgba(70,86,167,0.2)] border border-white/36 rounded-[60px] px-5 py-3 flex items-center justify-between">
+      <nav className="w-full backdrop-blur-[9.6px] bg-[rgba(70,86,167,0.2)] border border-white/36 rounded-[60px] px-5 py-3 flex items-center justify-between">
         {/* Mobile Menu Button - Only visible on mobile */}
         <div className="md:hidden">
           <Sheet>
