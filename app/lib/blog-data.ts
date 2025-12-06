@@ -16,8 +16,8 @@ export const blogPosts: BlogPost[] = [
     slug: 'exclusive-fan-meet-nichkhun',
     title: 'Exclusive + Fan Meet with Nichkhun',
     excerpt:
-      'Step inside the "คิดถึงคุณ" fan meet with Nichkhun ' +
-      'at Lido Connect.',
+      'Join prove+ and Nichkhun at Lido Connect on 7 Dec for an ' +
+      'intimate fan meet experience.',
     date: 'December 7, 2025',
     author: 'prove+ Events Team',
     readTime: '3 min read',
@@ -25,40 +25,39 @@ export const blogPosts: BlogPost[] = [
     tags: ['Events', 'Community', 'Nichkhun'],
     category: 'Events',
     content: `
-      <h2>"คิดถึงคุณ" Comes to Life</h2>
+      <h2>Experience Nichkhun Up Close</h2>
       <p>
-        The poster captures our prove+ Exclusive + Fan Meet with Nichkhun.
-        It calls everyone to Lido Connect (Siam Square) on Sunday, 7 Dec 2025.
-        We mirror the sky blue gradient and playful plus icons on site.
+        Sunday, 7 Dec 2025, Lido Connect (Siam Square) turns into the
+        "คิดถึงคุณ" lounge where Nichkhun shares stories,
+        performs acoustic sets, and hosts an intimate Q&amp;A.
+        The program mixes
+        Thai and English moments so every fan feels seen while enjoying
+        curated probiotic pairings from prove+ specialists.
       </p>
 
-      <h3>Poster Highlights</h3>
+      <h3>Reasons to Join</h3>
       <ul>
         <li>
-          Signature line คิดถึง "คุณ" keeps it personal.
+          Limited audience circles give you closer interaction during
+          meet-and-greet rotations.
         </li>
         <li>
-          Bold EXCLUSIVE + FAN MEET WITH NICHKHUN typography.
+          Wellness corners feature guided tastings, gut health coaching,
+          and personalized blend recommendations.
         </li>
         <li>
-          07.12.2025 timing with the Siam Square location call out.
-        </li>
-        <li>
-          Glossy prove+ bubble crosses guiding the stage design.
+          Exclusive merch bundles include signed prints and probiotic
+          starter kits available only at this event.
         </li>
       </ul>
 
-      <h3>What to Expect</h3>
+      <h3>How to Secure a Seat</h3>
       <p>
-        Expect curated wellness chats, acoustic sets, and signed keepsakes.
-        Guided probiotic tastings echo the calm gradient in the artwork.
-        Purple plus motifs throughout the hall create photo-ready zones.
-      </p>
-
-      <h3>Secure Your Spot</h3>
-      <p>
-        Seats are limited. Tap RSVP prompts in the events carousel to join.
-        Share poster inspired looks with #provePlusFanMeet once you confirm.
+        Tap the RSVP button inside the Events carousel or visit any prove+
+        retail pop-up to register before 31 Oct 2025. Confirmed guests
+        receive arrival windows plus styling tips so Nichkhun can spot you
+        in the crowd. Share your prep using #provePlusFanMeet to unlock
+        surprise upgrades on the day.
       </p>
     `
   },
