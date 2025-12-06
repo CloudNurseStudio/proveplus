@@ -21,8 +21,8 @@ export default function HomePage() {
         <ScrollAnimatedElement />
       </div> */}
 
-      <div className="fixed top-2 sm:top-4 left-1/2 z-50 w-full max-w-6xl -translate-x-1/2 px-2 sm:px-4 pointer-events-none">
-        <div className="pointer-events-auto">
+      <div className="fixed inset-x-0 top-2 sm:top-4 z-50 pointer-events-none">
+        <div className="pointer-events-auto mx-auto w-full max-w-6xl px-2 sm:px-4">
           <NavigationBar />
         </div>
       </div>
