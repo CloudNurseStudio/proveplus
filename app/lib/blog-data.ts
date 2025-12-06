@@ -28,10 +28,7 @@ export const blogPosts: BlogPost[] = [
       <h2>Experience Nichkhun Up Close</h2>
       <p>
         Sunday, 7 Dec 2025, Lido Connect (Siam Square) turns into the
-        "คิดถึงคุณ" lounge where Nichkhun shares stories,
-        performs acoustic sets, and hosts an intimate Q&amp;A.
-        The program mixes
-        Thai and English moments so every fan feels seen while enjoying
+        "คิดถึงคุณ" lounge where Nichkhun shares moments so every fan feels seen while enjoying
         curated probiotic pairings from prove+ specialists.
       </p>
 
@@ -54,7 +51,7 @@ export const blogPosts: BlogPost[] = [
       <h3>How to Secure a Seat</h3>
       <p>
         Tap the RSVP button inside the Events carousel or visit any prove+
-        retail pop-up to register before 31 Oct 2025. Confirmed guests
+        retail pop-up to register before 7 Dec 2025. Confirmed guests
         receive arrival windows plus styling tips so Nichkhun can spot you
         in the crowd. Share your prep using #provePlusFanMeet to unlock
         surprise upgrades on the day.
