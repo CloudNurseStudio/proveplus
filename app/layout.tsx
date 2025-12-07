@@ -1,6 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { AppProviders } from './providers';
+
+const GA_MEASUREMENT_ID = 'G-2EC1ZYGX5F';
 
 export const metadata: Metadata = {
   title: 'Prove+',
@@ -33,6 +36,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <AppProviders>{children}</AppProviders>
       </body>
     </html>
