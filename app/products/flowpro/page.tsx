@@ -24,9 +24,9 @@ export default function FlowproPage() {
   ];
 
   const ingredientIcons = [
-    '/images/flowpro-ingredient-1.webp',
-    '/images/flowpro-ingredient-2.webp',
-    '/images/flowpro-ingredient-3.webp',
+    '/images/badges/badge-fine-granules.svg',
+    '/images/badges/badge-encapsulation.svg',
+    '/images/badges/badge-cfu.svg',
   ];
 
   const handleOrderClick = () => {
