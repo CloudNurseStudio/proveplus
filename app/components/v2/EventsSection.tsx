@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useCallback } from 'react';
 import { useLocale } from './LocaleProvider';
 import { Arrow } from './Arrow';
 import {
@@ -11,6 +11,7 @@ import {
   CarouselItem,
   useCarousel,
 } from '@/app/components/ui/carousel';
+import { useModalService } from './ModalServiceProvider';
 
 interface EventCardProps {
   title: string;
@@ -45,19 +46,7 @@ function EventCarouselControls() {
 
 export function EventsSection() {
   const { t } = useLocale();
-  
-  // Single event card matching Figma design
-  const events: EventCardProps[] = [
-    {
-      title: 'EXCLUSIVE + FAN MEET',
-      description: 'prove+ PRESENT คิดถึงคุณ EXCLUSIVE + FAN MEET 💙\nในวัน เสาร์ 8 พฤศจิกายน 2568 นี้ !\n📍LIDO CONNECT BANGKOK (Siam Square)\nกิจกรรมเริ่มตั้งแต่ วันนี้ จนถึง 31 ตุลาคม 2568',
-      date: '8 พฤศจิกายน 2568',
-      location: 'LIDO CONNECT BANGKOK',
-      image: '/images/events/fan-meet-event.jpg',
-      cta: 'Learn More',
-      ctaUrl: '/blog',
-    },
-  ];
+  const events: EventCardProps[] = t.events?.cards ?? [];
 
   return (
     <section className="w-full px-4 sm:px-6 py-12 sm:py-16 md:py-20 flex flex-col gap-6 sm:gap-9 items-center">
@@ -69,21 +58,22 @@ export function EventsSection() {
         className="flex w-full max-w-6xl flex-col gap-2 sm:gap-3 text-center"
       >
         <p className="text-[clamp(2rem,6vw,3rem)] font-semibold text-prove-primary">
-          {t.events?.title || 'Events'}
+          {t.events.title}
         </p>
+        {/* <p className="text-base sm:text-lg text-prove-primary/80">{t.events.subtitle}</p> */}
       </motion.div>
 
       <Carousel
         opts={{
-          align: 'center',
+          align: 'start',
           loop: false,
           slidesToScroll: 1,
         }}
         className="w-full max-w-6xl"
       >
-        <CarouselContent className="flex justify-center">
+        <CarouselContent className="-ml-4 sm:-ml-6">
           {events.map((event) => (
-            <CarouselItem key={event.title} className="basis-[280px] sm:basis-[320px] md:basis-[360px]">
+            <CarouselItem key={event.title} className="pl-4 sm:pl-6 basis-[280px] sm:basis-[320px]">
               <EventCard {...event} />
             </CarouselItem>
           ))}
@@ -100,13 +90,38 @@ export function EventsSection() {
 function EventCard({
   title,
   description,
+  date,
+  location,
   image,
+  cta,
   ctaUrl,
 }: EventCardProps) {
+  const { openEventModal } = useModalService();
+  const handleSelect = useCallback(() => {
+    openEventModal({
+      title,
+      description,
+      date,
+      location,
+      imageSrc: image,
+      cta,
+      ctaUrl,
+    });
+  }, [
+    title,
+    description,
+    date,
+    location,
+    image,
+    cta,
+    ctaUrl,
+    openEventModal,
+  ]);
+
   return (
-    <Link 
-      href={ctaUrl || '/blog'}
-      className="bg-white flex w-full flex-shrink-0 cursor-pointer flex-col gap-[12px] items-center overflow-clip p-[20px] rounded-[16px] h-full hover:shadow-lg transition-shadow duration-300"
+    <div 
+      onClick={handleSelect}
+      className="bg-white flex w-full flex-shrink-0 cursor-pointer flex-col gap-[12px] items-center overflow-clip p-[20px] rounded-[16px] h-full"
     >
       <div className="aspect-square relative rounded-[16px] shrink-0 w-full">
         <Image
@@ -125,7 +140,7 @@ function EventCard({
           {description}
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 
