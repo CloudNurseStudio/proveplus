@@ -65,15 +65,15 @@ export function PopupModal() {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="max-w-[90vw] max-h-[90vh] sm:max-w-[600px] p-0 bg-transparent border-none shadow-none overflow-hidden [&>button]:text-white [&>button]:bg-black/20 [&>button]:hover:bg-black/40 [&>button]:rounded-full [&>button]:p-1">
+      <DialogContent className="max-w-[90vw] max-h-[90vh] sm:max-w-[600px] p-0 bg-transparent border-none shadow-none overflow-auto [&>button]:text-white [&>button]:bg-black/20 [&>button]:hover:bg-black/40 [&>button]:rounded-full [&>button]:p-1 flex flex-col">
         <DialogTitle className="sr-only">Special Offer</DialogTitle>
-        <div className="relative w-full max-h-[85vh] flex items-center justify-center overflow-auto">
+        <div className="relative w-full flex-shrink-0">
           <Image
             src={popupImageSrc}
             alt="Special Offer Popup"
             width={800}
             height={800}
-            className="w-full h-auto object-contain rounded-lg"
+            className="w-full h-auto rounded-lg"
             priority
             onLoadingComplete={() => setIsImageLoaded(true)}
           />
