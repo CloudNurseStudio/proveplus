@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { NavigationBar } from '../../components/v2/NavigationBar';
 import { FooterNav } from '../../components/v2/FooterNav';
+import { useLocale } from '../../components/v2/LocaleProvider';
 import { type BlogPost } from '../../lib/blog-data';
 
 interface BlogPostPageClientProps {
@@ -12,6 +13,14 @@ interface BlogPostPageClientProps {
 }
 
 export function BlogPostPageClient({ post }: BlogPostPageClientProps) {
+  const { locale, t } = useLocale();
+
+  const title = locale === 'th' && post.title_th ? post.title_th : post.title;
+  const date = locale === 'th' && post.date_th ? post.date_th : post.date;
+  const readTime = locale === 'th' && post.readTime_th ? post.readTime_th : post.readTime;
+  const content = locale === 'th' && post.content_th ? post.content_th : post.content;
+  const backLabel = (t as any).blog?.backToBlog ?? 'Back to Blog';
+
   return (
     <div className="relative min-h-screen bg-white">
       <div className="fixed top-2 sm:top-4 left-1/2 z-50 w-full max-w-6xl -translate-x-1/2 px-2 sm:px-4 pointer-events-none">
@@ -44,7 +53,7 @@ export function BlogPostPageClient({ post }: BlogPostPageClientProps) {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </svg>
-            Back to Blog
+            {backLabel}
           </Link>
         </motion.div>
 
@@ -57,19 +66,19 @@ export function BlogPostPageClient({ post }: BlogPostPageClientProps) {
           <div className="flex items-center justify-center gap-3 text-sm text-gray-500 font-medium mb-4">
             <span className="bg-[#f0f4f8] px-3 py-1 rounded-full">{post.tags[0]}</span>
             <span>•</span>
-            <span>{post.date}</span>
+            <span>{date}</span>
             <span>•</span>
-            <span>{post.readTime}</span>
+            <span>{readTime}</span>
           </div>
 
           <h1 className="font-fc-orbit font-medium text-3xl sm:text-4xl md:text-5xl text-[#4456a6] mb-6 leading-tight">
-            {post.title}
+            {title}
           </h1>
 
           <div className="flex items-center justify-center gap-3">
             <div className="text-left">
               <p className="font-bold text-gray-900 text-sm">{post.author}</p>
-              <p className="text-gray-500 text-xs">Author</p>
+              <p className="text-gray-500 text-xs">{locale === 'th' ? 'ผู้เขียน' : 'Author'}</p>
             </div>
           </div>
         </motion.header>
@@ -83,7 +92,7 @@ export function BlogPostPageClient({ post }: BlogPostPageClientProps) {
           <div className="absolute inset-0 bg-gray-200 animate-pulse" />
           <Image
             src={post.image}
-            alt={post.title}
+            alt={title}
             fill
             className="object-cover"
             priority
@@ -99,7 +108,7 @@ export function BlogPostPageClient({ post }: BlogPostPageClientProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={{ __html: content }}
         />
       </main>
 

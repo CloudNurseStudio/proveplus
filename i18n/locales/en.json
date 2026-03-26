@@ -346,6 +346,14 @@
       "howToUse": "Take 1 sachet daily. Simply tear open and pour directly into your mouth. No water needed."
     }
   },
+  "blog": {
+    "title": "Latest Updates",
+    "subtitle": "Explore insights about probiotics, gut health, and wellness science.",
+    "readArticle": "Read Article",
+    "backToBlog": "Back to Blog",
+    "noArticles": "No articles found in this category.",
+    "byAuthor": "By"
+  },
   "contactPage": {
     "hero": {
       "title": "Contact Us"

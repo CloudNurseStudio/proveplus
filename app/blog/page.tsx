@@ -6,10 +6,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { NavigationBar } from '../components/v2/NavigationBar';
 import { FooterNav } from '../components/v2/FooterNav';
+import { useLocale } from '../components/v2/LocaleProvider';
 import { blogPosts, BlogPost } from '../lib/blog-data';
 import { cn } from '../lib/utils';
 
-const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => {
+const BlogCard = ({ post, index, locale, blogT }: { post: BlogPost; index: number; locale: string; blogT: any }) => {
+  const title = locale === 'th' && post.title_th ? post.title_th : post.title;
+  const excerpt = locale === 'th' && post.excerpt_th ? post.excerpt_th : post.excerpt;
+  const date = locale === 'th' && post.date_th ? post.date_th : post.date;
+  const readTime = locale === 'th' && post.readTime_th ? post.readTime_th : post.readTime;
+  const readArticleLabel = blogT?.readArticle ?? 'Read Article';
+  const byLabel = blogT?.byAuthor ?? 'By';
+
   return (
     <Link href={`/blog/${post.slug}`} className="block h-full">
       <motion.div
@@ -26,13 +34,13 @@ const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => {
           <div className="absolute inset-0 bg-gray-200 animate-pulse" />
           <Image
             src={post.image}
-            alt={post.title}
+            alt={title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             onError={(e) => {
               // Fallback if image fails
               const target = e.target as HTMLImageElement;
-              target.src = '/placeholder.svg'; 
+              target.src = '/placeholder.svg';
             }}
           />
           <div className="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -45,28 +53,28 @@ const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => {
         {/* Content */}
         <div className="flex flex-col flex-grow p-6">
           <div className="flex items-center gap-2 mb-3 text-sm text-gray-500 font-medium">
-            <span>{post.date}</span>
+            <span>{date}</span>
             <span>•</span>
-            <span>{post.readTime}</span>
+            <span>{readTime}</span>
           </div>
-          
+
           <h3 className="font-fc-orbit text-xl sm:text-2xl text-[#4456a6] mb-3 line-clamp-2 group-hover:text-[#5d6fcd] transition-colors">
-            {post.title}
+            {title}
           </h3>
-          
+
           <p className="text-gray-600 mb-6 line-clamp-3 flex-grow leading-relaxed">
-            {post.excerpt}
+            {excerpt}
           </p>
 
           <div className="flex items-center justify-between mt-auto">
             <span className="font-outfit font-bold text-sm text-[#5d6fcd] uppercase tracking-wider group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-              Read Article
+              {readArticleLabel}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </span>
             <span className="text-xs text-gray-400 font-medium">
-              By {post.author}
+              {byLabel} {post.author}
             </span>
           </div>
         </div>
@@ -77,13 +85,15 @@ const BlogCard = ({ post, index }: { post: BlogPost; index: number }) => {
 
 export default function BlogListingPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const { locale, t } = useLocale();
+  const blogT = (t as any).blog;
 
   // Get unique categories
   const categories = ['All', ...Array.from(new Set(blogPosts.map(post => post.category)))];
 
   // Filter posts
-  const filteredPosts = selectedCategory === 'All' 
-    ? blogPosts 
+  const filteredPosts = selectedCategory === 'All'
+    ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
 
   return (
@@ -98,21 +108,21 @@ export default function BlogListingPage() {
       <main className="w-full max-w-7xl mx-auto pt-32 pb-16 px-6 sm:px-8">
         {/* Header */}
         <section className="mb-12 text-center">
-          <motion.h1 
+          <motion.h1
             className="font-fc-orbit font-medium text-4xl sm:text-5xl md:text-6xl text-[#5d6fcd] mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            Latest Updates
+            {blogT?.title ?? 'Latest Updates'}
           </motion.h1>
-          <motion.p 
+          <motion.p
             className="font-outfit text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Explore insights about probiotics, gut health, and wellness science.
+            {blogT?.subtitle ?? 'Explore insights about probiotics, gut health, and wellness science.'}
           </motion.p>
 
           {/* Category Filter */}
@@ -143,18 +153,18 @@ export default function BlogListingPage() {
         <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 min-h-[400px]">
           <AnimatePresence mode="popLayout">
             {filteredPosts.map((post, index) => (
-              <BlogCard key={post.slug} post={post} index={index} />
+              <BlogCard key={post.slug} post={post} index={index} locale={locale} blogT={blogT} />
             ))}
           </AnimatePresence>
         </section>
         
         {filteredPosts.length === 0 && (
-             <motion.div 
+             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="text-center py-20 text-gray-500 font-medium"
              >
-                 No articles found in this category.
+                 {blogT?.noArticles ?? 'No articles found in this category.'}
              </motion.div>
         )}
       </main>
