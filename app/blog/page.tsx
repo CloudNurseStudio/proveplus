@@ -38,9 +38,10 @@ const BlogCard = ({ post, index, locale, blogT }: { post: BlogPost; index: numbe
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             onError={(e) => {
-              // Fallback if image fails
               const target = e.target as HTMLImageElement;
-              target.src = '/placeholder.svg';
+              if (target.src.endsWith('.webp')) {
+                target.src = target.src.replace('.webp', '.jpg');
+              }
             }}
           />
           <div className="absolute top-4 left-4 flex flex-wrap gap-2">

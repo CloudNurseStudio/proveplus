@@ -98,7 +98,9 @@ export function BlogPostPageClient({ post }: BlogPostPageClientProps) {
             priority
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = '/placeholder.svg';
+              if (target.src.endsWith('.webp')) {
+                target.src = target.src.replace('.webp', '.jpg');
+              }
             }}
           />
         </motion.div>

@@ -93,7 +93,9 @@ function BlogPostCard({ post, locale, readLabel }: { post: BlogPost; locale: str
             className="object-cover rounded-[16px] transition-transform duration-500 hover:scale-105"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = '/placeholder.svg';
+              if (target.src.endsWith('.webp')) {
+                target.src = target.src.replace('.webp', '.jpg');
+              }
             }}
           />
           <div className="absolute top-3 left-3">

@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     date: 'December 7, 2025',
     author: 'prove+ Events Team',
     readTime: '3 min read',
-    image: '/images/events/fan-meet-event.jpg',
+    image: '/images/events/fan-meet-event.webp',
     tags: ['Events', 'Community', 'Nichkhun'],
     category: 'Events',
     content: `
@@ -74,7 +74,7 @@ export const blogPosts: BlogPost[] = [
     author: 'prove+ Team',
     readTime: '5 min read',
     readTime_th: 'อ่าน 5 นาที',
-    image: '/images/blog/prove-plus-launch/F.jpg',
+    image: '/images/blog/prove-plus-launch/F.webp',
     tags: ['Events', 'Product Launch', 'ALLERPRO', 'Nichkhun'],
     category: 'Events',
     content: `
@@ -99,8 +99,8 @@ export const blogPosts: BlogPost[] = [
           All Prove+ products are developed under international standards, supported by a team of <strong>over 200 experts</strong>, advanced technology, and comprehensive research — ensuring both quality and effectiveness.
         </p>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-          <img src="/images/blog/prove-plus-launch/A1.jpg" alt="Prove+ booth at launch event" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1/1;" />
-          <img src="/images/blog/prove-plus-launch/A2.jpg" alt="Fan messages at the event" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1/1;" />
+          <picture><source srcset="/images/blog/prove-plus-launch/A1.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/A1.jpg" alt="Prove+ booth at launch event" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1/1;" /></picture>
+          <picture><source srcset="/images/blog/prove-plus-launch/A2.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/A2.jpg" alt="Fan messages at the event" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1/1;" /></picture>
         </div>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">STANDARD x Union Medical (Thailand) — From Partners to Family</p>
       </div>
@@ -129,7 +129,7 @@ export const blogPosts: BlogPost[] = [
             "Convenient, easy to take, and reliable every day."
           </p>
         </div>
-        <img src="/images/blog/prove-plus-launch/C.jpg" alt="PROVE+ ALLERPRO and FLOWPRO products" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" />
+        <picture><source srcset="/images/blog/prove-plus-launch/C.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/C.jpg" alt="PROVE+ ALLERPRO and FLOWPRO products" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" /></picture>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af;">PROVE+ product lineup — FLOWPRO & ALLERPRO</p>
       </div>
 
@@ -148,7 +148,7 @@ export const blogPosts: BlogPost[] = [
         <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 1.5rem;">
           All Prove+ products are developed and designed by <strong>Syngen Biotech, Taiwan</strong>, a leader in biotechnology. With over <strong>30 years of experience</strong> in probiotics, combined with strict quality control processes at every stage, consumers can be confident in the safety, effectiveness, and suitability of every product.
         </p>
-        <img src="/images/blog/prove-plus-launch/B.jpg" alt="Prove+ leadership team" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" />
+        <picture><source srcset="/images/blog/prove-plus-launch/B.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/B.jpg" alt="Prove+ leadership team" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" /></picture>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af;">STANDARD x Union Medical (Thailand) — From Partners to Family</p>
       </div>
 
@@ -157,7 +157,7 @@ export const blogPosts: BlogPost[] = [
         <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 1.5rem;">
           The event was honored by the presence of <strong>Nichkhun Horvejkul</strong> and <strong>Nachjaree Horvejkul (Cherreen)</strong> as brand ambassadors. They shared their perspectives on health and inspired audiences to embrace a wellness lifestyle, starting from simple everyday habits.
         </p>
-        <img src="/images/blog/prove-plus-launch/D.jpg" alt="Nichkhun and Cherreen at the launch event" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" />
+        <picture><source srcset="/images/blog/prove-plus-launch/D.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/D.jpg" alt="Nichkhun and Cherreen at the launch event" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" /></picture>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af;">Nichkhun & Cherreen — Brand Ambassadors of Prove+</p>
       </div>
 
@@ -172,7 +172,7 @@ export const blogPosts: BlogPost[] = [
         <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 2rem;">
           With the goal of elevating the health standards of Thai consumers sustainably to a global level.
         </p>
-        <img src="/images/blog/prove-plus-launch/E.jpg" alt="Full team at the Prove+ launch event" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" />
+        <picture><source srcset="/images/blog/prove-plus-launch/E.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/E.jpg" alt="Full team at the Prove+ launch event" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" /></picture>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af;">The Prove+ family — The Next Generation of Probiotics</p>
       </div>
 
@@ -208,8 +208,8 @@ export const blogPosts: BlogPost[] = [
           ผลิตภัณฑ์ Prove+ ทุกตัวได้รับการพัฒนา ภายใต้มาตรฐานระดับสากล โดยทีมวิจัยผู้เชี่ยวชาญกว่า <strong>200 คน</strong> ผสานเทคโนโลยีที่ทันสมัย พร้อมงานวิจัยรองรับอย่างครบถ้วน เพื่อสร้างความมั่นใจในคุณภาพและประสิทธิภาพ
         </p>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-          <img src="/images/blog/prove-plus-launch/A1.jpg" alt="บูธ Prove+ ในงานเปิดตัว" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1/1;" />
-          <img src="/images/blog/prove-plus-launch/A2.jpg" alt="ข้อความจากแฟนๆ ในงาน" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1/1;" />
+          <picture><source srcset="/images/blog/prove-plus-launch/A1.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/A1.jpg" alt="บูธ Prove+ ในงานเปิดตัว" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1/1;" /></picture>
+          <picture><source srcset="/images/blog/prove-plus-launch/A2.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/A2.jpg" alt="ข้อความจากแฟนๆ ในงาน" style="width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1/1;" /></picture>
         </div>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af; margin-top: 0.5rem;">STANDARD x Union Medical (Thailand) — From Partners to Family</p>
       </div>
@@ -238,7 +238,7 @@ export const blogPosts: BlogPost[] = [
             ภายใต้คอนเซ็ปต์ "สะดวก ทานง่าย และมั่นใจได้ในทุกวัน"
           </p>
         </div>
-        <img src="/images/blog/prove-plus-launch/C.jpg" alt="ผลิตภัณฑ์ PROVE+ ALLERPRO และ FLOWPRO" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" />
+        <picture><source srcset="/images/blog/prove-plus-launch/C.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/C.jpg" alt="ผลิตภัณฑ์ PROVE+ ALLERPRO และ FLOWPRO" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" /></picture>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af;">ผลิตภัณฑ์ PROVE+ — FLOWPRO & ALLERPRO</p>
       </div>
 
@@ -257,7 +257,7 @@ export const blogPosts: BlogPost[] = [
         <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 1.5rem;">
           ผลิตภัณฑ์ Prove+ ทุกชิ้น ได้รับการพัฒนาและออกแบบโดย <strong>Syngen Biotech, Taiwan</strong> ผู้นำด้านไบโอเทคโนโลยีด้วยประสบการณ์ด้านโพรไบโอติกมากกว่า <strong>30 ปี</strong> และกระบวนการผลิตที่ควบคุมคุณภาพอย่างเข้มงวดในทุกขั้นตอน จึงมั่นใจได้ว่า ผลิตภัณฑ์มีทั้งความปลอดภัย ประสิทธิภาพ และเหมาะสำหรับผู้บริโภคในทุกช่วงวัย
         </p>
-        <img src="/images/blog/prove-plus-launch/B.jpg" alt="ทีมผู้บริหาร Prove+" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" />
+        <picture><source srcset="/images/blog/prove-plus-launch/B.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/B.jpg" alt="ทีมผู้บริหาร Prove+" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" /></picture>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af;">STANDARD x Union Medical (Thailand) — From Partners to Family</p>
       </div>
 
@@ -266,7 +266,7 @@ export const blogPosts: BlogPost[] = [
         <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 1.5rem;">
           ภายในงาน ได้รับเกียรติจาก <strong>นิชคุณ หรเวชกุล</strong> และ <strong>ณัฐจารี หรเวชกุล (เชอรีน)</strong> ในฐานะพรีเซนเตอร์ของแบรนด์ ทั้งสองได้ร่วมแบ่งปันแนวคิดการดูแลสุขภาพ และสร้างแรงบันดาลใจในการเริ่มต้น Wellness Lifestyle จากเรื่องใกล้ตัว
         </p>
-        <img src="/images/blog/prove-plus-launch/D.jpg" alt="นิชคุณ และ เชอรีน ในงานเปิดตัว" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" />
+        <picture><source srcset="/images/blog/prove-plus-launch/D.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/D.jpg" alt="นิชคุณ และ เชอรีน ในงานเปิดตัว" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" /></picture>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af;">นิชคุณ & เชอรีน — พรีเซนเตอร์ Prove+</p>
       </div>
 
@@ -281,7 +281,7 @@ export const blogPosts: BlogPost[] = [
         <p style="font-size: 1.125rem; line-height: 1.8; color: #4b5563; margin-bottom: 2rem;">
           เพื่อยกระดับสุขภาพของคนไทยสู่มาตรฐานระดับโลกอย่างยั่งยืน
         </p>
-        <img src="/images/blog/prove-plus-launch/E.jpg" alt="ทีม Prove+ ทั้งหมดในงานเปิดตัว" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" />
+        <picture><source srcset="/images/blog/prove-plus-launch/E.webp" type="image/webp" /><img src="/images/blog/prove-plus-launch/E.jpg" alt="ทีม Prove+ ทั้งหมดในงานเปิดตัว" style="width: 100%; border-radius: 16px; margin-bottom: 0.5rem;" /></picture>
         <p style="text-align: center; font-size: 0.85rem; color: #9ca3af;">ครอบครัว Prove+ — The Next Generation of Probiotics</p>
       </div>
 
