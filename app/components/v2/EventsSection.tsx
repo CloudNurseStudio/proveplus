@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useCallback } from 'react';
 import { useLocale } from './LocaleProvider';
 import { Arrow } from './Arrow';
 import {
@@ -11,17 +11,7 @@ import {
   CarouselItem,
   useCarousel,
 } from '@/app/components/ui/carousel';
-import { useModalService } from './ModalServiceProvider';
-
-interface EventCardProps {
-  title: string;
-  description: string;
-  date: string;
-  location: string;
-  image: string;
-  cta: string;
-  ctaUrl?: string;
-}
+import { blogPosts, type BlogPost } from '@/app/lib/blog-data';
 
 function EventCarouselControls() {
   const { scrollPrev, scrollNext, canScrollPrev, canScrollNext } = useCarousel();
@@ -45,8 +35,8 @@ function EventCarouselControls() {
 }
 
 export function EventsSection() {
-  const { t } = useLocale();
-  const events: EventCardProps[] = t.events?.cards ?? [];
+  const { t, locale } = useLocale();
+  const blogT = (t as any).blog;
 
   return (
     <section className="w-full px-4 sm:px-6 py-12 sm:py-16 md:py-20 flex flex-col gap-6 sm:gap-9 items-center">
@@ -60,7 +50,6 @@ export function EventsSection() {
         <p className="text-[clamp(2rem,6vw,3rem)] font-semibold text-prove-primary">
           {t.events.title}
         </p>
-        {/* <p className="text-base sm:text-lg text-prove-primary/80">{t.events.subtitle}</p> */}
       </motion.div>
 
       <Carousel
@@ -72,9 +61,9 @@ export function EventsSection() {
         className="w-full max-w-6xl"
       >
         <CarouselContent className="-ml-4 sm:-ml-6">
-          {events.map((event) => (
-            <CarouselItem key={event.title} className="pl-4 sm:pl-6 basis-[280px] sm:basis-[320px]">
-              <EventCard {...event} />
+          {blogPosts.map((post) => (
+            <CarouselItem key={post.slug} className="pl-4 sm:pl-6 basis-[280px] sm:basis-[320px]">
+              <BlogPostCard post={post} locale={locale} readLabel={blogT?.readArticle ?? 'Read Article'} />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -87,60 +76,48 @@ export function EventsSection() {
   );
 }
 
-function EventCard({
-  title,
-  description,
-  date,
-  location,
-  image,
-  cta,
-  ctaUrl,
-}: EventCardProps) {
-  const { openEventModal } = useModalService();
-  const handleSelect = useCallback(() => {
-    openEventModal({
-      title,
-      description,
-      date,
-      location,
-      imageSrc: image,
-      cta,
-      ctaUrl,
-    });
-  }, [
-    title,
-    description,
-    date,
-    location,
-    image,
-    cta,
-    ctaUrl,
-    openEventModal,
-  ]);
+function BlogPostCard({ post, locale, readLabel }: { post: BlogPost; locale: string; readLabel: string }) {
+  const title = locale === 'th' && post.title_th ? post.title_th : post.title;
+  const excerpt = locale === 'th' && post.excerpt_th ? post.excerpt_th : post.excerpt;
+  const date = locale === 'th' && post.date_th ? post.date_th : post.date;
 
   return (
-    <div 
-      onClick={handleSelect}
-      className="bg-white flex w-full flex-shrink-0 cursor-pointer flex-col gap-[12px] items-center overflow-clip p-[20px] rounded-[16px] h-full"
-    >
-      <div className="aspect-square relative rounded-[16px] shrink-0 w-full">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="320px"
-          className="object-cover rounded-[16px]"
-        />
-      </div>
-      <div className="bg-white flex flex-col gap-[8px] items-start w-full text-[#333333]">
-        <p className="font-medium leading-[1.4] text-[20px] w-full whitespace-pre-wrap">
-          {title}
-        </p>
-        <div className="font-normal leading-[1.4] opacity-80 text-[12px] tracking-[0.18px] w-full whitespace-pre-wrap">
-          {description}
+    <Link href={`/blog/${post.slug}`} className="block h-full">
+      <div className="bg-white flex w-full flex-shrink-0 cursor-pointer flex-col gap-[12px] items-center overflow-clip p-[20px] rounded-[16px] h-full hover:shadow-lg transition-shadow duration-300">
+        <div className="aspect-square relative rounded-[16px] shrink-0 w-full overflow-hidden">
+          <Image
+            src={post.image}
+            alt={title}
+            fill
+            sizes="320px"
+            className="object-cover rounded-[16px] transition-transform duration-500 hover:scale-105"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              if (target.src.endsWith('.webp')) {
+                target.src = target.src.replace('.webp', '.jpg');
+              }
+            }}
+          />
+          <div className="absolute top-3 left-3">
+            <span className="px-3 py-1 text-xs font-bold text-white bg-[#5d6fcd] rounded-full shadow-sm">
+              {post.category}
+            </span>
+          </div>
+        </div>
+        <div className="bg-white flex flex-col gap-[8px] items-start w-full text-[#333333]">
+          <p className="text-xs text-gray-400 font-medium">{date}</p>
+          <p className="font-medium leading-[1.4] text-[20px] w-full line-clamp-2">
+            {title}
+          </p>
+          <div className="font-normal leading-[1.4] opacity-80 text-[12px] tracking-[0.18px] w-full line-clamp-2">
+            {excerpt}
+          </div>
+          <span className="text-sm font-semibold text-[#5d6fcd] mt-1">
+            {readLabel} →
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
