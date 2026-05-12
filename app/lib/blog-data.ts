@@ -563,7 +563,7 @@ export const blogPosts: BlogPost[] = [
           <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; color: #b45309; text-transform: uppercase; margin: 0 0 0.5rem;">ตัวช่วยเฉพาะทาง</p>
           <h3 style="font-size: 1.5rem; font-weight: 700; color: #4456a6; margin-bottom: 0.75rem;">PROVE+ ALLERPRO</h3>
           <p style="font-size: 1.05rem; line-height: 1.7; color: #4b5563; margin-bottom: 1rem;">
-            อาหารเสริมบางชนิดถูกออกแบบมาเพื่อสนับสนุนสมดุลลำไส้และระบบภูมิคุ้มกันโดยเฉพาะ <strong>PROVE+ ALLERPRO</strong> รวมโพรไบโอติกสายพันธุ์เฉพาะร่วมกับสารช่วยปรับภูมิคุ้มกัน เช่น <strong>LCW23</strong> และ <strong>Wellmune</strong>
+            อาหารเสริมถูกออกแบบมาเพื่อสนับสนุนสมดุลลำไส้และระบบภูมิคุ้มกันโดยเฉพาะ <strong>PROVE+ ALLERPRO</strong> รวมโพรไบโอติกสายพันธุ์เฉพาะร่วมกับสารช่วยปรับภูมิคุ้มกัน เช่น <strong>LCW23</strong> และ <strong>Wellmune</strong>
           </p>
           <p style="font-size: 0.95rem; line-height: 1.6; color: #6b7280; font-style: italic; margin: 0;">
             ทั้งนี้ การเลือกใช้ผลิตภัณฑ์ควรพิจารณาข้อมูลทางวิชาการและความเหมาะสมของแต่ละคน
