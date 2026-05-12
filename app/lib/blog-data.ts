@@ -660,8 +660,8 @@ export const blogPosts: BlogPost[] = [
 
       <div style="margin-bottom: 3rem; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
         <div style="flex: 1 1 280px;">
-          <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; color: #5d6fcd; text-transform: uppercase; margin: 0 0 0.5rem;">Made to Survive the Journey</p>
-          <h2 style="font-size: 1.75rem; font-weight: 600; color: #4456a6; margin-bottom: 1rem;">What Makes FLOWPRO Different</h2>
+          <p style="font-size: 1.625rem; font-weight: 700; color: #5d6fcd; margin: 0 0 0.4rem; line-height: 1.25;">Made to Survive the Journey</p>
+          <h2 style="font-size: 1.5rem; font-weight: 600; color: #4456a6; margin-bottom: 1rem;">What Makes FLOWPRO Different</h2>
           <p style="font-size: 1.05rem; line-height: 1.8; color: #4b5563; margin-bottom: 1rem;">
             <strong>FLOWPRO</strong> uses <strong>Bacillus coagulans BC198</strong>, a spore-forming probiotic strain that holds up against heat and stomach acid where most probiotics break down.
           </p>
@@ -687,10 +687,11 @@ export const blogPosts: BlogPost[] = [
         </blockquote>
       </div>
 
-      <div style="background: linear-gradient(135deg, #4456a6 0%, #5d6fcd 100%); border-radius: 24px; padding: 0; overflow: hidden; color: white;">
-        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/F.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/F.jpg" alt="PROVE+ FLOWPRO probiotic product" style="width: 100%; display: block; max-height: 320px; object-fit: cover;" /></picture>
-        <div style="padding: 2rem; text-align: center;">
-          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: white;">Start taking care of your gut</h3>
+      <div style="position: relative; border-radius: 24px; overflow: hidden; min-height: 480px; display: flex; align-items: flex-end; background: #4456a6; color: white;">
+        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/F.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/F.jpg" alt="PROVE+ FLOWPRO probiotic product" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;" /></picture>
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(68,86,166,0.05) 0%, rgba(68,86,166,0.55) 55%, rgba(68,86,166,0.95) 100%);"></div>
+        <div style="position: relative; padding: 3rem 2rem 2rem; text-align: center; width: 100%;">
+          <h3 style="font-size: 1.35rem; font-weight: 600; margin-bottom: 1rem; color: white; text-shadow: 0 2px 12px rgba(0,0,0,0.25);">Start taking care of your gut</h3>
           <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;">
             <a href="https://shopee.co.th/proveplus" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); padding: 0.6rem 1.25rem; border-radius: 50px; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500; backdrop-filter: blur(4px);">Shopee</a>
             <a href="https://www.tiktok.com/@proveplus" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); padding: 0.6rem 1.25rem; border-radius: 50px; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500; backdrop-filter: blur(4px);">TikTok</a>
@@ -768,8 +769,8 @@ export const blogPosts: BlogPost[] = [
 
       <div style="margin-bottom: 3rem; display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
         <div style="flex: 1 1 280px;">
-          <p style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; color: #5d6fcd; text-transform: uppercase; margin: 0 0 0.5rem;">รอดถึงลำไส้ได้จริง</p>
-          <h2 style="font-size: 1.75rem; font-weight: 600; color: #4456a6; margin-bottom: 1rem;">FLOWPRO ต่างจากตัวอื่นยังไง</h2>
+          <p style="font-size: 1.625rem; font-weight: 700; color: #5d6fcd; margin: 0 0 0.4rem; line-height: 1.25;">รอดถึงลำไส้ได้จริง</p>
+          <h2 style="font-size: 1.5rem; font-weight: 600; color: #4456a6; margin-bottom: 1rem;">FLOWPRO ต่างจากตัวอื่นยังไง</h2>
           <p style="font-size: 1.05rem; line-height: 1.8; color: #4b5563; margin-bottom: 1rem;">
             <strong>FLOWPRO</strong> ใช้ <strong>Bacillus coagulans BC198</strong> โพรไบโอติกแบบสปอร์ที่ทนทั้งกรดในกระเพาะและความร้อน — จุดที่โพรไบโอติกทั่วไปมักจะตายไปก่อน
           </p>
@@ -795,10 +796,11 @@ export const blogPosts: BlogPost[] = [
         </blockquote>
       </div>
 
-      <div style="background: linear-gradient(135deg, #4456a6 0%, #5d6fcd 100%); border-radius: 24px; padding: 0; overflow: hidden; color: white;">
-        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/F.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/F.jpg" alt="ผลิตภัณฑ์ PROVE+ FLOWPRO" style="width: 100%; display: block; max-height: 320px; object-fit: cover;" /></picture>
-        <div style="padding: 2rem; text-align: center;">
-          <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: white;">เริ่มดูแลลำไส้ของคุณได้เลย</h3>
+      <div style="position: relative; border-radius: 24px; overflow: hidden; min-height: 480px; display: flex; align-items: flex-end; background: #4456a6; color: white;">
+        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/F.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/F.jpg" alt="ผลิตภัณฑ์ PROVE+ FLOWPRO" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;" /></picture>
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(68,86,166,0.05) 0%, rgba(68,86,166,0.55) 55%, rgba(68,86,166,0.95) 100%);"></div>
+        <div style="position: relative; padding: 3rem 2rem 2rem; text-align: center; width: 100%;">
+          <h3 style="font-size: 1.35rem; font-weight: 600; margin-bottom: 1rem; color: white; text-shadow: 0 2px 12px rgba(0,0,0,0.25);">เริ่มดูแลลำไส้ของคุณได้เลย</h3>
           <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;">
             <a href="https://shopee.co.th/proveplus" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); padding: 0.6rem 1.25rem; border-radius: 50px; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500; backdrop-filter: blur(4px);">Shopee</a>
             <a href="https://www.tiktok.com/@proveplus" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.15); padding: 0.6rem 1.25rem; border-radius: 50px; color: white; text-decoration: none; font-size: 0.9rem; font-weight: 500; backdrop-filter: blur(4px);">TikTok</a>
