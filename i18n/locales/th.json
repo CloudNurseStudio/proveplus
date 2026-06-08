@@ -327,6 +327,19 @@
     },
     "flavorLabel": "รสชาติ",
     "howToUseLabel": "วิธีรับประทาน",
+    "ingredients": {
+      "perServing": "ส่วนประกอบสำคัญใน 1 ซอง",
+      "additivesLabel": "วัตถุเจือปนอาหาร",
+      "fdaLabel": "เลขที่ อย.",
+      "tableHeadIngredient": "ส่วนประกอบ",
+      "tableHeadAmount": "ปริมาณ",
+      "categories": {
+        "probiotic": "โพรไบโอติก",
+        "prebiotic": "พรีไบโอติก",
+        "vitamin": "วิตามิน",
+        "immune": "ใยอาหารเสริมภูมิคุ้มกัน"
+      }
+    },
     "flowpro": {
       "name": "prove+ FLOWPRO",
       "subtitle": "โพรไบโอติกส์พร้อมทาน",

@@ -327,6 +327,19 @@
     },
     "flavorLabel": "Flavor",
     "howToUseLabel": "How to Consume",
+    "ingredients": {
+      "perServing": "Active ingredients per 1 sachet",
+      "additivesLabel": "Food additives",
+      "fdaLabel": "FDA Registration No.",
+      "tableHeadIngredient": "Ingredient",
+      "tableHeadAmount": "Amount",
+      "categories": {
+        "probiotic": "Probiotics",
+        "prebiotic": "Prebiotics",
+        "vitamin": "Vitamin",
+        "immune": "Immune Fibre"
+      }
+    },
     "flowpro": {
       "name": "prove+ FLOWPRO",
       "subtitle": "Ready-to-eat probiotic",
