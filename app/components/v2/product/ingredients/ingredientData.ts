@@ -277,19 +277,3 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
 };
 
 export type ProductId = keyof typeof PRODUCT_INGREDIENTS;
-
-/** Group ingredients by category, preserving original (amount-desc) order. */
-export function groupByCategory(ingredients: Ingredient[]): Array<{
-  category: IngredientCategory;
-  items: Ingredient[];
-}> {
-  const order: IngredientCategory[] = ['immune', 'probiotic', 'prebiotic', 'vitamin'];
-  const seen = new Map<IngredientCategory, Ingredient[]>();
-  for (const ing of ingredients) {
-    if (!seen.has(ing.category)) seen.set(ing.category, []);
-    seen.get(ing.category)!.push(ing);
-  }
-  return order
-    .filter((c) => seen.has(c))
-    .map((category) => ({ category, items: seen.get(category)! }));
-}

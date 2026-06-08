@@ -328,15 +328,9 @@
     "flavorLabel": "Flavor",
     "howToUseLabel": "How to Consume",
     "ingredients": {
-      "previewLabel": "Preview design",
       "perServing": "Active ingredients per 1 sachet",
-      "tapToExpand": "tap an ingredient to learn more",
       "additivesLabel": "Food additives",
       "fdaLabel": "FDA Registration No.",
-      "whatsInside": "What's inside every sachet",
-      "whatsInsideSub": "A synbiotic blend — live cultures fed by plant fibres",
-      "liveStrains": "live strains",
-      "heroIngredient": "hero ingredient",
       "tableHeadIngredient": "Ingredient",
       "tableHeadAmount": "Amount",
       "categories": {
@@ -344,12 +338,6 @@
         "prebiotic": "Prebiotics",
         "vitamin": "Vitamin",
         "immune": "Immune Fibre"
-      },
-      "variants": {
-        "table": "Table",
-        "cards": "Cards",
-        "infographic": "Infographic",
-        "detailed": "Detailed"
       }
     },
     "flowpro": {

@@ -239,21 +239,22 @@ FDA registration shown as a solid accent-coloured rounded badge:
 ## 9. Key Ingredients module (design-variant system)
 
 Lives in `app/components/v2/product/ingredients/`. Renders the official per-sachet
-ingredient data, food additives (INS), and FDA (อย.) number for each product, with
-**four interchangeable presentation designs** behind a floating toggle for review.
+ingredient data, food additives (INS), and FDA (อย.) number for each product as an
+upfront section on the product page. Five candidate designs were reviewed; the
+**spec-sheet table** was chosen as the final design and the others removed.
 
-- **Data** — `ingredientData.ts`: bilingual (`{en, th}`), typed, with category, amount
-  in **milligrams** (`amountMg`), and per-ingredient blurbs; plus each product's accent
-  palette.
-- **Contract** — every design implements `IngredientVariantProps` (`{ data }`); shared
-  `IngredientFooter` (additives + FDA badge) and `CategoryBadge` (brand circular icon
-  badge) keep them consistent (`shared.tsx`).
-- **Registry** — `variants/index.ts` lists the designs. `KeyIngredients.tsx` renders
-  the active one + a floating toggle (portaled to `<body>` to escape the card's
-  `backdrop-blur` containing block). **The toggle auto-hides when the registry has one
-  entry**, so collapsing to the final design = delete the other entries + files.
-- **The four designs** — `table`, `cards`, `infographic`, `detailed` (accordion). All
-  use FC Orbit Rounded, brand category colours, soft cards, and the product accent.
+- **Data** — `ingredientData.ts`: bilingual (`{en, th}`), typed, with category and amount
+  in **milligrams** (`amountMg`); plus each product's accent palette.
+- **Contract** — the design implements `IngredientVariantProps` (`{ data }`); a shared
+  `IngredientFooter` (additives + FDA badge) lives in `shared.tsx`.
+- **Registry** — `variants/index.ts` still drives the rendered design via a registry
+  (one entry: `table`), so new candidates can be re-introduced later by appending
+  entries and restoring a toggle in `KeyIngredients.tsx`.
+- **Final design** — `IngredientsTable`: a fully responsive spec-sheet table (accent
+  header, zebra rows, per-ingredient category sub-label, milligram amounts) over the
+  additives chips + FDA badge. Uses FC Orbit Rounded and the product accent.
+- **Responsive** — column widths and paddings scale down for mobile; the amount column
+  is fixed-width and `nowrap`, ingredient names wrap. Footer reflows from row to column.
 
 ---
 

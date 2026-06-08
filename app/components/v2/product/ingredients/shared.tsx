@@ -1,50 +1,7 @@
 'use client';
 
-import { Citrus, Dna, ShieldCheck, Wheat, type LucideIcon } from 'lucide-react';
 import { useLocale } from '../../LocaleProvider';
-import {
-  type IngredientCategory,
-  type ProductIngredients,
-  localise,
-} from './ingredientData';
-
-/** Line icon per category — echoes the homepage benefit badges. */
-export const CATEGORY_ICON: Record<IngredientCategory, LucideIcon> = {
-  probiotic: Dna,
-  prebiotic: Wheat,
-  vitamin: Citrus,
-  immune: ShieldCheck,
-};
-
-/** Accent colour for the category icon / amount text. */
-export const CATEGORY_COLOR: Record<IngredientCategory, string> = {
-  probiotic: '#5d6fcd',
-  prebiotic: '#c79318',
-  vitamin: '#e2683c',
-  immune: '#4f8c4c',
-};
-
-/**
- * Circular gradient icon badge in the brand style (soft lavender→pink fill,
- * thin ring), as used by the homepage "prove+ ช่วยเรื่อง" section.
- */
-export function CategoryBadge({
-  category,
-  size = 36,
-}: {
-  category: IngredientCategory;
-  size?: number;
-}) {
-  const Icon = CATEGORY_ICON[category];
-  return (
-    <span
-      className="rounded-full grid place-items-center bg-gradient-to-br from-[#eaeefe] to-[#f7ebf2] ring-1 ring-[#cdd3f2] shrink-0"
-      style={{ width: size, height: size }}
-    >
-      <Icon style={{ width: size * 0.5, height: size * 0.5, color: CATEGORY_COLOR[category] }} strokeWidth={2} />
-    </span>
-  );
-}
+import { type ProductIngredients, localise } from './ingredientData';
 
 /**
  * Every design variant receives exactly this. Keeping the contract tiny means
@@ -60,14 +17,7 @@ export function useIngredientLabels() {
   return { locale, labels: t.productPage.ingredients };
 }
 
-export function categoryLabel(
-  category: IngredientCategory,
-  labels: ReturnType<typeof useIngredientLabels>['labels'],
-): string {
-  return labels.categories[category];
-}
-
-/** Additives + FDA registration — identical across every variant. */
+/** Additives + FDA registration, shown beneath the ingredient table. */
 export function IngredientFooter({ data }: IngredientVariantProps) {
   const { locale, labels } = useIngredientLabels();
   const { accent } = data;
