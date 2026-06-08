@@ -78,6 +78,7 @@ export default function AllerproPage() {
               />
 
               <ProductTabs
+                productId="allerpro"
                 description={t.productPage.allerpro.description}
                 flavor={t.productPage.allerpro.flavor}
                 howToUse={t.productPage.allerpro.howToUse}

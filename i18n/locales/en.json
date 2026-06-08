@@ -327,6 +327,33 @@
     },
     "flavorLabel": "Flavor",
     "howToUseLabel": "How to Consume",
+    "ingredients": {
+      "previewLabel": "Preview design",
+      "perServing": "Active ingredients per 1 sachet",
+      "tapToExpand": "tap an ingredient to learn more",
+      "additivesLabel": "Food additives",
+      "fdaLabel": "FDA Registration No.",
+      "scaleNote": "Bar length uses a perceptual scale so trace strains stay visible.",
+      "whatsInside": "What's inside every sachet",
+      "whatsInsideSub": "A synbiotic blend — live cultures fed by plant fibres",
+      "liveStrains": "live strains",
+      "heroIngredient": "hero ingredient",
+      "tableHeadIngredient": "Ingredient",
+      "tableHeadAmount": "Amount",
+      "categories": {
+        "probiotic": "Probiotics",
+        "prebiotic": "Prebiotics",
+        "vitamin": "Vitamin",
+        "immune": "Immune Fibre"
+      },
+      "variants": {
+        "table": "Table",
+        "bars": "Chart",
+        "cards": "Cards",
+        "infographic": "Infographic",
+        "detailed": "Detailed"
+      }
+    },
     "flowpro": {
       "name": "prove+ FLOWPRO",
       "subtitle": "Ready-to-eat probiotic",

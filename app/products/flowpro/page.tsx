@@ -76,6 +76,7 @@ export default function FlowproPage() {
               />
 
               <ProductTabs
+                productId="flowpro"
                 description={t.productPage.flowpro.description}
                 flavor={t.productPage.flowpro.flavor}
                 howToUse={t.productPage.flowpro.howToUse}

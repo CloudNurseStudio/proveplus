@@ -4,8 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useLocale } from '../LocaleProvider';
+import { KeyIngredients } from './ingredients/KeyIngredients';
+import type { ProductId } from './ingredients/ingredientData';
 
 interface ProductTabsProps {
+  productId: ProductId;
   description: string;
   flavor: string;
   howToUse: string;
@@ -13,6 +16,7 @@ interface ProductTabsProps {
 }
 
 export function ProductTabs({
+  productId,
   description,
   flavor,
   howToUse,
@@ -93,13 +97,7 @@ export function ProductTabs({
           </>
         )}
 
-        {activeTab === 'ingredients' && (
-          <div className="flex flex-col gap-4">
-            <p className="text-[16px] leading-[24px] text-[#667085]">
-              Detailed ingredient information coming soon...
-            </p>
-          </div>
-        )}
+        {activeTab === 'ingredients' && <KeyIngredients product={productId} />}
       </motion.div>
     </div>
   );

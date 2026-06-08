@@ -327,6 +327,33 @@
     },
     "flavorLabel": "รสชาติ",
     "howToUseLabel": "วิธีรับประทาน",
+    "ingredients": {
+      "previewLabel": "เลือกรูปแบบการแสดงผล",
+      "perServing": "ส่วนประกอบสำคัญใน 1 ซอง",
+      "tapToExpand": "แตะที่ส่วนประกอบเพื่อดูรายละเอียด",
+      "additivesLabel": "วัตถุเจือปนอาหาร",
+      "fdaLabel": "เลขที่ อย.",
+      "scaleNote": "ความยาวของแถบใช้สเกลเชิงการมองเห็น เพื่อให้เห็นสายพันธุ์ที่มีปริมาณน้อยได้ชัดเจน",
+      "whatsInside": "ในทุกซองประกอบด้วย",
+      "whatsInsideSub": "ซินไบโอติก — จุลินทรีย์มีชีวิตที่ได้รับการหล่อเลี้ยงด้วยใยอาหารจากพืช",
+      "liveStrains": "สายพันธุ์",
+      "heroIngredient": "ส่วนประกอบเด่น",
+      "tableHeadIngredient": "ส่วนประกอบ",
+      "tableHeadAmount": "ปริมาณ",
+      "categories": {
+        "probiotic": "โพรไบโอติก",
+        "prebiotic": "พรีไบโอติก",
+        "vitamin": "วิตามิน",
+        "immune": "ใยอาหารเสริมภูมิคุ้มกัน"
+      },
+      "variants": {
+        "table": "ตาราง",
+        "bars": "กราฟ",
+        "cards": "การ์ด",
+        "infographic": "อินโฟกราฟิก",
+        "detailed": "รายละเอียด"
+      }
+    },
     "flowpro": {
       "name": "prove+ FLOWPRO",
       "subtitle": "โพรไบโอติกส์พร้อมทาน",
