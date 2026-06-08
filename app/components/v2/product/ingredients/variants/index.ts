@@ -1,13 +1,12 @@
 import type { ComponentType } from 'react';
 import type { IngredientVariantProps } from '../shared';
 import { IngredientsTable } from './IngredientsTable';
-import { IngredientsBars } from './IngredientsBars';
 import { IngredientsCards } from './IngredientsCards';
 import { IngredientsInfographic } from './IngredientsInfographic';
 import { IngredientsAccordion } from './IngredientsAccordion';
 
 /** Keys into `t.productPage.ingredients.variants` for the toggle labels. */
-export type VariantId = 'table' | 'bars' | 'cards' | 'infographic' | 'detailed';
+export type VariantId = 'table' | 'cards' | 'infographic' | 'detailed';
 
 export interface IngredientVariant {
   id: VariantId;
@@ -25,7 +24,6 @@ export interface IngredientVariant {
  */
 export const INGREDIENT_VARIANTS: IngredientVariant[] = [
   { id: 'table', Component: IngredientsTable },
-  { id: 'bars', Component: IngredientsBars },
   { id: 'cards', Component: IngredientsCards },
   { id: 'infographic', Component: IngredientsInfographic },
   { id: 'detailed', Component: IngredientsAccordion },

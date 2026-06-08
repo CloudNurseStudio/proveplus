@@ -333,7 +333,6 @@
       "tapToExpand": "tap an ingredient to learn more",
       "additivesLabel": "Food additives",
       "fdaLabel": "FDA Registration No.",
-      "scaleNote": "Bar length uses a perceptual scale so trace strains stay visible.",
       "whatsInside": "What's inside every sachet",
       "whatsInsideSub": "A synbiotic blend — live cultures fed by plant fibres",
       "liveStrains": "live strains",
@@ -348,7 +347,6 @@
       },
       "variants": {
         "table": "Table",
-        "bars": "Chart",
         "cards": "Cards",
         "infographic": "Infographic",
         "detailed": "Detailed"

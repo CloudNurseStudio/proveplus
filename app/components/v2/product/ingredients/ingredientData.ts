@@ -29,9 +29,9 @@ export interface Ingredient {
   name: LStr;
   /** Optional sub-label: strain code, percentage, abbreviation. */
   detail?: LStr;
-  /** Amount in grams — numeric, used for sorting and bar scaling. */
-  amountG: number;
-  /** Pre-formatted amount string for display. */
+  /** Amount in milligrams — numeric, used for sorting. */
+  amountMg: number;
+  /** Pre-formatted amount string for display (milligrams). */
   amount: string;
   category: IngredientCategory;
   /** Short benefit description, used by the "detailed" (accordion) variant. */
@@ -48,7 +48,7 @@ export interface ProductIngredients {
 }
 
 export interface ProductAccent {
-  /** Primary fill (buttons, table header, bars). */
+  /** Primary fill (buttons, table header, accents). */
   solid: string;
   /** Darker shade for hover / emphasis text. */
   deep: string;
@@ -61,7 +61,7 @@ export interface ProductAccent {
 const VITAMIN_C: Ingredient = {
   name: { en: 'Ascorbic Acid (Vitamin C)', th: 'กรดแอสคอร์บิก (วิตามินซี)' },
   detail: { en: '100%', th: '100%' },
-  amountG: 0, // overridden per product below
+  amountMg: 0, // overridden per product below
   amount: '',
   category: 'vitamin',
   blurb: {
@@ -84,8 +84,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       {
         name: { en: 'Fructooligosaccharide', th: 'ฟรุกโตโอลิโกแซคคาไรด์' },
         detail: { en: 'FOS 45%', th: 'FOS 45%' },
-        amountG: 0.1,
-        amount: '0.10 g',
+        amountMg: 100,
+        amount: '100 mg',
         category: 'prebiotic',
         blurb: {
           en: 'A plant-derived soluble fibre that feeds beneficial gut bacteria.',
@@ -94,8 +94,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       },
       {
         name: { en: 'Lactobacillus paracasei', th: 'แลกโตบาซิลลัส พาราคาเซอิ' },
-        amountG: 0.06,
-        amount: '0.06 g',
+        amountMg: 60,
+        amount: '60 mg',
         category: 'probiotic',
         blurb: {
           en: 'A resilient strain that supports a balanced intestinal flora.',
@@ -105,8 +105,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       {
         name: { en: 'Inulin', th: 'อินนูลิน' },
         detail: { en: '90%', th: '90%' },
-        amountG: 0.05,
-        amount: '0.05 g',
+        amountMg: 50,
+        amount: '50 mg',
         category: 'prebiotic',
         blurb: {
           en: 'A prebiotic fibre that promotes regularity and nourishes good bacteria.',
@@ -115,8 +115,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       },
       {
         name: { en: 'Bacillus coagulans', th: 'บาซิลลัส โคแอกกูแลนส์' },
-        amountG: 0.03,
-        amount: '0.03 g',
+        amountMg: 30,
+        amount: '30 mg',
         category: 'probiotic',
         blurb: {
           en: 'A spore-forming probiotic that survives stomach acid to reach the gut.',
@@ -126,8 +126,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       {
         name: { en: 'Galacto-oligosaccharide', th: 'กาแลคโตโอลิโกแซคคาไรด์' },
         detail: { en: 'GOS 80%', th: 'GOS 80%' },
-        amountG: 0.015,
-        amount: '0.015 g',
+        amountMg: 15,
+        amount: '15 mg',
         category: 'prebiotic',
         blurb: {
           en: 'A gentle prebiotic that selectively encourages Bifidobacteria.',
@@ -136,13 +136,13 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       },
       {
         ...VITAMIN_C,
-        amountG: 0.015,
-        amount: '0.015 g',
+        amountMg: 15,
+        amount: '15 mg',
       },
       {
         name: { en: 'Bifidobacterium lactis', th: 'บิฟิโดแบคทีเรียม แลคทิส' },
-        amountG: 0.008,
-        amount: '0.008 g',
+        amountMg: 8,
+        amount: '8 mg',
         category: 'probiotic',
         blurb: {
           en: 'A well-studied strain associated with digestive balance.',
@@ -151,8 +151,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       },
       {
         name: { en: 'Bifidobacterium longum', th: 'บิฟิโดแบคทีเรียม ลองกัม' },
-        amountG: 0.006,
-        amount: '0.006 g',
+        amountMg: 6,
+        amount: '6 mg',
         category: 'probiotic',
         blurb: {
           en: 'A core resident of a healthy gut, helping maintain microbial harmony.',
@@ -161,8 +161,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       },
       {
         name: { en: 'Lactobacillus rhamnosus', th: 'แลกโตบาซิลลัส รามโนซัส' },
-        amountG: 0.0015,
-        amount: '0.0015 g',
+        amountMg: 1.5,
+        amount: '1.5 mg',
         category: 'probiotic',
         blurb: {
           en: 'A widely researched strain supporting gut and overall wellbeing.',
@@ -171,8 +171,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       },
       {
         name: { en: 'Lactobacillus reuteri', th: 'แลกโตบาซิลลัส รอยเทอรี' },
-        amountG: 0.0015,
-        amount: '0.0015 g',
+        amountMg: 1.5,
+        amount: '1.5 mg',
         category: 'probiotic',
         blurb: {
           en: 'A naturally occurring strain that helps maintain a balanced microbiome.',
@@ -194,8 +194,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       {
         name: { en: 'Yeast Beta-Glucan', th: 'ยีสต์ เบต้ากลูแคน' },
         detail: { en: '75%', th: '75%' },
-        amountG: 0.125,
-        amount: '0.125 g',
+        amountMg: 125,
+        amount: '125 mg',
         category: 'immune',
         blurb: {
           en: "A natural fibre from yeast that helps support the body's everyday immune defences.",
@@ -204,14 +204,14 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       },
       {
         ...VITAMIN_C,
-        amountG: 0.055,
-        amount: '0.055 g',
+        amountMg: 55,
+        amount: '55 mg',
       },
       {
         name: { en: 'Bacillus coagulans', th: 'บาซิลลัส โคแอกกูแลนส์' },
         detail: { en: 'BC198', th: 'BC198' },
-        amountG: 0.05,
-        amount: '0.050 g',
+        amountMg: 50,
+        amount: '50 mg',
         category: 'probiotic',
         blurb: {
           en: 'A spore-forming probiotic that survives stomach acid to reach the gut.',
@@ -221,8 +221,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       {
         name: { en: 'Bifidobacterium animalis subsp. lactis', th: 'บิฟิโดแบคทีเรียม แอนิมาลิส ซับสปีชีส์ แลคทิส' },
         detail: { en: 'SG105', th: 'SG105' },
-        amountG: 0.04,
-        amount: '0.040 g',
+        amountMg: 40,
+        amount: '40 mg',
         category: 'probiotic',
         blurb: {
           en: 'A well-studied strain associated with digestive balance and immune support.',
@@ -232,8 +232,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       {
         name: { en: 'Lactobacillus paracasei', th: 'แลกโตบาซิลลัส พาราคาเซอิ' },
         detail: { en: 'LCW23', th: 'LCW23' },
-        amountG: 0.0125,
-        amount: '0.0125 g',
+        amountMg: 12.5,
+        amount: '12.5 mg',
         category: 'probiotic',
         blurb: {
           en: 'A resilient strain that supports a balanced intestinal flora.',
@@ -243,8 +243,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       {
         name: { en: 'Lactobacillus rhamnosus', th: 'แลกโตบาซิลลัส รามโนซัส' },
         detail: { en: 'LR1', th: 'LR1' },
-        amountG: 0.0003,
-        amount: '0.0003 g',
+        amountMg: 0.3,
+        amount: '0.3 mg',
         category: 'probiotic',
         blurb: {
           en: 'A widely researched strain supporting gut and overall wellbeing.',
@@ -253,8 +253,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       },
       {
         name: { en: 'Bifidobacterium longum subsp. longum', th: 'บิฟิโดแบคทีเรียม ลองกัม' },
-        amountG: 0.0003,
-        amount: '0.0003 g',
+        amountMg: 0.3,
+        amount: '0.3 mg',
         category: 'probiotic',
         blurb: {
           en: 'A core resident of a healthy gut, helping maintain microbial harmony.',
@@ -264,8 +264,8 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
       {
         name: { en: 'Bifidobacterium infantis', th: 'บิฟิโดแบคทีเรียม อินแฟนทิส' },
         detail: { en: 'B. longum subsp. infantis', th: 'B. longum subsp. infantis' },
-        amountG: 0.0003,
-        amount: '0.0003 g',
+        amountMg: 0.3,
+        amount: '0.3 mg',
         category: 'probiotic',
         blurb: {
           en: 'An early-life strain that supports a balanced microbiome.',

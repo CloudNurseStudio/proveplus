@@ -240,20 +240,20 @@ FDA registration shown as a solid accent-coloured rounded badge:
 
 Lives in `app/components/v2/product/ingredients/`. Renders the official per-sachet
 ingredient data, food additives (INS), and FDA (อย.) number for each product, with
-**five interchangeable presentation designs** behind a floating toggle for review.
+**four interchangeable presentation designs** behind a floating toggle for review.
 
-- **Data** — `ingredientData.ts`: bilingual (`{en, th}`), typed, with category, gram
-  amount, and per-ingredient blurbs; plus each product's accent palette.
+- **Data** — `ingredientData.ts`: bilingual (`{en, th}`), typed, with category, amount
+  in **milligrams** (`amountMg`), and per-ingredient blurbs; plus each product's accent
+  palette.
 - **Contract** — every design implements `IngredientVariantProps` (`{ data }`); shared
   `IngredientFooter` (additives + FDA badge) and `CategoryBadge` (brand circular icon
   badge) keep them consistent (`shared.tsx`).
-- **Registry** — `variants/index.ts` lists the five designs. `KeyIngredients.tsx` renders
+- **Registry** — `variants/index.ts` lists the designs. `KeyIngredients.tsx` renders
   the active one + a floating toggle (portaled to `<body>` to escape the card's
   `backdrop-blur` containing block). **The toggle auto-hides when the registry has one
   entry**, so collapsing to the final design = delete the other entries + files.
-- **The five designs** — `table`, `bars` (chart), `cards`, `infographic`, `detailed`
-  (accordion). All use FC Orbit Rounded, brand category colours, soft cards, and the
-  product accent.
+- **The four designs** — `table`, `cards`, `infographic`, `detailed` (accordion). All
+  use FC Orbit Rounded, brand category colours, soft cards, and the product accent.
 
 ---
 

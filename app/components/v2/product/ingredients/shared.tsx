@@ -67,16 +67,6 @@ export function categoryLabel(
   return labels.categories[category];
 }
 
-/**
- * Perceptual (square-root) bar width so trace strains measured in ten-thousandths
- * of a gram stay visible next to the dominant fibre. Returns a percentage.
- */
-export function barWidth(amountG: number, maxG: number): number {
-  if (maxG <= 0) return 0;
-  const pct = Math.sqrt(amountG / maxG) * 100;
-  return Math.max(8, Math.round(pct));
-}
-
 /** Additives + FDA registration — identical across every variant. */
 export function IngredientFooter({ data }: IngredientVariantProps) {
   const { locale, labels } = useIngredientLabels();
