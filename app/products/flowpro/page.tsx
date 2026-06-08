@@ -6,6 +6,7 @@ import { ProductCard } from '@/app/components/v2/product/ProductCard';
 import { ProductMainImage, ProductThumbnailGrid } from '@/app/components/v2/product/ProductGallery';
 import { ProductDetails } from '@/app/components/v2/product/ProductDetails';
 import { ProductTabs } from '@/app/components/v2/product/ProductTabs';
+import { KeyIngredients } from '@/app/components/v2/product/ingredients/KeyIngredients';
 import { useLocale } from '@/app/components/v2/LocaleProvider';
 import { useModalService } from '@/app/components/v2/ModalServiceProvider';
 
@@ -76,7 +77,6 @@ export default function FlowproPage() {
               />
 
               <ProductTabs
-                productId="flowpro"
                 description={t.productPage.flowpro.description}
                 flavor={t.productPage.flowpro.flavor}
                 howToUse={t.productPage.flowpro.howToUse}
@@ -84,6 +84,13 @@ export default function FlowproPage() {
               />
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Key Ingredients (upfront section) */}
+      <div className="px-4 sm:px-8 md:px-16 max-w-[1200px] mx-auto">
+        <div className="bg-white/50 backdrop-blur-sm rounded-[32px] p-6 sm:p-8">
+          <KeyIngredients product="flowpro" />
         </div>
       </div>
 
