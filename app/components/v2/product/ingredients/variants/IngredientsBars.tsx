@@ -29,7 +29,7 @@ export function IngredientsBars({ data }: IngredientVariantProps) {
 
   return (
     <div className="flex flex-col gap-6">
-      <p className="text-[12px] text-[#667085] italic text-outfit">{labels.scaleNote}</p>
+      <p className="text-[12px] text-[#667085] italic">{labels.scaleNote}</p>
 
       {groups.map(({ category, items }) => (
         <div key={category}>
@@ -38,11 +38,11 @@ export function IngredientsBars({ data }: IngredientVariantProps) {
               className="w-2.5 h-2.5 rounded-full"
               style={{ backgroundColor: CATEGORY_DOT[category] }}
             />
-            <h4 className="text-[13px] font-bold tracking-[0.1em] uppercase text-[#1d2939] text-outfit">
+            <h4 className="text-[13px] font-bold tracking-[0.1em] uppercase text-[#1d2939]">
               {labels.categories[category]}
             </h4>
             {category === 'probiotic' && (
-              <span className="ml-auto text-[12px] text-[#667085] text-outfit">
+              <span className="ml-auto text-[12px] text-[#667085]">
                 {items.length} {labels.liveStrains}
               </span>
             )}
@@ -50,14 +50,14 @@ export function IngredientsBars({ data }: IngredientVariantProps) {
 
           {items.map((ing, i) => (
             <div key={i} className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-1 items-baseline mb-3.5">
-              <span className="text-[14.5px] font-medium text-[#1d2939] text-outfit">
+              <span className="text-[14.5px] font-medium text-[#1d2939]">
                 {localise(ing.name, locale)}
                 {ing.detail && (
                   <span className="text-[#667085] font-normal"> ({localise(ing.detail, locale)})</span>
                 )}
               </span>
               <span
-                className="text-[14px] font-bold whitespace-nowrap text-outfit"
+                className="text-[14px] font-bold whitespace-nowrap"
                 style={{ color: accent.deep }}
               >
                 {ing.amount}

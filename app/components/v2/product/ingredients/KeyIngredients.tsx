@@ -53,7 +53,7 @@ export function KeyIngredients({ product }: KeyIngredientsProps) {
         createPortal(
           <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[100] max-w-[calc(100vw-1rem)]">
             <div className="flex items-center gap-2 bg-white/90 backdrop-blur-md border border-[#e4e7ec] rounded-full shadow-[0_8px_30px_rgba(16,24,40,0.18)] px-2 py-2">
-              <span className="hidden sm:inline text-[11px] font-semibold uppercase tracking-[0.1em] text-[#667085] pl-2 pr-1 text-outfit whitespace-nowrap">
+              <span className="hidden sm:inline text-[11px] font-semibold uppercase tracking-[0.1em] text-[#667085] pl-2 pr-1 whitespace-nowrap">
                 {labels.previewLabel}
               </span>
               <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-hide">
@@ -63,7 +63,7 @@ export function KeyIngredients({ product }: KeyIngredientsProps) {
                     <button
                       key={v.id}
                       onClick={() => setActiveId(v.id)}
-                      className="text-[13px] font-medium px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap text-outfit"
+                      className="text-[13px] font-medium px-3.5 py-1.5 rounded-full transition-all whitespace-nowrap"
                       style={
                         isActive
                           ? { backgroundColor: data.accent.deep, color: '#fff' }

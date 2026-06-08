@@ -20,7 +20,7 @@ export function IngredientsAccordion({ data }: IngredientVariantProps) {
 
   return (
     <div className="flex flex-col gap-5">
-      <p className="text-[12px] text-[#667085] italic text-outfit">
+      <p className="text-[12px] text-[#667085] italic">
         {labels.perServing} · {labels.tapToExpand}
       </p>
 
@@ -37,7 +37,7 @@ export function IngredientsAccordion({ data }: IngredientVariantProps) {
             >
               <button
                 onClick={() => setOpen(isOpen ? -1 : i)}
-                className="w-full flex items-center gap-3 px-4 py-3.5 text-left text-outfit"
+                className="w-full flex items-center gap-3 px-4 py-3.5 text-left"
               >
                 <span
                   className="text-[10px] font-bold tracking-[0.06em] uppercase px-2 py-0.5 rounded-full"
@@ -67,7 +67,7 @@ export function IngredientsAccordion({ data }: IngredientVariantProps) {
                     transition={{ duration: 0.25 }}
                     className="overflow-hidden"
                   >
-                    <p className="text-[13.5px] leading-relaxed text-[#667085] px-4 pb-4 text-outfit">
+                    <p className="text-[13.5px] leading-relaxed text-[#667085] px-4 pb-4">
                       {localise(ing.blurb, locale)}
                     </p>
                   </motion.div>

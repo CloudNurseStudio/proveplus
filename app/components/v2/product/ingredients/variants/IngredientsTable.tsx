@@ -9,10 +9,10 @@ export function IngredientsTable({ data }: IngredientVariantProps) {
 
   return (
     <div className="flex flex-col gap-5">
-      <p className="text-[14px] text-[#667085] text-outfit">{labels.perServing}</p>
+      <p className="text-[14px] text-[#667085]">{labels.perServing}</p>
 
       <div className="overflow-hidden rounded-[18px] bg-white border border-[#eef1f5]">
-        <table className="w-full border-collapse text-outfit">
+        <table className="w-full border-collapse">
           <thead>
             <tr>
               <th
