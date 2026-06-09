@@ -1,44 +1,22 @@
 'use client';
 
 import Image from 'next/image';
-import { Star, StarHalf, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLocale } from '../LocaleProvider';
 
 interface ProductDetailsProps {
   productName: string;
   fullName: string;
-  rating: number;
-  reviewCount: number;
   onOrderClick?: () => void;
 }
 
 export function ProductDetails({
   productName,
   fullName,
-  rating,
-  reviewCount,
   onOrderClick,
 }: ProductDetailsProps) {
   const { t } = useLocale();
-
-  const renderStars = () => {
-    const stars = [];
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 !== 0;
-
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(
-        <Star key={`full-${i}`} className="w-6 h-6 fill-[#FDB022] text-[#FDB022]" />
-      );
-    }
-
-    if (hasHalfStar) {
-      stars.push(<StarHalf key="half" className="w-6 h-6 fill-[#FDB022] text-[#FDB022]" />);
-    }
-
-    return stars;
-  };
 
   return (
     <motion.div
@@ -51,13 +29,6 @@ export function ProductDetails({
         <h1 className="text-[clamp(1.75rem,5vw,2.5rem)] font-bold text-[#1d2939] leading-[1.2]">
           {fullName}
         </h1>
-
-        <div className="flex items-center gap-3">
-          <div className="flex gap-1">{renderStars()}</div>
-          <span className="text-[18px] font-medium text-[#1d2939]">
-            {reviewCount} {t.productPage.reviewsLabel}
-          </span>
-        </div>
 
         <div className="h-px bg-[#d0d5dd]" />
 

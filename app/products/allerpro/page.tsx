@@ -73,8 +73,6 @@ export default function AllerproPage() {
               <ProductDetails
                 productName={t.productPage.allerpro.name}
                 fullName={t.productPage.allerpro.fullName}
-                rating={4.5}
-                reviewCount={288}
                 onOrderClick={handleOrderClick}
               />
 

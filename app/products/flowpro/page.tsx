@@ -71,8 +71,6 @@ export default function FlowproPage() {
               <ProductDetails
                 productName={t.productPage.flowpro.name}
                 fullName={t.productPage.flowpro.fullName}
-                rating={4.5}
-                reviewCount={288}
                 onOrderClick={handleOrderClick}
               />
 
