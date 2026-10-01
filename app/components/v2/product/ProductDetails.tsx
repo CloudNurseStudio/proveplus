@@ -8,8 +8,9 @@ import { useLocale } from '../LocaleProvider';
 interface ProductDetailsProps {
   productName: string;
   fullName: string;
-  rating: number;
-  reviewCount: number;
+  /** Omit both to hide the rating row (e.g. a product with no reviews yet). */
+  rating?: number;
+  reviewCount?: number;
   onOrderClick?: () => void;
 }
 
@@ -22,7 +23,7 @@ export function ProductDetails({
 }: ProductDetailsProps) {
   const { t } = useLocale();
 
-  const renderStars = () => {
+  const renderStars = (rating: number) => {
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -52,12 +53,14 @@ export function ProductDetails({
           {fullName}
         </h1>
 
-        <div className="flex items-center gap-3">
-          <div className="flex gap-1">{renderStars()}</div>
-          <span className="text-[18px] font-medium text-[#1d2939]">
-            {reviewCount} {t.productPage.reviewsLabel}
-          </span>
-        </div>
+        {rating !== undefined && reviewCount !== undefined && (
+          <div className="flex items-center gap-3">
+            <div className="flex gap-1">{renderStars(rating)}</div>
+            <span className="text-[18px] font-medium text-[#1d2939]">
+              {reviewCount} {t.productPage.reviewsLabel}
+            </span>
+          </div>
+        )}
 
         <div className="h-px bg-[#d0d5dd]" />
 
