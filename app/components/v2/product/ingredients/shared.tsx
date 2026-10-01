@@ -22,36 +22,46 @@ export function IngredientFooter({ data }: IngredientVariantProps) {
   const { locale, labels } = useIngredientLabels();
   const { accent } = data;
 
+  if (data.additives.length === 0 && !data.fdaNumber) return null;
+
   return (
     <div className="flex flex-col sm:flex-row flex-wrap gap-6 sm:gap-8 items-start pt-1">
-      <div className="flex-1 min-w-[200px]">
-        <p className="text-[16px] font-medium text-[#1d2939] mb-2.5">
-          {labels.additivesLabel}
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {data.additives.map((additive, i) => (
-            <span
-              key={i}
-              className="text-[13px] text-[#1d2939] bg-white border border-[#d0d5dd] rounded-full px-3.5 py-1.5"
-            >
-              {localise(additive, locale)}
-            </span>
-          ))}
+      {data.additives.length > 0 && (
+        <div className="flex-1 min-w-[200px]">
+          <p className="text-[16px] font-medium text-[#1d2939] mb-2.5">
+            {labels.additivesLabel}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {data.additives.map((additive, i) => (
+              <span
+                key={i}
+                className="text-[13px] text-[#1d2939] bg-white border border-[#d0d5dd] rounded-full px-3.5 py-1.5"
+              >
+                {localise(additive, locale)}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
-      <div className="min-w-[200px]">
-        <p className="text-[16px] font-medium text-[#1d2939] mb-2.5">
-          {labels.fdaLabel}
-        </p>
-        <span
-          className="inline-flex items-center gap-2.5 text-white rounded-2xl px-4 py-3"
-          style={{ backgroundColor: accent.deep }}
-        >
-          <span className="text-[11px] uppercase tracking-[0.12em] opacity-80">อย. / FDA No.</span>
-          <span className="text-[18px] font-bold tracking-[0.04em]">{data.fdaNumber}</span>
-        </span>
-      </div>
+      {data.fdaNumber && (
+        <div className="min-w-[200px]">
+          <p className="text-[16px] font-medium text-[#1d2939] mb-2.5">
+            {labels.fdaLabel}
+          </p>
+          <span
+            className="inline-flex items-center gap-2.5 text-white rounded-2xl px-4 py-3"
+            style={{ backgroundColor: accent.deep }}
+          >
+            <span className="text-[11px] uppercase tracking-[0.12em] opacity-80">
+              อย. / FDA No.
+            </span>
+            <span className="text-[18px] font-bold tracking-[0.04em]">
+              {data.fdaNumber}
+            </span>
+          </span>
+        </div>
+      )}
     </div>
   );
 }

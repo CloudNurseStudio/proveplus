@@ -131,7 +131,7 @@ function FeatureCardTile({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25, delay: 0.1 }}
-              className="mt-4 text-base sm:text-lg lg:text-xl text-prove-primary text-center max-w-md leading-relaxed"
+              className="mt-4 text-base sm:text-lg lg:text-xl text-prove-primary text-center max-w-md leading-relaxed whitespace-pre-line"
             >
               {card.description}
             </motion.p>
