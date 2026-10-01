@@ -1,0 +1,526 @@
+/*
+ * Magazine article layout — styles the HTML body of posts with
+ * `layout: 'magazine'` (see app/lib/blog-data.ts and MagazineArticle.tsx).
+ *
+ * The body is a named-line grid: children sit in a readable `content`
+ * column by default and can break out to the `wide` track with `.mag-wide`.
+ */
+
+.mag-body {
+  --mag-ink: #1d2939;
+  --mag-text: #344054;
+  --mag-muted: #667085;
+  --mag-indigo: #4554a4;
+  --mag-indigo-bright: #5d6fcd;
+  --mag-indigo-soft: #6678d6;
+  --mag-lavender: #e5ecfe;
+  --mag-surface: #f5f7ff;
+  --mag-border: #d0d5dd;
+  --mag-gutter: 1rem;
+
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--mag-gutter), 1fr)
+    [wide-start] minmax(0, 13rem)
+    [content-start] min(40rem, 100% - 2 * var(--mag-gutter))
+    [content-end] minmax(0, 13rem)
+    [wide-end] minmax(var(--mag-gutter), 1fr)
+    [full-end];
+  color: var(--mag-text);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+@media (min-width: 640px) {
+  .mag-body {
+    --mag-gutter: 2rem;
+  }
+}
+
+.mag-body > * {
+  grid-column: content;
+  min-width: 0;
+}
+
+.mag-body > .mag-wide {
+  grid-column: wide;
+}
+
+.mag-body p {
+  margin: 0;
+}
+
+.mag-body > p + p {
+  margin-top: 1.25rem;
+}
+
+.mag-body strong {
+  color: var(--mag-ink);
+  font-weight: 600;
+}
+
+.mag-body em {
+  font-style: italic;
+}
+
+/* ---------- Opening ---------- */
+
+.mag-lede {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: var(--mag-ink);
+}
+
+@media (min-width: 640px) {
+  .mag-lede {
+    font-size: 1.375rem;
+  }
+}
+
+.mag-dropcap::first-letter {
+  float: left;
+  font-size: 4.6em;
+  line-height: 0.8;
+  font-weight: 700;
+  color: var(--mag-indigo);
+  margin: 0.1em 0.12em 0 0;
+}
+
+/* ---------- Headings ---------- */
+
+.mag-body > h2,
+.mag-spotlight h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--mag-indigo);
+}
+
+.mag-body > h2 {
+  margin-top: 4.5rem;
+}
+
+.mag-body > h2 + p,
+.mag-body > h2 + ol {
+  margin-top: 1.25rem;
+}
+
+.mag-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mag-indigo-bright);
+}
+
+.mag-body:lang(th) .mag-eyebrow {
+  font-size: 0.9rem;
+  letter-spacing: 0;
+}
+
+/* ---------- By the numbers ---------- */
+
+.mag-stats {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem 1.5rem;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #eef2ff 0%, #f5f7ff 55%, #e9f6fd 100%);
+}
+
+@media (min-width: 640px) {
+  .mag-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 2.5rem 1rem;
+  }
+
+  .mag-stat + .mag-stat {
+    border-left: 1px dashed var(--mag-border);
+  }
+}
+
+.mag-stat {
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.mag-stat-num {
+  display: block;
+  font-size: clamp(3rem, 9vw, 4.75rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--mag-indigo);
+}
+
+.mag-stat-label {
+  display: block;
+  margin: 0.75rem auto 0;
+  max-width: 18rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--mag-muted);
+}
+
+/* ---------- Figures ---------- */
+
+.mag-figure {
+  margin: 3.5rem 0 0;
+}
+
+.mag-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+  box-shadow: 0 24px 48px -28px rgba(69, 84, 164, 0.45);
+}
+
+@media (min-width: 768px) {
+  /* Letterbox wide hero shots; their subjects sit in the middle band. */
+  .mag-figure--cinema img {
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+  }
+}
+
+.mag-body figcaption {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--mag-muted);
+}
+
+.mag-body figcaption::before {
+  content: '';
+  flex: none;
+  width: 1.5rem;
+  height: 2px;
+  margin-top: 0.7em;
+  border-radius: 9999px;
+  background: var(--mag-indigo-bright);
+}
+
+/* ---------- Numbered feature list ---------- */
+
+.mag-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mag-list li {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px dashed var(--mag-border);
+}
+
+.mag-list li:last-child {
+  border-bottom: 1px dashed var(--mag-border);
+}
+
+@media (min-width: 640px) {
+  .mag-list li {
+    grid-template-columns: 5rem 1fr;
+  }
+}
+
+.mag-list-num {
+  grid-row: span 2;
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--mag-indigo-soft);
+}
+
+.mag-list h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--mag-ink);
+}
+
+.mag-list p {
+  margin-top: 0.35rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ---------- Side note ---------- */
+
+.mag-note {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border-radius: 20px;
+  border: 1px solid #dfe4fb;
+  background: var(--mag-surface);
+}
+
+.mag-note p:not(.mag-eyebrow) {
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* ---------- Pull quote ---------- */
+
+.mag-pullquote {
+  margin: 4.5rem 0 0;
+  padding: 2.5rem 0.5rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.mag-pullquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Serif glyph: the brand face draws curly quotes as straight bars. */
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 7rem;
+  line-height: 1;
+  color: #cdd3f2;
+}
+
+.mag-pullquote p {
+  max-width: 46rem;
+  margin: 0 auto;
+  font-size: clamp(1.5rem, 3.6vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--mag-indigo);
+}
+
+/* ---------- Product spotlight ---------- */
+
+.mag-spotlight {
+  margin-top: 4.5rem;
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 1.25rem;
+  border-radius: 32px;
+  background: var(--mag-lavender);
+}
+
+@media (min-width: 640px) {
+  .mag-spotlight {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .mag-spotlight {
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3rem;
+    padding: 3.5rem;
+  }
+}
+
+.mag-spotlight h2 {
+  margin-top: 0.5rem;
+}
+
+.mag-spotlight-text > p:not(.mag-eyebrow) {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.mag-facts {
+  margin: 1.75rem 0 0;
+  padding: 0.25rem 1.25rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.mag-facts > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding: 0.8rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.mag-facts > div + div {
+  border-top: 1px dashed var(--mag-border);
+}
+
+.mag-facts dt {
+  color: var(--mag-muted);
+}
+
+.mag-facts dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--mag-indigo);
+  text-align: right;
+}
+
+.mag-spotlight .mag-figure {
+  width: 100%;
+  max-width: 26rem;
+  margin: 0 auto;
+}
+
+/* ---------- Ending ---------- */
+
+.mag-ornament {
+  margin-top: 4.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--mag-indigo-bright);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mag-ornament::before,
+.mag-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--mag-border);
+}
+
+.mag-body > .mag-ornament + h2 {
+  margin-top: 2.5rem;
+}
+
+/* End mark: a small prove+ "+" tile closing the final paragraph. */
+.mag-end::after {
+  content: '+';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15em;
+  height: 1.15em;
+  margin-left: 0.4em;
+  border-radius: 0.3em;
+  background: var(--mag-indigo);
+  color: #fff;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: -0.1em;
+}
+
+.mag-tagline {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.mag-tagline p {
+  font-size: clamp(1.4rem, 3.4vw, 2rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--mag-indigo);
+}
+
+.mag-tagline p + p {
+  margin-top: 0.35rem;
+  font-size: clamp(1.1rem, 2.6vw, 1.4rem);
+  font-weight: 600;
+  color: var(--mag-indigo-soft);
+}
+
+/* ---------- Where to buy ---------- */
+
+.mag-cta {
+  margin-top: 3rem;
+  display: grid;
+  overflow: hidden;
+  border-radius: 32px;
+  background: linear-gradient(135deg, #4554a4 0%, #5d6fcd 100%);
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .mag-cta {
+    grid-template-columns: 5fr 7fr;
+  }
+}
+
+.mag-cta-media {
+  display: block;
+}
+
+.mag-cta-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mag-cta-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1.5rem 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .mag-cta-body {
+    padding: 3rem;
+  }
+}
+
+.mag-cta .mag-eyebrow {
+  color: #cdd3f2;
+}
+
+.mag-cta .mag-cta-title {
+  margin-top: 0.5rem;
+  font-size: clamp(1.6rem, 3.6vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.mag-cta-links {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mag-cta-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  border-radius: 9999px;
+  background: #fff;
+  color: var(--mag-indigo);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -12px rgba(16, 24, 40, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mag-cta-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -12px rgba(16, 24, 40, 0.5);
+}
+
+.mag-cta-links a:focus-visible {
+  outline: 3px solid #fef0ca;
+  outline-offset: 3px;
+}
+
+.mag-cta-links span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--mag-muted);
+}

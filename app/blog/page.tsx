@@ -37,6 +37,7 @@ const BlogCard = ({ post, index, locale, blogT }: { post: BlogPost; index: numbe
             alt={title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
+            style={post.imagePosition ? { objectPosition: post.imagePosition } : undefined}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               if (target.src.endsWith('.webp')) {

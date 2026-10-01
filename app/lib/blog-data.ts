@@ -14,6 +14,13 @@ export interface BlogPost {
   readTime_th?: string;
   tags: string[];
   category: string;
+  /** CSS object-position for cropping `image` on blog listing cards. */
+  imagePosition?: string;
+  /** 'magazine' renders the editorial layout in app/blog/[slug]/MagazineArticle.tsx. */
+  layout?: 'standard' | 'magazine';
+  /** Small label above a magazine headline; defaults to `category`. */
+  kicker?: string;
+  kicker_th?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -808,6 +815,212 @@ export const blogPosts: BlogPost[] = [
           </div>
         </div>
       </div>
+    `
+  },
+  {
+    slug: 'is-the-gut-your-second-brain',
+    title: 'Is the Gut Really the Second Brain? Why Probiotics Matter for Health and Mood',
+    title_th: 'ลำไส้คือสมองที่สองจริงไหม? ทำไมโพรไบโอติกถึงสำคัญต่ออารมณ์และสุขภาพ',
+    excerpt: 'Feeling stressed, tired, or mentally drained? The answer may lie in your gut — home to 70–80% of your immune system and the source of over 90% of your serotonin.',
+    excerpt_th: 'รู้สึกเครียด เหนื่อยง่าย หรืออารมณ์แปรปรวนโดยไม่มีสาเหตุชัดเจน? คำตอบอาจอยู่ที่ลำไส้ ที่อยู่ของระบบภูมิคุ้มกัน 70–80% และแหล่งผลิตเซโรโทนินมากกว่า 90%',
+    date: 'October 1, 2026',
+    date_th: '1 ตุลาคม 2026',
+    author: 'prove+ Team',
+    readTime: '3 min read',
+    readTime_th: 'อ่าน 3 นาที',
+    image: '/images/blog/gut-brain-axis-probiotics/B.webp',
+    imagePosition: '50% 15%',
+    tags: ['Wellness', 'Gut Health', 'Gut-Brain Axis', 'Probiotics', 'Microbiome', 'FLOWPRO'],
+    category: 'Wellness',
+    layout: 'magazine',
+    kicker: 'Feature · Gut Health',
+    kicker_th: 'บทความพิเศษ · สุขภาพลำไส้',
+    content: `
+      <p class="mag-lede mag-dropcap">
+        Have you ever wondered why you feel stressed, tired, or mentally drained? The answer may lie in your gut. The gut is often called the “second brain” due to its direct connection with the brain via the <strong>Gut-Brain Axis</strong>.
+      </p>
+      <p>
+        The gut plays a key role in digestion, hosts <strong>70–80%</strong> of the immune system, and produces <strong>over 90%</strong> of serotonin, the “feel-good” hormone.
+      </p>
+
+      <div class="mag-stats mag-wide">
+        <div class="mag-stat"><span class="mag-stat-num">70–80%</span><span class="mag-stat-label">of the immune system is hosted in the gut</span></div>
+        <div class="mag-stat"><span class="mag-stat-num">90%+</span><span class="mag-stat-label">of serotonin, the “feel-good” hormone, is produced in the gut</span></div>
+      </div>
+
+      <figure class="mag-figure mag-figure--cinema mag-wide">
+        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/A.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/A.jpg" alt="Glowing illustration of the brain linked to the intestine by a web of connections" width="2048" height="1449" loading="lazy" /></picture>
+        <figcaption>The gut and the brain are in constant, two-way conversation through the gut-brain axis.</figcaption>
+      </figure>
+
+      <h2>The Power of the Gut</h2>
+      <ol class="mag-list">
+        <li><span class="mag-list-num" aria-hidden="true">01</span><h3>Gut-Brain Connection</h3><p>The gut communicates with the brain, influencing mood, stress, and cognitive function.</p></li>
+        <li><span class="mag-list-num" aria-hidden="true">02</span><h3>Immune System</h3><p>A healthy gut supports immunity, protects against pathogens, and reduces inflammation.</p></li>
+        <li><span class="mag-list-num" aria-hidden="true">03</span><h3>Mood &amp; Mental Health</h3><p>Gut health affects neurotransmitter production, helping improve mood and mental clarity.</p></li>
+        <li><span class="mag-list-num" aria-hidden="true">04</span><h3>Metabolism &amp; Absorption</h3><p>Gut bacteria help break down food, produce vitamins, and regulate metabolism.</p></li>
+        <li><span class="mag-list-num" aria-hidden="true">05</span><h3>Disease Prevention</h3><p>A balanced gut reduces the risk of chronic diseases such as diabetes and heart disease.</p></li>
+      </ol>
+
+      <figure class="mag-figure mag-wide">
+        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/C.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/C.jpg" alt="Gut-brain axis diagram linking nutrient delivery, microbial balance, motility, and secretion to neurotransmitters, mood, anxiety, and stress" width="2048" height="1365" loading="lazy" /></picture>
+        <figcaption>The gut-brain axis: microbial balance in the gut feeds into neurotransmitters, mood, and stress.</figcaption>
+      </figure>
+
+      <h2>Why Probiotics Matter</h2>
+      <p>
+        Probiotics help restore gut balance and promote <strong>SCFA</strong> production, which supports immunity and reduces inflammation.
+      </p>
+      <aside class="mag-note">
+        <p class="mag-eyebrow">Quick definition</p>
+        <p><strong>SCFAs (short-chain fatty acids)</strong> are compounds that gut bacteria produce when they ferment dietary fiber.</p>
+      </aside>
+
+      <blockquote class="mag-pullquote mag-wide">
+        <p>The gut is often called the “second brain” due to its direct connection with the brain.</p>
+      </blockquote>
+
+      <section class="mag-spotlight mag-wide">
+        <div class="mag-spotlight-text">
+          <p class="mag-eyebrow">Product spotlight</p>
+          <h2>What Makes FLOWPRO Different</h2>
+          <p>FLOWPRO contains <em>Bacillus coagulans</em> BC198, a spore-forming probiotic resistant to heat and acid, combined with 5-layer encapsulation technology to ensure survivability.</p>
+          <p>It is manufactured by <strong>Syngen Biotech</strong>, a trusted probiotic innovator from Taiwan with over 20 years of expertise and 200 in-house R&amp;D specialists.</p>
+          <dl class="mag-facts">
+            <div><dt>Strain</dt><dd><em>B. coagulans</em> BC198</dd></div>
+            <div><dt>Protection</dt><dd>5-layer encapsulation</dd></div>
+            <div><dt>Made by</dt><dd>Syngen Biotech, Taiwan</dd></div>
+            <div><dt>Expertise</dt><dd>20+ years · 200 R&amp;D staff</dd></div>
+          </dl>
+        </div>
+        <figure class="mag-figure">
+          <picture><source srcset="/images/blog/gut-brain-axis-probiotics/E.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/E.jpg" alt="Infographic explaining prove+ encapsulation technology and its German certificate" width="1080" height="1350" loading="lazy" /></picture>
+          <figcaption>Encapsulation, explained: a protective coating helps probiotics survive storage and stomach acid to reach the gut. prove+ protects its probiotics with up to 5 layers, a technology certified in Germany.</figcaption>
+        </figure>
+      </section>
+
+      <figure class="mag-figure mag-wide">
+        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/D.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/D.jpg" alt="Infographic of seven things to check when buying a probiotic supplement" width="2048" height="1365" loading="lazy" /></picture>
+        <figcaption>What to check when buying a probiotic: the strain, the microbe count, strain-specific research, survival to the gut, added prebiotics, a match for your needs, and a format you’ll take consistently.</figcaption>
+      </figure>
+
+      <div class="mag-ornament" aria-hidden="true">+</div>
+
+      <h2>The Takeaway</h2>
+      <p class="mag-end">
+        Your gut is the foundation of your health. Choosing a high-quality probiotic is essential for long-term well-being.
+      </p>
+
+      <div class="mag-tagline mag-wide">
+        <p>PROVE+ — Proof in every dose, plus in every need</p>
+      </div>
+
+      <section class="mag-cta mag-wide">
+        <picture class="mag-cta-media"><source srcset="/images/blog/gut-brain-axis-probiotics/F.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/F.jpg" alt="PROVE+ FLOWPRO probiotic boxes and sachets" width="1080" height="1350" loading="lazy" /></picture>
+        <div class="mag-cta-body">
+          <p class="mag-eyebrow">Where to buy</p>
+          <p class="mag-cta-title">Start taking care of your gut here</p>
+          <div class="mag-cta-links">
+            <a href="https://shopee.co.th/proveplusthailand" target="_blank" rel="noopener noreferrer">Shopee <span>Prove+ Thailand</span></a>
+            <a href="https://www.tiktok.com/@proveplus" target="_blank" rel="noopener noreferrer">TikTok <span>@proveplus</span></a>
+            <a href="https://www.lazada.co.th/shop/nvjcwykx" target="_blank" rel="noopener noreferrer">Lazada <span>Prove+ Thailand</span></a>
+          </div>
+        </div>
+      </section>
+    `,
+    content_th: `
+      <p class="mag-lede">
+        เคยสงสัยไหมว่าทำไมเราถึงรู้สึกเครียด เหนื่อยง่าย หรืออารมณ์แปรปรวนโดยไม่มีสาเหตุชัดเจน? คำตอบอาจไม่ได้อยู่ที่สมองเพียงอย่างเดียว แต่อยู่ที่ “ลำไส้” ของคุณ ลำไส้ถูกเรียกว่า “สมองที่สอง” เพราะมีการเชื่อมต่อกับสมองผ่านระบบ <strong>Gut-Brain Axis</strong> ซึ่งเป็นการสื่อสารสองทางระหว่างลำไส้และสมอง
+      </p>
+      <p>
+        ลำไส้มีบทบาทสำคัญ เช่น การย่อยอาหาร การดูดซึมสารอาหาร เป็นที่อยู่ของระบบภูมิคุ้มกัน <strong>70–80%</strong> และผลิตเซโรโทนิน<strong>มากกว่า 90%</strong> ซึ่งเป็นฮอร์โมนแห่งความสุข
+      </p>
+
+      <div class="mag-stats mag-wide">
+        <div class="mag-stat"><span class="mag-stat-num">70–80%</span><span class="mag-stat-label">ของระบบภูมิคุ้มกันอยู่ที่ลำไส้</span></div>
+        <div class="mag-stat"><span class="mag-stat-num">90%+</span><span class="mag-stat-label">ของเซโรโทนิน ฮอร์โมนแห่งความสุข ผลิตที่ลำไส้</span></div>
+      </div>
+
+      <figure class="mag-figure mag-figure--cinema mag-wide">
+        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/A.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/A.jpg" alt="ภาพสมองเชื่อมต่อกับลำไส้ด้วยเครือข่ายการสื่อสาร" width="2048" height="1449" loading="lazy" /></picture>
+        <figcaption>ลำไส้และสมองสื่อสารกันตลอดเวลาแบบสองทาง ผ่านระบบ Gut-Brain Axis</figcaption>
+      </figure>
+
+      <h2>พลังของลำไส้</h2>
+      <ol class="mag-list">
+        <li><span class="mag-list-num" aria-hidden="true">01</span><h3>Gut-Brain Axis (ลำไส้กับสมอง)</h3><p>ลำไส้และสมองสื่อสารกันตลอดเวลา ส่งผลต่ออารมณ์ ความเครียด และการทำงานของสมอง</p></li>
+        <li><span class="mag-list-num" aria-hidden="true">02</span><h3>ระบบภูมิคุ้มกัน</h3><p>ลำไส้ช่วยป้องกันเชื้อโรค เสริมภูมิคุ้มกัน และลดการอักเสบในร่างกาย</p></li>
+        <li><span class="mag-list-num" aria-hidden="true">03</span><h3>อารมณ์และสุขภาพจิต</h3><p>ลำไส้มีบทบาทในการสร้างสารสื่อประสาท ช่วยให้อารมณ์สมดุล ลดความเครียด และช่วยให้สมองปลอดโปร่ง</p></li>
+        <li><span class="mag-list-num" aria-hidden="true">04</span><h3>การดูดซึมและเมตาบอลิซึม</h3><p>ช่วยย่อยอาหาร สร้างวิตามิน และควบคุมน้ำหนัก</p></li>
+        <li><span class="mag-list-num" aria-hidden="true">05</span><h3>การป้องกันโรค</h3><p>ลำไส้ที่ดีช่วยลดความเสี่ยงของโรคเรื้อรัง เช่น เบาหวาน โรคหัวใจ และการอักเสบ</p></li>
+      </ol>
+
+      <figure class="mag-figure mag-wide">
+        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/C.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/C.jpg" alt="แผนภาพ Gut-Brain Axis แสดงความเชื่อมโยงระหว่างจุลินทรีย์ในลำไส้ สารสื่อประสาท อารมณ์ และความเครียด" width="2048" height="1365" loading="lazy" /></picture>
+        <figcaption>Gut-Brain Axis: สมดุลของจุลินทรีย์ในลำไส้ส่งผลต่อสารสื่อประสาท อารมณ์ และความเครียด</figcaption>
+      </figure>
+
+      <h2>ทำไมโพรไบโอติกถึงสำคัญ</h2>
+      <p>
+        โพรไบโอติกช่วยปรับสมดุลลำไส้ และช่วยสร้าง <strong>SCFAs</strong> ซึ่งช่วยลดการอักเสบและเสริมภูมิคุ้มกัน
+      </p>
+      <aside class="mag-note">
+        <p class="mag-eyebrow">รู้จักคำนี้</p>
+        <p><strong>SCFAs (กรดไขมันสายสั้น)</strong> คือสารที่จุลินทรีย์ในลำไส้สร้างขึ้นเมื่อหมักย่อยใยอาหาร</p>
+      </aside>
+
+      <blockquote class="mag-pullquote mag-wide">
+        <p>ลำไส้ถูกเรียกว่า “สมองที่สอง” เพราะมีการเชื่อมต่อกับสมองผ่านระบบ Gut-Brain Axis</p>
+      </blockquote>
+
+      <section class="mag-spotlight mag-wide">
+        <div class="mag-spotlight-text">
+          <p class="mag-eyebrow">ผลิตภัณฑ์แนะนำ</p>
+          <h2>FLOWPRO แตกต่างอย่างไร</h2>
+          <p>FLOWPRO ใช้ <em>Bacillus coagulans</em> BC198 ซึ่งเป็นโพรไบโอติกแบบสปอร์ ทนกรดและความร้อน พร้อมเทคโนโลยี 5-layer encapsulation ช่วยให้จุลินทรีย์รอดถึงลำไส้ ไม่ตายไปก่อน</p>
+          <p>FLOWPRO ของ prove+ ผลิตโดย <strong>Syngen Biotech</strong> จากไต้หวัน ผู้เชี่ยวชาญโพรไบโอติกมากกว่า 20 ปี ด้วยทีม R&amp;D กว่า 200 คน</p>
+          <dl class="mag-facts">
+            <div><dt>สายพันธุ์</dt><dd><em>B. coagulans</em> BC198</dd></div>
+            <div><dt>การปกป้อง</dt><dd>Encapsulation 5 ชั้น</dd></div>
+            <div><dt>ผู้ผลิต</dt><dd>Syngen Biotech, ไต้หวัน</dd></div>
+            <div><dt>ความเชี่ยวชาญ</dt><dd>20+ ปี · ทีม R&amp;D 200 คน</dd></div>
+          </dl>
+        </div>
+        <figure class="mag-figure">
+          <picture><source srcset="/images/blog/gut-brain-axis-probiotics/E.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/E.jpg" alt="อินโฟกราฟิกอธิบายเทคโนโลยี Encapsulation ของ prove+ และใบรับรองจากเยอรมนี" width="1080" height="1350" loading="lazy" /></picture>
+          <figcaption>Encapsulation คือการห่อหุ้มโพรไบโอติกด้วยสารเคลือบพิเศษ ช่วยให้รอดตั้งแต่การผลิต การเก็บรักษา และกรดในกระเพาะ จนถึงลำไส้ — prove+ ปกป้องจุลินทรีย์มากถึง 5 ชั้น ด้วยมาตรฐานจากเยอรมนี</figcaption>
+        </figure>
+      </section>
+
+      <figure class="mag-figure mag-wide">
+        <picture><source srcset="/images/blog/gut-brain-axis-probiotics/D.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/D.jpg" alt="อินโฟกราฟิก 7 สิ่งที่ต้องดูเมื่อซื้ออาหารเสริมโพรไบโอติกส์" width="2048" height="1365" loading="lazy" /></picture>
+        <figcaption>7 สิ่งที่ต้องดูเมื่อซื้ออาหารเสริมโพรไบโอติกส์: สายพันธุ์ ปริมาณจุลินทรีย์ งานวิจัยรองรับ การรอดถึงลำไส้ พรีไบโอติกส์ การเลือกตามปัญหา และรูปแบบที่กินต่อเนื่องได้สะดวก</figcaption>
+      </figure>
+
+      <div class="mag-ornament" aria-hidden="true">+</div>
+
+      <h2>สรุป</h2>
+      <p class="mag-end">
+        ลำไส้คือพื้นฐานของสุขภาพทั้งหมด การเลือกโพรไบโอติกที่มีคุณภาพและน่าเชื่อถือจึงเป็นสิ่งสำคัญ
+      </p>
+
+      <div class="mag-tagline mag-wide">
+        <p>PROVE+ — Proof in every dose, plus in every need</p>
+        <p>พรูฟพลัส พรูฟแล้วว่าดี</p>
+      </div>
+
+      <section class="mag-cta mag-wide">
+        <picture class="mag-cta-media"><source srcset="/images/blog/gut-brain-axis-probiotics/F.webp" type="image/webp" /><img src="/images/blog/gut-brain-axis-probiotics/F.jpg" alt="ผลิตภัณฑ์ PROVE+ FLOWPRO แบบกล่องและซอง" width="1080" height="1350" loading="lazy" /></picture>
+        <div class="mag-cta-body">
+          <p class="mag-eyebrow">ช่องทางสั่งซื้อ</p>
+          <p class="mag-cta-title">เริ่มดูแลตัวเองได้แล้ววันนี้</p>
+          <div class="mag-cta-links">
+            <a href="https://shopee.co.th/proveplusthailand" target="_blank" rel="noopener noreferrer">Shopee <span>Prove+ Thailand</span></a>
+            <a href="https://www.tiktok.com/@proveplus" target="_blank" rel="noopener noreferrer">TikTok <span>@proveplus</span></a>
+            <a href="https://www.lazada.co.th/shop/nvjcwykx" target="_blank" rel="noopener noreferrer">Lazada <span>Prove+ Thailand</span></a>
+          </div>
+        </div>
+      </section>
     `
   },
   /*
