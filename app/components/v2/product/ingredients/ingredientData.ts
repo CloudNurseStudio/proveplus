@@ -285,10 +285,35 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro' | 'lumipro', Pro
 
   // Source: "Product Infromation" doc, LUMIPRO section. Its header was copied
   // from ALLERPRO (says apple flavour); the Canva rollout deck confirms yogurt.
-  // FDA number and additives are not in the doc yet.
   lumipro: {
     accent: { solid: '#d6528f', deep: '#b8407a', soft: '#fbe4ef', surface: '#fdeef5' },
-    additives: [],
+    fdaNumber: '10-3-11368-5-0003',
+    additives: [
+      {
+        en: 'Solvent or carrier (INS 414)',
+        th: 'สารช่วยทำละลายหรือช่วยพา (INS 414)',
+      },
+      {
+        en: 'Anti-caking agent (INS 551)',
+        th: 'สารป้องกันการจับเป็นก้อน (INS 551)',
+      },
+      {
+        en: 'Acidity regulator (INS 330)',
+        th: 'สารควบคุมความเป็นกรด (INS 330)',
+      },
+      {
+        en: 'Sweetener (INS 955)',
+        th: 'สารให้ความหวาน (INS 955)',
+      },
+      {
+        en: 'Bulking agent (Maltodextrin)',
+        th: 'สารเพิ่มปริมาณ (MALTODEXTRIN)',
+      },
+      {
+        en: 'Synthetic flavoring',
+        th: 'แต่งกลิ่นสังเคราะห์',
+      },
+    ],
     ingredients: [
       {
         name: { en: 'Yogurt Powder', th: 'ผงโยเกิร์ต' },

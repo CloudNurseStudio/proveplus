@@ -26,9 +26,18 @@ export interface ProductConfig {
   rating?: { value: number; count: number };
 }
 
-// LUMIPRO images are still being collected; every LUMIPRO slot points here
-// until the packshots and banners are added.
-const LUMIPRO_PLACEHOLDER = '/images/products/lumipro/placeholder.svg';
+const LUMIPRO_IMAGE = '/images/products/lumipro/SKU_Skin_RE_9.png';
+const LUMIPRO_BANNER = '/images/products/lumipro/PROVE_AW01.1-02.jpg';
+const LUMIPRO_GALLERY = [
+  '/images/products/lumipro/1.jpg',
+  '/images/products/lumipro/2.jpg',
+  '/images/products/lumipro/3.jpg',
+  '/images/products/lumipro/4.jpg',
+  '/images/products/lumipro/5.jpg',
+  '/images/products/lumipro/6.jpg',
+  '/images/products/lumipro/7.jpg',
+  '/images/products/lumipro/8.jpg',
+];
 
 const BADGE_FINE_GRANULES = '/images/badges/badge-fine-granules.svg';
 const BADGE_ENCAPSULATION = '/images/badges/badge-encapsulation.svg';
@@ -81,10 +90,10 @@ export const PRODUCTS: ProductConfig[] = [
     id: 'lumipro',
     shortName: 'LUMIPRO',
     href: '/products/lumipro',
-    banner: LUMIPRO_PLACEHOLDER,
-    gallery: [LUMIPRO_PLACEHOLDER],
-    cardImage: LUMIPRO_PLACEHOLDER,
-    homeCardImage: LUMIPRO_PLACEHOLDER,
+    banner: LUMIPRO_BANNER,
+    gallery: LUMIPRO_GALLERY,
+    cardImage: LUMIPRO_IMAGE,
+    homeCardImage: LUMIPRO_IMAGE,
     // The CFU badge is product-specific, so it is left out until LUMIPRO's
     // own badge is supplied.
     badges: [BADGE_FINE_GRANULES, BADGE_ENCAPSULATION],
