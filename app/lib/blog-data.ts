@@ -818,8 +818,8 @@ export const blogPosts: BlogPost[] = [
       'Discover the gut-skin axis and meet SG105, a unique probiotic strain from Syngen, Taiwan, studied for antioxidant activity and healthy skin aging.',
     excerpt_th:
       'ทำความรู้จัก Gut-Skin Axis และ SG105 โพรไบโอติกสายพันธุ์เฉพาะจาก Syngen ไต้หวัน ที่ถูกศึกษาเรื่องอนุมูลอิสระและการดูแลผิวตามวัย',
-    date: 'October 2026',
-    date_th: 'ตุลาคม 2026',
+    date: '2 October 2026',
+    date_th: '2 ตุลาคม 2026',
     author: 'prove+ Wellness Editorial Team',
     readTime: '8 min read',
     readTime_th: 'อ่าน 8 นาที',
