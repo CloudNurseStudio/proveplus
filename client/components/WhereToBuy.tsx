@@ -16,7 +16,7 @@ export function ShopModalContent({ heading }: ShopModalContentProps) {
       <div className="flex flex-col gap-9 items-center w-full max-w-[297px]">
         {/* Shopee */}
         <a
-          href="https://shopee.co.th/proveplusthailand?entryPoint=ShopBySearch&searchKeyword=prove%20plus"
+          href="https://shopee.co.th/proveplusthailand"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Buy on Shopee"
@@ -38,7 +38,7 @@ export function ShopModalContent({ heading }: ShopModalContentProps) {
 
         {/* Lazada */}
         <a
-          href="https://www.lazada.co.th/shop/nvjcwykx?spm=a2o4m.homepage.search.12.11255e89wCBz6p"
+          href="https://shopee.co.th/proveplusthailand"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Buy on Lazada"
