@@ -26,15 +26,15 @@
         "image": "/images/benefits/feature-easy.webp"
       },
       {
-        "title": "BC 198",
-        "subtitle": "Tiny beads, packed in one sachet",
-        "description": "Quality microorganisms that withstand heat and acid. Bacillus coagulans BC198 is research-backed for producing SCFAs (short-chain fatty acids) up to 8x higher than normal, effectively benefiting your gut.",
+        "title": "Proven by science",
+        "subtitle": "Research-backed strains",
+        "description": "We choose high-quality probiotic strains backed by research, so each product answers a real need:\nFLOWPRO uses BC198 to support regular bowel movements\nALLERPRO uses LCW23 to help reduce allergy symptoms\nLUMIPRO uses SG105 to help the body fight free radicals",
         "image": "/images/benefits/feature-bc198.webp"
       },
       {
         "title": "Great taste",
         "subtitle": "Loved by Thai palates",
-        "description": "Bursting with delicious pineapple powder that's refreshing and suits Thai palates. Pineapple also contains Bromelain enzyme that helps reduce bloating and improves digestion.",
+        "description": "Three refreshing flavours, three formulas, made for Thai tastes:\nFLOWPRO pineapple: delicious and fragrant\nALLERPRO green apple: tangy and refreshing\nLUMIPRO yogurt: smooth and well-rounded",
         "image": "/images/benefits/feature-taste-pineapple.webp",
         "image2": "/images/benefits/feature-taste-apple.webp"
       }
@@ -48,8 +48,8 @@
         "subtitle": "Dissolves in your mouth"
       },
       {
-        "title": "BC 198",
-        "subtitle": "Tiny beads, all-in-one sachet"
+        "title": "Proven by science",
+        "subtitle": "Research-backed strains"
       },
       {
         "title": "Great taste",
@@ -337,7 +337,9 @@
         "probiotic": "Probiotics",
         "prebiotic": "Prebiotics",
         "vitamin": "Vitamin",
-        "immune": "Immune Fibre"
+        "immune": "Immune Fibre",
+        "postbiotic": "Postbiotic",
+        "other": "Other ingredients"
       }
     },
     "flowpro": {
@@ -356,6 +358,15 @@
       "size": "30 sachets",
       "fullName": "prove+Synbiotics+VitaminC Apple Flavor (Ready-to-eat probiotic for balanced gut health)",
       "description": "prove+ Synbiotics+VitaminC Apple Flavor (Ready-to-eat probiotic for balanced gut health) is your starting point for better health from Prove+",
+      "howToUse": "Take 1 sachet daily. Simply tear open and pour directly into your mouth. No water needed."
+    },
+    "lumipro": {
+      "name": "prove+ LUMIPRO",
+      "subtitle": "Ready-to-eat probiotic",
+      "flavor": "Yogurt",
+      "size": "30 sachets",
+      "fullName": "prove+Synbiotics+VitaminC Yogurt Flavor (Ready-to-eat probiotic for skin care from within)",
+      "description": "prove+ Synbiotics+VitaminC Yogurt Flavor (Ready-to-eat probiotic for skin care from within) features the SG105 strain, which helps the body fight free radicals. It is your starting point for better health from Prove+",
       "howToUse": "Take 1 sachet daily. Simply tear open and pour directly into your mouth. No water needed."
     }
   },

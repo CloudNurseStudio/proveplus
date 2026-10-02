@@ -30,6 +30,7 @@ dist-ssr
 out/
 out
 .next/
+.next-dev/
 .superdesign/
 .cursor/
 .cursorrules

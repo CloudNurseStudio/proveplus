@@ -6,8 +6,8 @@
  * each variant render the same facts differently without duplicating content.
  *
  * Thai names for FLOWPRO come verbatim from the official product document.
- * ALLERPRO Thai names are transliterated using the same conventions and
- * should be verified by the client before launch.
+ * ALLERPRO and LUMIPRO Thai names are transliterated using the same conventions
+ * and should be verified by the client before launch.
  */
 
 export type Locale = 'th' | 'en';
@@ -22,7 +22,13 @@ export function localise(value: LStr, locale: Locale): string {
   return value[locale] ?? value.en;
 }
 
-export type IngredientCategory = 'probiotic' | 'prebiotic' | 'vitamin' | 'immune';
+export type IngredientCategory =
+  | 'probiotic'
+  | 'prebiotic'
+  | 'vitamin'
+  | 'immune'
+  | 'postbiotic'
+  | 'other';
 
 export interface Ingredient {
   /** Display name (e.g. genus/species or compound name). */
@@ -41,8 +47,10 @@ export interface Ingredient {
 export interface ProductIngredients {
   /** Ordered (highest amount first) active ingredients per sachet. */
   ingredients: Ingredient[];
+  /** Empty until the official list is confirmed; the footer hides it. */
   additives: LStr[];
-  fdaNumber: string;
+  /** Thai FDA (อย.) number; omitted until registered, and the footer hides it. */
+  fdaNumber?: string;
   /** Accent colours so each product keeps its own identity in every variant. */
   accent: ProductAccent;
 }
@@ -70,7 +78,7 @@ const VITAMIN_C: Ingredient = {
   },
 };
 
-export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredients> = {
+export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro' | 'lumipro', ProductIngredients> = {
   flowpro: {
     accent: { solid: '#5d6fcd', deep: '#4554a4', soft: '#e9edff', surface: '#e5ecfe' },
     fdaNumber: '10-3-11368-5-0001',
@@ -271,6 +279,146 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro', ProductIngredie
           en: 'An early-life strain that supports a balanced microbiome.',
           th: 'สายพันธุ์ที่พบในช่วงต้นของชีวิต ช่วยรักษาสมดุลของไมโครไบโอม',
         },
+      },
+    ],
+  },
+
+  // Source: "Product Infromation" doc, LUMIPRO section. Its header was copied
+  // from ALLERPRO (says apple flavour); the Canva rollout deck confirms yogurt.
+  lumipro: {
+    accent: { solid: '#d6528f', deep: '#b8407a', soft: '#fbe4ef', surface: '#fdeef5' },
+    fdaNumber: '10-3-11368-5-0003',
+    additives: [
+      {
+        en: 'Solvent or carrier (INS 414)',
+        th: 'สารช่วยทำละลายหรือช่วยพา (INS 414)',
+      },
+      {
+        en: 'Anti-caking agent (INS 551)',
+        th: 'สารป้องกันการจับเป็นก้อน (INS 551)',
+      },
+      {
+        en: 'Acidity regulator (INS 330)',
+        th: 'สารควบคุมความเป็นกรด (INS 330)',
+      },
+      {
+        en: 'Sweetener (INS 955)',
+        th: 'สารให้ความหวาน (INS 955)',
+      },
+      {
+        en: 'Bulking agent (Maltodextrin)',
+        th: 'สารเพิ่มปริมาณ (MALTODEXTRIN)',
+      },
+      {
+        en: 'Synthetic flavoring',
+        th: 'แต่งกลิ่นสังเคราะห์',
+      },
+    ],
+    ingredients: [
+      {
+        name: { en: 'Yogurt Powder', th: 'ผงโยเกิร์ต' },
+        amountMg: 210,
+        amount: '210 mg',
+        category: 'other',
+        blurb: {
+          en: 'Gives LUMIPRO its smooth, mellow yogurt taste.',
+          th: 'ให้รสชาติโยเกิร์ตที่ละมุนลิ้น กลมกล่อม',
+        },
+      },
+      {
+        name: { en: 'Inulin', th: 'อินนูลิน' },
+        detail: { en: '90%', th: '90%' },
+        amountMg: 60,
+        amount: '60 mg',
+        category: 'prebiotic',
+        blurb: {
+          en: 'A prebiotic fibre that promotes regularity and nourishes good bacteria.',
+          th: 'ใยอาหารพรีไบโอติก ช่วยเรื่องการขับถ่ายและบำรุงแบคทีเรียดี',
+        },
+      },
+      {
+        name: { en: 'Whole Milk Powder', th: 'นมผงชนิดเต็มมันเนย' },
+        amountMg: 60,
+        amount: '60 mg',
+        category: 'other',
+      },
+      {
+        ...VITAMIN_C,
+        amountMg: 55,
+        amount: '55 mg',
+      },
+      {
+        name: { en: 'Inactivated Yeast (Saccharomyces cerevisiae)', th: 'ยีสต์ที่ผ่านการทำให้หมดฤทธิ์ (แซคคาโรไมซีส ซีรีวิเซีย)' },
+        amountMg: 50,
+        amount: '50 mg',
+        category: 'postbiotic',
+        blurb: {
+          en: 'Heat-treated yeast cells that support the body without needing to stay alive.',
+          th: 'เซลล์ยีสต์ที่ผ่านความร้อน ให้ประโยชน์ต่อร่างกายโดยไม่ต้องมีชีวิต',
+        },
+      },
+      {
+        name: { en: 'Bacillus coagulans', th: 'บาซิลลัส โคแอกกูแลนส์' },
+        amountMg: 50,
+        amount: '50 mg',
+        category: 'probiotic',
+        blurb: {
+          en: 'A spore-forming probiotic that survives stomach acid to reach the gut.',
+          th: 'โพรไบโอติกชนิดสร้างสปอร์ ทนกรดในกระเพาะจึงเดินทางถึงลำไส้ได้',
+        },
+      },
+      {
+        name: { en: 'Bifidobacterium animalis subsp. lactis', th: 'บิฟิโดแบคทีเรียม แอนิมาลิส ซับสปีชีส์ แลคทิส' },
+        detail: { en: 'SG105', th: 'SG105' },
+        amountMg: 40,
+        amount: '40 mg',
+        category: 'probiotic',
+        blurb: {
+          en: 'A research-backed strain that helps the body fight free radicals.',
+          th: 'สายพันธุ์ที่มีงานวิจัยรองรับ มีส่วนช่วยต้านอนุมูลอิสระในร่างกาย',
+        },
+      },
+      {
+        name: { en: 'Lactobacillus acidophilus', th: 'แลกโตบาซิลลัส แอซิโดฟิลัส' },
+        amountMg: 3,
+        amount: '3 mg',
+        category: 'probiotic',
+        blurb: {
+          en: 'A classic gut-friendly strain found in cultured dairy.',
+          th: 'สายพันธุ์ที่เป็นมิตรต่อลำไส้ พบได้ในผลิตภัณฑ์นมหมัก',
+        },
+      },
+      {
+        name: { en: 'Bifidobacterium longum', th: 'บิฟิโดแบคทีเรียม ลองกัม' },
+        amountMg: 3,
+        amount: '3 mg',
+        category: 'probiotic',
+        blurb: {
+          en: 'A core resident of a healthy gut, helping maintain microbial harmony.',
+          th: 'จุลินทรีย์หลักของลำไส้ที่แข็งแรง ช่วยรักษาสมดุลของจุลินทรีย์',
+        },
+      },
+      {
+        name: { en: 'Lactobacillus rhamnosus', th: 'แลกโตบาซิลลัส รามโนซัส' },
+        amountMg: 3,
+        amount: '3 mg',
+        category: 'probiotic',
+        blurb: {
+          en: 'A widely researched strain supporting gut and overall wellbeing.',
+          th: 'สายพันธุ์ที่มีการศึกษาอย่างกว้างขวาง ช่วยดูแลลำไส้และสุขภาพโดยรวม',
+        },
+      },
+      {
+        name: { en: 'Rice Powder', th: 'ผงข้าว' },
+        amountMg: 3,
+        amount: '3 mg',
+        category: 'other',
+      },
+      {
+        name: { en: 'Bird\'s Nest Powder', th: 'ผงรังนก' },
+        amountMg: 3,
+        amount: '3 mg',
+        category: 'other',
       },
     ],
   },

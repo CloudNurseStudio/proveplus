@@ -18,7 +18,7 @@ export function ShopModalContent({ heading }: ShopModalContentProps) {
       <div className="flex flex-col gap-6 sm:gap-9 items-center w-full max-w-[297px]">
         {/* Shopee */}
         <a
-          href="https://shopee.co.th/proveplusthailand?entryPoint=ShopBySearch&searchKeyword=prove%20plus"
+          href="https://shopee.co.th/proveplusthailand"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Buy on Shopee"
