@@ -26,7 +26,7 @@ export interface ProductConfig {
   rating?: { value: number; count: number };
 }
 
-const LUMIPRO_IMAGE = '/images/products/lumipro/SKU_Skin_RE_9.png';
+const LUMIPRO_IMAGE = '/images/products/lumipro/lumipro-product.png';
 const LUMIPRO_BANNER = '/images/products/lumipro/PROVE_AW01.1-02.jpg';
 const LUMIPRO_GALLERY = [
   '/images/products/lumipro/1.jpg',
