@@ -4,11 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useLocale } from './LocaleProvider';
+import { PRODUCTS } from './product/products';
 
 // Local asset URLs
 const imgImage45 = "/images/microprobiotic-image-45.webp";
-const imgProduct1 = "/images/microprobiotic-product-1.webp";
-const imgProduct2 = "/images/microprobiotic-product-2.webp";
 const imgMix1 = "/images/microprobiotic-mix-1.webp";
 const imgElementPlus030 = "/images/microprobiotic-element-plus-030.webp";
 export const MICRO_SECTION_ID = 'micro-probiotic-section';
@@ -64,45 +63,34 @@ export function MicroProbioticSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex gap-4 sm:gap-5 mt-4 sm:mt-6 justify-center lg:justify-start"
+            className="flex gap-3 sm:gap-5 mt-4 sm:mt-6 justify-center lg:justify-start"
           >
-            {/* Product 1 - Flowpro */}
-            <Link href="/products/flowpro" className="flex flex-col items-center rounded-full shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] cursor-pointer hover:scale-105 transition-transform">
-              <div className="bg-[#e5ecfe] p-2 rounded-t-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
-                <div className="relative w-[120px] h-[120px]">
-                  <Image
-                    src={imgProduct1}
-                    alt="Prove+ Gut Relief Product"
-                    fill
-                    className="object-contain"
-                  />
+            {PRODUCTS.map((product) => (
+              <Link
+                key={product.id}
+                href={product.href}
+                className="flex flex-col items-center rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] cursor-pointer hover:scale-105 transition-transform"
+              >
+                <div
+                  className="p-2 rounded-t-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"
+                  style={{ backgroundColor: product.surface }}
+                >
+                  <div className="relative w-[84px] h-[84px] sm:w-[120px] sm:h-[120px]">
+                    <Image
+                      src={product.homeCardImage}
+                      alt={t.productPage[product.id].name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className="bg-[#f5f5f5] px-6 py-3 rounded-b-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] w-[136px]">
-                <p className="text-[#4456a6] text-center font-semibold text-[16px]">
-                  Details
-                </p>
-              </div>
-            </Link>
-
-            {/* Product 2 - Allerpro */}
-            <Link href="/products/allerpro" className="flex flex-col items-center rounded-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] cursor-pointer hover:scale-105 transition-transform">
-              <div className="bg-[#fbf7e2] p-2 rounded-t-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
-                <div className="relative w-[120px] h-[120px]">
-                  <Image
-                    src={imgProduct2}
-                    alt="Prove+ Allergy Relief Product"
-                    fill
-                    className="object-contain"
-                  />
+                <div className="bg-[#f5f5f5] px-2 sm:px-6 py-3 rounded-b-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] w-[100px] sm:w-[136px]">
+                  <p className="text-[#4456a6] text-center font-semibold text-[14px] sm:text-[16px]">
+                    {product.shortName}
+                  </p>
                 </div>
-              </div>
-              <div className="bg-[#f5f5f5] px-6 py-3 rounded-b-[24px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] w-[136px]">
-                <p className="text-[#4456a6] text-center font-semibold text-[16px]">
-                  Details
-                </p>
-              </div>
-            </Link>
+              </Link>
+            ))}
           </motion.div>
         </motion.div>
 
