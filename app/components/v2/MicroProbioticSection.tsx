@@ -63,7 +63,7 @@ export function MicroProbioticSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex gap-3 sm:gap-5 mt-4 sm:mt-6 justify-center lg:justify-start"
+            className="flex flex-wrap gap-3 sm:gap-5 mt-4 sm:mt-6 justify-center lg:justify-start"
           >
             {PRODUCTS.map((product) => (
               <Link

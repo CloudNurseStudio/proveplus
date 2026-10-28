@@ -107,7 +107,11 @@ function FeatureCardTile({
             fontSize: isHovered ? 'clamp(2.5rem, 5vw, 4.5rem)' : 'clamp(2rem, 4vw, 3rem)',
           }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="font-bold text-black text-center leading-tight"
+          className="font-bold text-[#293d91] text-center leading-tight"
+          style={{
+            WebkitTextStroke: '0.35px rgba(255, 255, 255, 0.8)',
+            textShadow: '0 1px 3px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.72)',
+          }}
         >
           {card.title}
         </motion.p>
@@ -119,7 +123,11 @@ function FeatureCardTile({
             marginTop: isHovered ? 0 : 8,
           }}
           transition={{ duration: 0.2 }}
-          className="text-[clamp(1rem, 2vw, 1.5rem)] font-medium text-black text-center overflow-hidden"
+          className="text-[clamp(1rem, 2vw, 1.5rem)] font-semibold text-[#243047] text-center overflow-hidden"
+          style={{
+            WebkitTextStroke: '0.2px rgba(255, 255, 255, 0.82)',
+            textShadow: '0 1px 3px rgba(255, 255, 255, 0.95), 0 0 7px rgba(255, 255, 255, 0.68)',
+          }}
         >
           {card.subtitle}
         </motion.p>
