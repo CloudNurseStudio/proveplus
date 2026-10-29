@@ -28,6 +28,7 @@ export interface ProductConfig {
 
 const LUMIPRO_IMAGE = '/images/products/lumipro/lumipro-product.png';
 const LUMIPRO_BANNER = '/images/products/lumipro/PROVE_AW01.1-02.jpg';
+const BLOOMPRO_IMAGE = '/images/products/bloompro/SKU_BloomPro_RE_9.webp';
 const LUMIPRO_GALLERY = [
   '/images/products/lumipro/1.jpg',
   '/images/products/lumipro/2.jpg',
@@ -42,6 +43,25 @@ const LUMIPRO_GALLERY = [
 const BADGE_FINE_GRANULES = '/images/badges/badge-fine-granules.svg';
 const BADGE_ENCAPSULATION = '/images/badges/badge-encapsulation.svg';
 const BADGE_CFU = '/images/badges/badge-cfu.svg';
+const BADGE_ALLERPRO_MILLION = '/images/badges/badge-million.webp';
+const BADGE_LUMIPRO_YOGURT = '/images/badges/badge-yogurt.webp';
+const BADGE_BLOOMPRO_CFU = '/images/badges/badge-bloompro-5000-cfu.webp';
+const BLOOMPRO_BANNER = '/images/products/bloompro/PROVE_AW02-03.webp';
+const BLOOMPRO_GALLERY = [
+  '/images/products/bloompro/B-4_1-2-07.webp',
+  '/images/products/bloompro/B-4_1-2-01.webp',
+  '/images/products/bloompro/B-4_1-2-02.webp',
+  '/images/products/bloompro/B-4_1-2-03.webp',
+  '/images/products/bloompro/B-4_1-2-04.webp',
+  '/images/products/bloompro/B-4_1-2-05.webp',
+  '/images/products/bloompro/B-4_1-2-06.webp',
+  '/images/products/bloompro/B-4_1-2-08.webp',
+  '/images/products/bloompro/B-4_1-2-09.webp',
+  '/images/products/bloompro/B-4_1-2-10.webp',
+  '/images/products/bloompro/B-4_1-2-11.webp',
+  '/images/products/bloompro/B-4_1-2-12.webp',
+  '/images/products/bloompro/B-4_1-2-13.webp',
+];
 
 export const PRODUCTS: ProductConfig[] = [
   {
@@ -80,9 +100,7 @@ export const PRODUCTS: ProductConfig[] = [
     ],
     cardImage: '/images/products/allerpro/allerpro-product.webp',
     homeCardImage: '/images/microprobiotic-product-2.webp',
-    // TODO: swap the CFU badge for ALLERPRO's "1,000 million CFU + β-glucan &
-    // Vit C" badge once the artwork is supplied (Canva rollout deck, slide 6).
-    badges: [BADGE_FINE_GRANULES, BADGE_ENCAPSULATION, BADGE_CFU],
+    badges: [BADGE_FINE_GRANULES, BADGE_ENCAPSULATION, BADGE_ALLERPRO_MILLION],
     surface: '#fbf7e2',
     rating: { value: 4.5, count: 288 },
   },
@@ -94,10 +112,20 @@ export const PRODUCTS: ProductConfig[] = [
     gallery: LUMIPRO_GALLERY,
     cardImage: LUMIPRO_IMAGE,
     homeCardImage: LUMIPRO_IMAGE,
-    // The CFU badge is product-specific, so it is left out until LUMIPRO's
-    // own badge is supplied.
-    badges: [BADGE_FINE_GRANULES, BADGE_ENCAPSULATION],
+    // LUMIPRO's CFU badge is omitted until its product-specific artwork is supplied.
+    badges: [BADGE_FINE_GRANULES, BADGE_ENCAPSULATION, BADGE_LUMIPRO_YOGURT],
     surface: '#fdeef5',
+  },
+  {
+    id: 'bloompro',
+    shortName: 'BLOOMPRO',
+    href: '/products/bloompro',
+    banner: BLOOMPRO_BANNER,
+    gallery: BLOOMPRO_GALLERY,
+    cardImage: BLOOMPRO_IMAGE,
+    homeCardImage: BLOOMPRO_IMAGE,
+    badges: [BADGE_FINE_GRANULES, BADGE_ENCAPSULATION, BADGE_BLOOMPRO_CFU],
+    surface: '#fde9ed',
   },
 ];
 

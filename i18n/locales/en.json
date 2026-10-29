@@ -35,8 +35,7 @@
         "title": "Great taste",
         "subtitle": "Loved by Thai palates",
         "description": "Three refreshing flavours, three formulas, made for Thai tastes:\nFLOWPRO pineapple: delicious and fragrant\nALLERPRO green apple: tangy and refreshing\nLUMIPRO yogurt: smooth and well-rounded",
-        "image": "/images/benefits/feature-taste-pineapple.webp",
-        "image2": "/images/benefits/feature-taste-apple.webp"
+        "image": "/images/benefits/feature-taste-combo.webp"
       }
     ]
   },
@@ -368,6 +367,15 @@
       "fullName": "prove+Synbiotics+VitaminC Yogurt Flavor (Ready-to-eat probiotic for skin care from within)",
       "description": "prove+ Synbiotics+VitaminC Yogurt Flavor (Ready-to-eat probiotic for skin care from within) features the SG105 strain, which helps the body fight free radicals. It is your starting point for better health from Prove+",
       "howToUse": "Take 1 sachet daily. Simply tear open and pour directly into your mouth. No water needed."
+    },
+    "bloompro": {
+      "name": "prove+ BLOOMPRO",
+      "subtitle": "Ready-to-eat probiotic",
+      "flavor": "Cranberry",
+      "size": "30 sachets",
+      "fullName": "BLOOMPRO Cranberry Flavor Dietary Supplement Product (PROVE+ Brand)",
+      "description": "prove+ BLOOMPRO Cranberry Flavor is a synbiotic formula with 6 probiotic strains and 2 prebiotics, providing 5,000+ million CFU per sachet.",
+      "howToUse": "Take 1–2 sachets daily. No water is needed; suggested on an empty stomach."
     }
   },
   "blog": {

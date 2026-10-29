@@ -63,7 +63,7 @@ export function MicroProbioticSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex gap-3 sm:gap-5 mt-4 sm:mt-6 justify-center lg:justify-start"
+            className="flex flex-wrap gap-3 sm:gap-5 mt-4 sm:mt-6 justify-center lg:justify-start"
           >
             {PRODUCTS.map((product) => (
               <Link
@@ -123,7 +123,7 @@ export function MicroProbioticSection() {
           <div className="relative w-full h-full rounded-full sm:rounded-full overflow-hidden bg-[rgba(166,180,220,0.24)]">
             <Image
               src={imgMix1}
-              alt="Prove+ Sampling Kit"
+              alt="Prove+ BloomPro probiotic with woman"
               fill
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 500px, 552px"
               className="object-cover"

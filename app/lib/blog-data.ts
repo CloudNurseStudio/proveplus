@@ -1,3 +1,6 @@
+import { antiAgingPost } from './anti-aging-post';
+import { bloomproLaunchPost } from './bloompro-launch-post';
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -17,6 +20,8 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  bloomproLaunchPost,
+  antiAgingPost,
   {
     slug: 'exclusive-fan-meet-nichkhun',
     title: 'Exclusive + Fan Meet with Nichkhun',
