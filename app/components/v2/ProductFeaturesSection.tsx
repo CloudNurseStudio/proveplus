@@ -43,7 +43,6 @@ export function ProductFeaturesSection() {
             key={card.title}
             card={card}
             isHovered={index === hoveredCard}
-            hasHoveredCard={hoveredCard !== null}
             onHover={() => setHoveredCard(index)}
           />
         ))}
@@ -55,28 +54,18 @@ export function ProductFeaturesSection() {
 function FeatureCardTile({
   card,
   isHovered,
-  hasHoveredCard,
   onHover,
 }: {
   card: FeatureCard;
   isHovered: boolean;
-  hasHoveredCard: boolean;
   onHover: () => void;
 }) {
-  // Determine flex value based on hover state
-  const getFlexValue = () => {
-    if (!hasHoveredCard) return 1; // All equal when none hovered
-    return isHovered ? 2.2 : 0.7; // Expanded or shrunk
-  };
-
   return (
     <motion.div
       initial={false}
-      animate={{ flex: getFlexValue() }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       onMouseEnter={onHover}
       onFocus={onHover}
-      className="group relative flex h-[340px] w-full flex-col overflow-hidden rounded-[36px] bg-gradient-to-br from-white/90 to-[#8FDAFA]/20 backdrop-blur-lg cursor-pointer sm:h-[380px] sm:rounded-[48px] md:h-[420px] md:w-auto md:min-w-0 lg:h-[460px] lg:rounded-[60px]"
+      className="group relative flex h-[340px] w-full flex-none flex-col overflow-hidden rounded-[36px] bg-gradient-to-br from-white/90 to-[#8FDAFA]/20 backdrop-blur-lg cursor-pointer sm:h-[380px] sm:rounded-[48px] md:h-[420px] md:flex-1 md:min-w-0 lg:h-[460px] lg:rounded-[60px]"
     >
       {/* Background gradient overlay */}
       <motion.div
