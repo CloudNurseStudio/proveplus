@@ -5,14 +5,10 @@ const figure = (file: string, alt: string, caption: string) => `
   </figure>`;
 
 const campaignImagePair = (firstAlt: string, secondAlt: string, secondCaption: string) => `
-  <div style="margin: 2rem 0;">
-    <figure style="margin: 0; text-align: center; line-height: 0;">
-      <picture style="display: block;"><source srcset="/images/blog/anti-aging-food-fruit-habits/F.webp" type="image/webp" /><img src="/images/blog/anti-aging-food-fruit-habits/F.jpg" alt="${firstAlt}" style="display: block; width: 100%; max-height: 720px; object-fit: contain; border-radius: 20px 20px 0 0; box-shadow: 0 16px 36px -22px rgba(68,86,166,.3);" /></picture>
-    </figure>
-    <figure style="margin: 0; text-align: center;">
-      <picture style="display: block;"><source srcset="/images/blog/anti-aging-food-fruit-habits/G.webp" type="image/webp" /><img src="/images/blog/anti-aging-food-fruit-habits/G.jpg" alt="${secondAlt}" style="display: block; width: 100%; max-height: 720px; object-fit: contain; border-radius: 0 0 20px 20px; box-shadow: 0 16px 36px -22px rgba(68,86,166,.3);" /></picture>
-      <figcaption style="margin-top: .65rem; color: #8b93a3; font-size: .9rem; line-height: 1.5;">${secondCaption}</figcaption>
-    </figure>
+  <div class="anti-aging-campaign-pair">
+    <figure><picture><source srcset="/images/blog/anti-aging-food-fruit-habits/F.webp" type="image/webp" /><img src="/images/blog/anti-aging-food-fruit-habits/F.jpg" alt="${firstAlt}" /></picture></figure>
+    <figure><picture><source srcset="/images/blog/anti-aging-food-fruit-habits/G.webp" type="image/webp" /><img src="/images/blog/anti-aging-food-fruit-habits/G.jpg" alt="${secondAlt}" /></picture></figure>
+    <figcaption>${secondCaption}</figcaption>
   </div>`;
 
 const sources = [
