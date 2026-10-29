@@ -76,7 +76,7 @@ function FeatureCardTile({
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       onMouseEnter={onHover}
       onFocus={onHover}
-      className="group relative flex h-[320px] sm:h-[400px] lg:h-[480px] w-full md:w-auto md:min-w-0 overflow-hidden rounded-[48px] sm:rounded-[60px] lg:rounded-[72px] bg-gradient-to-br from-white/90 to-[#8FDAFA]/20 backdrop-blur-lg cursor-pointer"
+      className="group relative flex h-[340px] w-full flex-col overflow-hidden rounded-[36px] bg-gradient-to-br from-white/90 to-[#8FDAFA]/20 backdrop-blur-lg cursor-pointer sm:h-[380px] sm:rounded-[48px] md:h-[420px] md:w-auto md:min-w-0 lg:h-[460px] lg:rounded-[60px]"
     >
       {/* Background gradient overlay */}
       <motion.div
@@ -96,18 +96,18 @@ function FeatureCardTile({
         transition={{ duration: 0.3 }}
       />
 
-      {/* Text content */}
+      {/* Keep headings in a dedicated area above the product photography. */}
       <div
-        className={`relative z-10 flex flex-col items-center w-full p-6 sm:p-8 lg:p-9 transition-all duration-300 ${
-          isHovered ? 'justify-center' : 'justify-start pt-8 sm:pt-10 lg:pt-12'
+        className={`relative z-10 flex w-full flex-col items-center px-5 pt-5 text-center transition-all duration-300 sm:px-7 sm:pt-7 md:px-5 md:pt-6 lg:px-7 lg:pt-8 ${
+          isHovered ? 'h-full shrink-0 justify-center bg-white/90' : 'h-[38%] shrink-0 justify-start'
         }`}
       >
         <motion.p
           animate={{
-            fontSize: isHovered ? 'clamp(2.5rem, 5vw, 4.5rem)' : 'clamp(2rem, 4vw, 3rem)',
+            fontSize: isHovered ? 'clamp(1.8rem, 3vw, 2.8rem)' : 'clamp(1.35rem, 2.2vw, 2rem)',
           }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="font-bold text-[#293d91] text-center leading-tight"
+          className="max-w-full font-bold leading-tight text-[#293d91]"
           style={{
             WebkitTextStroke: '0.35px rgba(255, 255, 255, 0.8)',
             textShadow: '0 1px 3px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 255, 255, 0.72)',
@@ -123,7 +123,7 @@ function FeatureCardTile({
             marginTop: isHovered ? 0 : 8,
           }}
           transition={{ duration: 0.2 }}
-          className="text-[clamp(1rem, 2vw, 1.5rem)] font-semibold text-[#243047] text-center overflow-hidden"
+          className="mt-1 max-w-full overflow-hidden text-[clamp(0.9rem,1.35vw,1.15rem)] font-semibold leading-snug text-[#243047]"
           style={{
             WebkitTextStroke: '0.2px rgba(255, 255, 255, 0.82)',
             textShadow: '0 1px 3px rgba(255, 255, 255, 0.95), 0 0 7px rgba(255, 255, 255, 0.68)',
@@ -139,7 +139,7 @@ function FeatureCardTile({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25, delay: 0.1 }}
-              className="mt-4 text-base sm:text-lg lg:text-xl text-prove-primary text-center max-w-md leading-relaxed whitespace-pre-line"
+              className="mt-4 max-w-md text-sm leading-relaxed text-prove-primary sm:text-base lg:text-lg"
             >
               {card.description}
             </motion.p>
@@ -147,9 +147,9 @@ function FeatureCardTile({
         </AnimatePresence>
       </div>
 
-      {/* Images - only visible when not hovered */}
+      {/* Images stay in the lower portion so they cannot sit behind the text. */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-full pointer-events-none"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[62%]"
         animate={{
           opacity: isHovered ? 0 : 1,
           scale: isHovered ? 0.8 : 1,
@@ -158,19 +158,19 @@ function FeatureCardTile({
         transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       >
         {/* Primary image */}
-        <div className="relative w-full h-full">
+        <div className={`relative h-full ${card.image2 ? 'ml-auto w-[78%]' : 'w-full'}`}>
           <Image
             src={card.image}
             alt={card.title}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
-            className="object-contain object-center"
+            className="object-contain object-[center_bottom]"
           />
         </div>
         
         {/* Secondary image (for fruit card) */}
         {card.image2 && (
-          <div className="absolute -left-[10%] top-1/2 -translate-y-1/2 w-[50%] h-[80%]">
+          <div className="absolute left-0 top-1/2 h-full w-[48%] -translate-y-1/2">
             <Image
               src={card.image2}
               alt={`${card.title} secondary`}
