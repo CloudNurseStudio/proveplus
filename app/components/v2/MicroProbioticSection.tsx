@@ -123,7 +123,7 @@ export function MicroProbioticSection() {
           <div className="relative w-full h-full rounded-full sm:rounded-full overflow-hidden bg-[rgba(166,180,220,0.24)]">
             <Image
               src={imgMix1}
-              alt="Prove+ Sampling Kit"
+              alt="Prove+ BloomPro probiotic with woman"
               fill
               sizes="(max-width: 640px) 90vw, (max-width: 1024px) 500px, 552px"
               className="object-cover"
