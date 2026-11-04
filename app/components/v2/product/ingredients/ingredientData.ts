@@ -78,7 +78,7 @@ const VITAMIN_C: Ingredient = {
   },
 };
 
-export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro' | 'lumipro', ProductIngredients> = {
+export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro' | 'lumipro' | 'bloompro', ProductIngredients> = {
   flowpro: {
     accent: { solid: '#5d6fcd', deep: '#4554a4', soft: '#e9edff', surface: '#e5ecfe' },
     fdaNumber: '10-3-11368-5-0001',
@@ -418,6 +418,121 @@ export const PRODUCT_INGREDIENTS: Record<'flowpro' | 'allerpro' | 'lumipro', Pro
         name: { en: 'Bird\'s Nest Powder', th: 'ผงรังนก' },
         amountMg: 3,
         amount: '3 mg',
+        category: 'other',
+      },
+    ],
+  },
+
+  bloompro: {
+    accent: { solid: '#df5367', deep: '#c7354d', soft: '#fde8ec', surface: '#fde9ed' },
+    fdaNumber: '10-3-11368-5-0004',
+    additives: [
+      { en: 'Stabilizer (INS 333(iii))', th: 'สารทำให้คงตัว (INS 333(iii))' },
+      { en: 'Thickener (INS 414)', th: 'สารให้ความข้นเหนียว (INS 414)' },
+      { en: 'Acidity regulator (INS 296)', th: 'สารควบคุมความเป็นกรด (INS 296)' },
+      { en: 'Anti-foaming agent (INS 551)', th: 'สารป้องกันการเกิดฟอง (INS 551)' },
+      { en: 'Sweetener (INS 955)', th: 'สารให้ความหวาน (INS 955)' },
+      { en: 'Synthetic flavoring', th: 'แต่งกลิ่นสังเคราะห์' },
+    ],
+    ingredients: [
+      {
+        name: { en: 'Bacillus coagulans', th: 'บาซิลลัส โคแอกกูแลน' },
+        amountMg: 100,
+        amount: '100 mg',
+        category: 'probiotic',
+      },
+      {
+        name: { en: 'Cranberry juice powder', th: 'ผงน้ำแครนเบอร์รี่' },
+        amountMg: 75.68,
+        amount: '75.68 mg',
+        category: 'other',
+      },
+      {
+        name: { en: 'Lactobacillus rhamnosus', th: 'แล็กโทบาซิลลัส แรมโนซัส' },
+        detail: { en: 'LR1', th: 'LR1' },
+        amountMg: 50,
+        amount: '50 mg',
+        category: 'probiotic',
+      },
+      {
+        name: { en: 'Fructooligosaccharide', th: 'ฟรุกโตโอลิโกแซคคาไรด์' },
+        detail: { en: '45%', th: '45%' },
+        amountMg: 45,
+        amount: '45 mg',
+        category: 'prebiotic',
+      },
+      {
+        name: { en: 'Strawberry juice powder', th: 'ผงน้ำสตรอเบอร์รี่' },
+        amountMg: 30.27,
+        amount: '30.27 mg',
+        category: 'other',
+      },
+      {
+        name: { en: 'Apple juice powder', th: 'ผงน้ำแอปเปิ้ล' },
+        amountMg: 30.27,
+        amount: '30.27 mg',
+        category: 'other',
+      },
+      {
+        name: { en: 'Roselle extract', th: 'สารสกัดกระเจี๊ยบแดง' },
+        amountMg: 13.5,
+        amount: '13.5 mg',
+        category: 'other',
+      },
+      {
+        name: { en: 'Inulin', th: 'อินนูลิน' },
+        detail: { en: '90%', th: '90%' },
+        amountMg: 10,
+        amount: '10 mg',
+        category: 'prebiotic',
+      },
+      {
+        name: { en: 'Fermented soybean powder', th: 'ผงถั่วเน่า' },
+        amountMg: 7.5,
+        amount: '7.5 mg',
+        category: 'other',
+      },
+      {
+        name: { en: 'Rice bran powder', th: 'ผงรำข้าว' },
+        amountMg: 7.5,
+        amount: '7.5 mg',
+        category: 'other',
+      },
+      {
+        name: { en: 'Vitamin D3', th: 'วิตามิน ดี3' },
+        amountMg: 2.85,
+        amount: '2.85 mg',
+        category: 'vitamin',
+      },
+      {
+        name: { en: 'Bifidobacterium animalis subsp. lactis', th: 'บิฟิโดแบคทีเรียม แอนิมัลลิส ซับสปีชีส์ แล็กทิส' },
+        amountMg: 1.5,
+        amount: '1.5 mg',
+        category: 'probiotic',
+      },
+      {
+        name: { en: 'Lactobacillus crispatus', th: 'แล็กโทบาซิลลัส คริสปาตัส' },
+        amountMg: 1.5,
+        amount: '1.5 mg',
+        category: 'probiotic',
+      },
+      {
+        name: { en: 'Lactobacillus paracasei', th: 'แล็กโทบาซิลลัส พาราคาเซอิ' },
+        amountMg: 1.5,
+        amount: '1.5 mg',
+        category: 'probiotic',
+      },
+      {
+        name: { en: 'Lactobacillus reuteri', th: 'แล็กโทบาซิลลัส รียูเทอรี' },
+        detail: { en: 'LR126', th: 'LR126' },
+        amountMg: 1.5,
+        amount: '1.5 mg',
+        category: 'probiotic',
+      },
+      {
+        name: { en: 'Cranberry powder', th: 'ผงแครนเบอร์รี่' },
+        amountMg: 1,
+        amount: '1 mg',
         category: 'other',
       },
     ],

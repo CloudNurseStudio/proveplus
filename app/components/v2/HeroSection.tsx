@@ -86,7 +86,7 @@ export function HeroSection() {
             <source srcSet="/images/hero/sku-gut-re.webp" type="image/webp" />
             <img
               src="/images/hero/sku-gut-re.jpg"
-              alt="Prove+ Product"
+              alt="Prove+ BloomPro product"
               className="object-contain w-full h-full"
             />
           </picture>

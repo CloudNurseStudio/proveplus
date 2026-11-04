@@ -120,6 +120,51 @@
   }
 }
 
+@layer components {
+  .anti-aging-campaign-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 12px;
+    margin: 2rem 0;
+  }
+
+  .anti-aging-campaign-pair figure {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .anti-aging-campaign-pair picture,
+  .anti-aging-campaign-pair img {
+    display: block;
+    width: 100%;
+  }
+
+  .anti-aging-campaign-pair img {
+    height: auto;
+    max-height: 720px;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 16px 36px -22px rgba(68, 86, 166, 0.3);
+  }
+
+  .anti-aging-campaign-pair figcaption {
+    grid-column: 1 / -1;
+    margin-top: 0.2rem;
+    color: #8b93a3;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .anti-aging-campaign-pair {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+}
+
 @layer utilities {
   .text-outfit {
     font-family: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI",
