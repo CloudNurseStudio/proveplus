@@ -12,7 +12,8 @@ import { EventsSection } from './components/v2/EventsSection';
 import { ScrollAnimatedElement } from './components/v2/ScrollAnimatedElement';
 import { PopupModal } from './components/v2/PopupModal';
 
-const homeUrl = 'https://www.proveplus-th.com/';
+const previewHost = process.env.VERCEL_ENV === 'preview' ? process.env.VERCEL_URL : undefined;
+const homeUrl = previewHost ? `https://${previewHost}/` : 'https://www.proveplus-th.com/';
 
 export const metadata: Metadata = {
   openGraph: {
@@ -20,9 +21,9 @@ export const metadata: Metadata = {
     url: homeUrl,
     images: [
       {
-        url: new URL('images/popup.jpg', homeUrl),//ภาพแชร์ platform
-        width: 1080,
-        height: 1350,
+        url: new URL('images/bloompro-share.jpg', homeUrl),
+        width: 1200,
+        height: 630,
         type: 'image/jpeg',
         alt: 'Prove+ BLOOMPRO promotional poster',
       },
