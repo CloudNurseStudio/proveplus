@@ -86,11 +86,11 @@ function BlogPostCard({ post, locale, readLabel }: { post: BlogPost; locale: str
       <div className="bg-white flex w-full flex-shrink-0 cursor-pointer flex-col gap-[12px] items-center overflow-clip p-[20px] rounded-[16px] h-full hover:shadow-lg transition-shadow duration-300">
         <div className="aspect-square relative rounded-[16px] shrink-0 w-full overflow-hidden">
           <Image
-            src={post.image}
+            src={post.thumbnail ?? post.image}
             alt={title}
             fill
             sizes="320px"
-            className="object-cover rounded-[16px] transition-transform duration-500 hover:scale-105"
+            className={`${post.thumbnail ? 'object-contain' : 'object-cover'} rounded-[16px] transition-transform duration-500 hover:scale-105`}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               if (target.src.endsWith('.webp')) {

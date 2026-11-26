@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import { NavigationBar } from './components/v2/NavigationBar';
 import { FooterNav } from './components/v2/FooterNav';
 import { HeroSection } from './components/v2/HeroSection';
@@ -12,6 +11,28 @@ import { TestimonialsSection } from './components/v2/TestimonialsSection';
 import { EventsSection } from './components/v2/EventsSection';
 import { ScrollAnimatedElement } from './components/v2/ScrollAnimatedElement';
 import { PopupModal } from './components/v2/PopupModal';
+
+const previewHost = process.env.VERCEL_ENV === 'preview' ? process.env.VERCEL_URL : undefined;
+const homeUrl = previewHost ? `https://${previewHost}/` : 'https://www.proveplus-th.com/';
+
+export const metadata: Metadata = {
+  openGraph: {
+    type: 'website',
+    url: homeUrl,
+    images: [
+      {
+        url: new URL('images/bloompro-share.jpg', homeUrl),
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Prove+ BLOOMPRO promotional poster',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+};
 
 export default function HomePage() {
   return (

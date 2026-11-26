@@ -33,10 +33,13 @@ const BlogCard = ({ post, index, locale, blogT }: { post: BlogPost; index: numbe
         <div className="relative h-48 sm:h-56 w-full overflow-hidden">
           <div className="absolute inset-0 bg-gray-200 animate-pulse" />
           <Image
-            src={post.image}
+            src={post.listingImage ?? post.image}
             alt={title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className={cn(
+              'object-cover transition-transform duration-500 group-hover:scale-105',
+              post.listingImage && 'object-[center_18%]',
+            )}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               if (target.src.endsWith('.webp')) {
