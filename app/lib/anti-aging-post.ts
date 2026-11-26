@@ -102,7 +102,7 @@ export const antiAgingPost = {
   title_th: 'ผิวแก่ก่อนวัยเกิดจากอะไร? วิธีต้านแก่ด้วยอาหาร ผลไม้ และพฤติกรรมที่มีงานวิจัยรองรับ',
   excerpt: 'A research-informed guide to foods, Thai fruits, herbs and everyday habits that support healthy-looking skin, with an honest look at collagen claims.',
   excerpt_th: 'รู้จักสาเหตุผิวแก่ก่อนวัย พร้อมวิธีดูแลด้วยอาหาร ผลไม้ไทย สมุนไพร และพฤติกรรมที่มีงานวิจัยรองรับ รวมถึงข้อเท็จจริงเรื่องคอลลาเจน',
-  date: '27 October 2026',
+  date: 'October 27, 2026',
   date_th: '27 ตุลาคม 2026',
   author: 'prove+ Wellness Editorial Team',
   image: '/images/blog/anti-aging-food-fruit-habits/A.webp',

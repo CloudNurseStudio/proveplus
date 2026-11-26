@@ -66,7 +66,7 @@ export const bloomproLaunchPost = {
   title_th: 'NEW! เปิดตัว BLOOMPRO โพรไบโอติกน้องสาว เพราะน้องสาวดีต้องมีตัวช่วย',
   excerpt: 'Meet BLOOMPRO, the new Prove+ women’s synbiotic with LR1, cranberry and CELABIO®. Learn about vaginal balance, ingredient research and when to seek medical care.',
   excerpt_th: 'รู้จัก BLOOMPRO ซินไบโอติกสูตรใหม่จาก Prove+ พร้อม LR1 แครนเบอร์รี่ และ CELABIO® ทำความเข้าใจสมดุลช่องคลอด ข้อมูลส่วนผสม และสัญญาณที่ควรพบแพทย์',
-  date: '27 October 2026',
+  date: 'October 27, 2026',
   date_th: '27 ตุลาคม 2026',
   author: 'prove+ Wellness Editorial Team',
   image: '/images/blog/bloompro-probiotic-womens-health-launch/A.webp',

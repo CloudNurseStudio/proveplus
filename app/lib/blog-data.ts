@@ -33,6 +33,7 @@ export const blogPosts: BlogPost[] = [
       'Join prove+ and Nichkhun at Lido Connect on 7 Dec for an ' +
       'intimate fan meet experience.',
     date: 'December 7, 2025',
+    date_th: '7 ธันวาคม 2025',
     author: 'prove+ Events Team',
     readTime: '3 min read',
     image: '/images/events/fan-meet-event.webp',
@@ -827,7 +828,7 @@ export const blogPosts: BlogPost[] = [
       'Discover the gut-skin axis and meet SG105, a unique probiotic strain from Syngen, Taiwan, studied for antioxidant activity and healthy skin aging.',
     excerpt_th:
       'ทำความรู้จัก Gut-Skin Axis และ SG105 โพรไบโอติกสายพันธุ์เฉพาะจาก Syngen ไต้หวัน ที่ถูกศึกษาเรื่องอนุมูลอิสระและการดูแลผิวตามวัย',
-    date: '2 October 2026',
+    date: 'October 2, 2026',
     date_th: '2 ตุลาคม 2026',
     author: 'prove+ Wellness Editorial Team',
     readTime: '8 min read',
