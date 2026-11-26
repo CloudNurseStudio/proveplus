@@ -1,5 +1,6 @@
 import { antiAgingPost } from './anti-aging-post';
 import { bloomproLaunchPost } from './bloompro-launch-post';
+import { yearEndHealthCheckPost } from './year-end-health-check-post';
 
 export interface BlogPost {
   slug: string;
@@ -13,6 +14,8 @@ export interface BlogPost {
   date_th?: string;
   author: string;
   image: string;
+  thumbnail?: string;
+  listingImage?: string;
   readTime: string;
   readTime_th?: string;
   tags: string[];
@@ -20,6 +23,7 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  yearEndHealthCheckPost,
   bloomproLaunchPost,
   antiAgingPost,
   {
