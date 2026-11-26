@@ -90,7 +90,7 @@ function BlogPostCard({ post, locale, readLabel }: { post: BlogPost; locale: str
             alt={title}
             fill
             sizes="320px"
-            className={post.thumbnail ? 'object-contain' : 'object-cover transition-transform duration-500 hover:scale-105'}
+            className={`${post.thumbnail ? 'object-contain' : 'object-cover'} rounded-[16px] transition-transform duration-500 hover:scale-105`}
             onError={(e) => {
               const target = e.target as HTMLImageElement;
               if (target.src.endsWith('.webp')) {
